@@ -1,6 +1,22 @@
 import type { NextConfig } from "next";
 
+
+
 const nextConfig: NextConfig = {
+  turbopack: {
+   
+    resolveAlias: {
+      underscore: 'lodash',
+      mocha: { browser: 'mocha/browser-entry.js' },
+    },
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+    resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'],
+  },
   serverExternalPackages: ["pino-pretty", "lokijs", "encoding"],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }) => {
     // ref: https://github.com/WalletConnect/walletconnect-monorepo/issues/1908#issuecomment-1487801131
