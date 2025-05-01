@@ -89,7 +89,7 @@ function Watch() {
 
           // Update localStorage
           const history = JSON.parse(
-            localStorage.getItem('watchHistory') || '{}'
+            localStorage.getItem('watchHistory') || '{}',
           );
           history[`${id}`] = {
             ...history[`${id}`],
@@ -108,7 +108,7 @@ function Watch() {
       // Final save on unmount
       if (movie) {
         const history = JSON.parse(
-          localStorage.getItem('watchHistory') || '{}'
+          localStorage.getItem('watchHistory') || '{}',
         );
         const progress = videoProgressRef.current;
 
@@ -175,7 +175,7 @@ function Watch() {
         isSavingRef.current = false;
       }
     },
-    [movie]
+    [movie],
   );
 
   // Efek untuk interval penyimpanan
@@ -350,7 +350,7 @@ function Watch() {
                           setSelectedServer(`Media ${num}`);
                           localStorage.setItem(
                             'selectedVideoServer',
-                            `Media ${num}`
+                            `Media ${num}`,
                           );
                           setShowServerDropdown(false);
                         }}

@@ -255,7 +255,7 @@ function Banner({ type }: { type: 'movie' | 'tv' }) {
               {new Date(
                 currentMovie.release_date
                   ? currentMovie.release_date
-                  : currentMovie.first_air_date
+                  : currentMovie.first_air_date,
               ).getFullYear()}
             </span>
             <span>•</span>

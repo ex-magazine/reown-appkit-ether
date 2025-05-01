@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
   try {
     const tokens = await google.validateAuthorizationCode(
       code,
-      storedCodeVerifier
+      storedCodeVerifier,
     );
 
     const googleUser = await kyInstance
@@ -51,7 +51,7 @@ export async function GET(req: NextRequest) {
       cookies().set(
         sessionCookie.name,
         sessionCookie.value,
-        sessionCookie.attributes
+        sessionCookie.attributes,
       );
       return new Response(null, {
         status: 302,
@@ -86,7 +86,7 @@ export async function GET(req: NextRequest) {
     cookies().set(
       sessionCookie.name,
       sessionCookie.value,
-      sessionCookie.attributes
+      sessionCookie.attributes,
     );
 
     return new Response(null, {

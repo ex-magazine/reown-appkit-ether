@@ -142,7 +142,7 @@ export const NetworkGraph = ({ people }: { people: Person[] }) => {
                     >
                       {genre}
                     </span>
-                  )
+                  ),
                 )}
               </div>
             </div>

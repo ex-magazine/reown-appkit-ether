@@ -5,7 +5,7 @@ import { NextRequest } from 'next/server';
 
 export async function GET(
   req: NextRequest,
-  { params: { userId } }: { params: { userId: string } }
+  { params: { userId } }: { params: { userId: string } },
 ) {
   try {
     const cursor = req.nextUrl.searchParams.get('cursor') || undefined;

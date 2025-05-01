@@ -23,7 +23,7 @@ export async function GET(req: NextRequest) {
         statusCode: 400,
         message: 'Missing address',
       },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -44,6 +44,6 @@ export async function GET(req: NextRequest) {
         nonce: nonce,
       },
     },
-    { status: 200 }
+    { status: 200 },
   );
 }

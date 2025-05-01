@@ -69,7 +69,7 @@ export default function Home() {
         recipient,
         ethers.parseUnits(
           amount.toString() == '' ? '0' : amount.toString(),
-          18
+          18,
         ),
       ],
       chainId: 56, // BSC chainId
@@ -92,7 +92,7 @@ export default function Home() {
         recipient,
         ethers.parseUnits(
           amount.toString() == '' ? '0' : amount.toString(),
-          18
+          18,
         ),
       ],
       chainId: 56, // BSC chainId

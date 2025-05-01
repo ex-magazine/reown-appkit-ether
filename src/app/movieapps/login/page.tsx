@@ -47,7 +47,7 @@ export default function LoginPage() {
         };
       }
     },
-    initialState
+    initialState,
   );
 
   return (

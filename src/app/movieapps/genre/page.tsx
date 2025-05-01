@@ -75,7 +75,7 @@ const GenrePage = () => {
                       'rounded-full border px-4 py-2 transition-all',
                       selectedGenre === genre.id
                         ? 'border-cyan-400 bg-cyan-400/10 text-cyan-400'
-                        : 'border-slate-600 text-slate-300 hover:border-cyan-400/40 hover:text-cyan-300'
+                        : 'border-slate-600 text-slate-300 hover:border-cyan-400/40 hover:text-cyan-300',
                     )}
                   >
                     {genre.name}

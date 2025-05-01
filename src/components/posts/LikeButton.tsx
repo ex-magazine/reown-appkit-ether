@@ -63,7 +63,7 @@ export default function LikeButton({ postId, initialState }: LikeButtonProps) {
       <Heart
         className={cn(
           'size-5',
-          data.isLikedByUser && 'fill-red-500 text-red-500'
+          data.isLikedByUser && 'fill-red-500 text-red-500',
         )}
       />
       <span className="text-sm font-medium tabular-nums">

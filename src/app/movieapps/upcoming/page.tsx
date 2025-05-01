@@ -104,7 +104,7 @@ const Upcoming = () => {
                     'rounded-full px-6 py-2 transition-colors',
                     type === 'movie'
                       ? 'bg-cyan-500 text-white'
-                      : 'text-slate-300 hover:bg-slate-700'
+                      : 'text-slate-300 hover:bg-slate-700',
                   )}
                 >
                   Movie
@@ -115,7 +115,7 @@ const Upcoming = () => {
                     'rounded-full px-6 py-2 transition-colors',
                     type === 'tv'
                       ? 'bg-cyan-500 text-white'
-                      : 'text-slate-300 hover:bg-slate-700'
+                      : 'text-slate-300 hover:bg-slate-700',
                   )}
                 >
                   TV/Show
@@ -129,7 +129,7 @@ const Upcoming = () => {
                       'rounded-full px-6 py-2 transition-colors',
                       releaseFilter === 'all'
                         ? 'bg-cyan-500 text-white'
-                        : 'text-slate-300 hover:bg-slate-700'
+                        : 'text-slate-300 hover:bg-slate-700',
                     )}
                   >
                     All
@@ -140,7 +140,7 @@ const Upcoming = () => {
                       'rounded-full px-6 py-2 transition-colors',
                       releaseFilter === 'month'
                         ? 'bg-cyan-500 text-white'
-                        : 'text-slate-300 hover:bg-slate-700'
+                        : 'text-slate-300 hover:bg-slate-700',
                     )}
                   >
                     Month

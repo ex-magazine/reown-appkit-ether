@@ -37,7 +37,7 @@ export function useSubmitCommentMutation(postId: string) {
               ],
             };
           }
-        }
+        },
       );
 
       queryClient.invalidateQueries({
@@ -87,7 +87,7 @@ export function useDeleteCommentMutation() {
               comments: page.comments.filter((c) => c.id !== deletedComment.id),
             })),
           };
-        }
+        },
       );
 
       toast({

@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
           authenticated: false,
         },
       },
-      { status: 200 }
+      { status: 200 },
     );
   }
 
@@ -45,7 +45,7 @@ export async function GET(request: NextRequest) {
           authenticated: false,
         },
       },
-      { status: 200 }
+      { status: 200 },
     );
   }
 
@@ -60,6 +60,6 @@ export async function GET(request: NextRequest) {
         authenticated: true,
       },
     },
-    { status: 200 }
+    { status: 200 },
   );
 }

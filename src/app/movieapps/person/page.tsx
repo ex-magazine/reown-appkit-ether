@@ -180,7 +180,7 @@ const PersonCard = memo(
         </div>
       </motion.div>
     );
-  }
+  },
 );
 
 const MemoizedFilterIcon = memo(Filter);
@@ -210,7 +210,7 @@ const DepartmentButton = memo(
         {dept}
       </motion.button>
     );
-  }
+  },
 );
 
 const DepartmentFilter = ({
@@ -282,7 +282,7 @@ const ViewToggle = memo(
         Detailed
       </motion.button>
     </div>
-  )
+  ),
 );
 
 // Add page parameter to the query function

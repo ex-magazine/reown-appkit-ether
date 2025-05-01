@@ -83,10 +83,10 @@ export default async function Home() {
     CategoriesList.map(async (category) => {
       const movies = await category.queryFn;
       return { ...category, movies };
-    })
+    }),
   );
   const filteredCategoriesWithMovies = categoriesWithMovies.filter(
-    (category) => category.movies.length > 0
+    (category) => category.movies.length > 0,
   );
 
   return (

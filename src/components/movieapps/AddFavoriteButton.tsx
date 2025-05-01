@@ -21,7 +21,7 @@ export const AddFavoriteButton = ({ item }: { item: FavoriteItem }) => {
     favorites?.some(
       (i: FavoriteItem) =>
         i.itemId === (item.itemId ?? item.id) &&
-        i.type === (item.type ?? item.media_type)
+        i.type === (item.type ?? item.media_type),
     ) ?? false;
 
   useEffect(() => {

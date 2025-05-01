@@ -33,7 +33,7 @@ const DynamicRecommendation = dynamic(
   () => import('@/Fragments/Recommendation'),
   {
     ssr: false,
-  }
+  },
 );
 
 function DetailShow({ params }: { params: Promise<{ id: string }> }) {
@@ -78,7 +78,7 @@ function DetailShow({ params }: { params: Promise<{ id: string }> }) {
   });
 
   const trailer = trailers?.results?.find(
-    (video: Video) => video.site === 'YouTube' && video.type === 'Trailer'
+    (video: Video) => video.site === 'YouTube' && video.type === 'Trailer',
   );
 
   if (isLoading) {
@@ -136,7 +136,7 @@ function DetailShow({ params }: { params: Promise<{ id: string }> }) {
           )}
         </button>
       );
-    }
+    },
   );
 
   function Tabs() {
@@ -150,7 +150,7 @@ function DetailShow({ params }: { params: Promise<{ id: string }> }) {
         'Status',
         'Cast',
       ],
-      []
+      [],
     );
 
     return (
@@ -339,7 +339,7 @@ function DetailShow({ params }: { params: Promise<{ id: string }> }) {
                           <p className="text-white">
                             {show?.first_air_date
                               ? new Date(
-                                  show.first_air_date
+                                  show.first_air_date,
                                 ).toLocaleDateString()
                               : 'N/A'}
                           </p>
@@ -360,7 +360,7 @@ function DetailShow({ params }: { params: Promise<{ id: string }> }) {
                           <p className="text-white">
                             {show?.first_air_date
                               ? new Date(
-                                  show.first_air_date
+                                  show.first_air_date,
                                 ).toLocaleDateString()
                               : 'N/A'}
                           </p>
@@ -381,7 +381,7 @@ function DetailShow({ params }: { params: Promise<{ id: string }> }) {
                             </h3>
                             <p className="text-white">
                               {new Date(
-                                show.next_episode_to_air.air_date
+                                show.next_episode_to_air.air_date,
                               ).toLocaleDateString()}
                               <br />
                               Episode {show.next_episode_to_air.episode_number}
@@ -416,7 +416,7 @@ function DetailShow({ params }: { params: Promise<{ id: string }> }) {
                               ((show?.budget ?? 0) /
                                 (show?.revenue ?? (show?.budget ?? 0) * 2)) *
                                 100,
-                              100
+                              100,
                             )}%`,
                           }}
                         />
@@ -446,7 +446,7 @@ function DetailShow({ params }: { params: Promise<{ id: string }> }) {
                                 ((show?.budget ?? 0) * 4 ||
                                   (show?.revenue ?? 0) * 2)) *
                                 100,
-                              100
+                              100,
                             )}%`,
                           }}
                         />
@@ -528,7 +528,7 @@ function DetailShow({ params }: { params: Promise<{ id: string }> }) {
                                 'A'.charCodeAt(0)),
                             0x1f1e6 +
                               (lang.iso_639_1.toUpperCase().charCodeAt(1) -
-                                'A'.charCodeAt(0))
+                                'A'.charCodeAt(0)),
                           )}
                         </div>
                         <div className="space-y-1">

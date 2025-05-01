@@ -4,7 +4,7 @@ import { FollowerInfo } from '@/lib/types';
 
 export async function GET(
   req: Request,
-  { params: { userId } }: { params: { userId: string } }
+  { params: { userId } }: { params: { userId: string } },
 ) {
   try {
     const { user: loggedInUser } = await validateRequest();
@@ -50,7 +50,7 @@ export async function GET(
 
 export async function POST(
   req: Request,
-  { params: { userId } }: { params: { userId: string } }
+  { params: { userId } }: { params: { userId: string } },
 ) {
   try {
     const { user: loggedInUser } = await validateRequest();
@@ -91,7 +91,7 @@ export async function POST(
 
 export async function DELETE(
   req: Request,
-  { params: { userId } }: { params: { userId: string } }
+  { params: { userId } }: { params: { userId: string } },
 ) {
   try {
     const { user: loggedInUser } = await validateRequest();

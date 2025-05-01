@@ -9,7 +9,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 export async function login(
-  credentials: LoginValues
+  credentials: LoginValues,
 ): Promise<{ error: string }> {
   try {
     const { username, password } = loginSchema.parse(credentials);
@@ -47,7 +47,7 @@ export async function login(
     cookies().set(
       sessionCookie.name,
       sessionCookie.value,
-      sessionCookie.attributes
+      sessionCookie.attributes,
     );
 
     return redirect('/main');

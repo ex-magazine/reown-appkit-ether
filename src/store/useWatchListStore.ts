@@ -115,7 +115,7 @@ export const useWatchlistStore = create<WatchlistState>()(
         } else {
           // Jika tidak ada token, ambil dari local storage
           const localData = JSON.parse(
-            localStorage.getItem('watchlist-storage') || '{}'
+            localStorage.getItem('watchlist-storage') || '{}',
           );
           set({ watchlist: localData?.state?.watchlist || [] });
         }
@@ -146,7 +146,7 @@ export const useWatchlistStore = create<WatchlistState>()(
                 state: {
                   watchlist: value.state.watchlist,
                 },
-              })
+              }),
             );
           }
         },
@@ -154,6 +154,6 @@ export const useWatchlistStore = create<WatchlistState>()(
           localStorage.removeItem(name);
         },
       },
-    }
-  )
+    },
+  ),
 );

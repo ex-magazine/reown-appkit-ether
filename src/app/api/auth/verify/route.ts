@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
           statusCode: 400,
           message: 'Missing parameters',
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -81,7 +81,7 @@ export async function POST(req: NextRequest) {
     const isValid = nacl.sign.detached.verify(
       new TextEncoder().encode(message),
       bs58.decode(signature),
-      new PublicKey(accountAddress).toBytes()
+      new PublicKey(accountAddress).toBytes(),
     );
 
     if (!isValid) {
@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
           statusCode: 400,
           message: 'Invalid signature',
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -115,7 +115,7 @@ export async function POST(req: NextRequest) {
           authenticated: true,
         },
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error: any) {
     return NextResponse.json(
@@ -123,7 +123,7 @@ export async function POST(req: NextRequest) {
         statusCode: 500,
         message: error.message,
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

@@ -84,7 +84,7 @@ export default function Post({ post }: PostProps) {
           postId={post.id}
           initialState={{
             isBookmarkedByUser: post.bookmarks.some(
-              (bookmark) => bookmark.userId === user.id
+              (bookmark) => bookmark.userId === user.id,
             ),
           }}
         />
@@ -103,7 +103,7 @@ function MediaPreviews({ attachments }: MediaPreviewsProps) {
     <div
       className={cn(
         'flex flex-col gap-3',
-        attachments.length > 1 && 'sm:grid sm:grid-cols-2'
+        attachments.length > 1 && 'sm:grid sm:grid-cols-2',
       )}
     >
       {attachments.map((m) => (

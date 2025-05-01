@@ -12,7 +12,7 @@ interface FavoritesContextType {
 }
 
 const FavoritesContext = createContext<FavoritesContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -23,7 +23,7 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({
   >('favorites', []);
 
   const [favorites, setFavorites] = useState<IMovie[]>(
-    () => localStorageFavorites || []
+    () => localStorageFavorites || [],
   );
 
   useEffect(() => setLocalStorageFavorites(favorites), [favorites]);
@@ -35,7 +35,7 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({
     setFavorites((prevFavorites) =>
       isFavorited(movie)
         ? prevFavorites.filter((fav) => fav.id !== movie.id)
-        : [...prevFavorites, movie]
+        : [...prevFavorites, movie],
     );
   };
 

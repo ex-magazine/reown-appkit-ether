@@ -64,7 +64,7 @@ export const FilterSection = ({
           'transition-all',
           'focus:ring-primary-500/30 focus:outline-none focus:ring-2',
           'group relative duration-200 ease-out',
-          isOpen && 'ring-primary-500/30 ring-2'
+          isOpen && 'ring-primary-500/30 ring-2',
         )}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
@@ -74,7 +74,7 @@ export const FilterSection = ({
             'truncate text-left transition-colors',
             selected
               ? 'font-medium text-gray-100 dark:text-white'
-              : 'text-gray-300 dark:text-gray-400'
+              : 'text-gray-300 dark:text-gray-400',
           )}
         >
           {displayText()}
@@ -103,7 +103,7 @@ export const FilterSection = ({
           isOpen
             ? 'scale-y-100 opacity-100'
             : 'pointer-events-none scale-y-95 opacity-0',
-          'scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent max-h-60 overflow-y-auto'
+          'scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent max-h-60 overflow-y-auto',
         )}
         role="listbox"
       >
@@ -118,7 +118,7 @@ export const FilterSection = ({
                 'hover:bg-primary-50/50 transition-colors dark:hover:bg-gray-700/50',
                 'text-gray-100 dark:text-gray-200',
                 selected === option.value &&
-                  'bg-primary-50/30 font-medium dark:bg-gray-700/30'
+                  'bg-primary-50/30 font-medium dark:bg-gray-700/30',
               )}
               role="option"
               aria-selected={selected === option.value}

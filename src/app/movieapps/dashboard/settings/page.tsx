@@ -40,7 +40,7 @@ export default function Page() {
   });
   const [preferences, setPreferences] = useState(userData.preferences);
   const [selectedGenres, setSelectedGenres] = useState(
-    userData.preferences.contentPreferences.favoriteGenres
+    userData.preferences.contentPreferences.favoriteGenres,
   );
   const [isDarkMode, setIsDarkMode] = useState(userData.preferences.darkMode);
   const fileInputRef = useRef<HTMLInputElement>(null);

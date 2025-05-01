@@ -26,7 +26,7 @@ export default function CommentInput({ post }: CommentInputProps) {
       },
       {
         onSuccess: () => setInput(''),
-      }
+      },
     );
   }
 

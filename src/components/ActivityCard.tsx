@@ -89,7 +89,7 @@ const ActivityCard = ({ contract, mode, address }) => {
   const loadActivity = async () => {
     const c = Date.now();
     const req = await fetch(
-      `/api/banzai/pool-transactions?mode=${mode}&address=${contract.address}&t=${c}`
+      `/api/banzai/pool-transactions?mode=${mode}&address=${contract.address}&t=${c}`,
     );
 
     if (!req || !req.ok) return false;

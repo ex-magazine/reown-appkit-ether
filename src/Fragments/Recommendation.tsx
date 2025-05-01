@@ -24,7 +24,7 @@ function Recommendation({ id, type }: { id: string; type: string }) {
       queryKey: ['recommendedMovies', id],
       queryFn: () => getRecommendedMovies(id as unknown as string, type),
       staleTime: 5 * 60 * 1000,
-    }
+    },
   );
 
   const handleScrollSimilar = (direction: 'left' | 'right') => {

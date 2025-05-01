@@ -44,7 +44,7 @@ const SearchResultsPage = () => {
     useShallow((state) => ({
       selectedType: state.selectedType,
       setSelectedType: state.setSelectedType,
-    }))
+    })),
   );
 
   const { data, isLoading, isError } = useQuery({

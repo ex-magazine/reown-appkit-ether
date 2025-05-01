@@ -39,7 +39,7 @@ export function DropdownGenre() {
   const { setSelectedGenresId } = useStore(
     useShallow((state) => ({
       setSelectedGenresId: state.setSelectedGenresId,
-    }))
+    })),
   );
 
   return (

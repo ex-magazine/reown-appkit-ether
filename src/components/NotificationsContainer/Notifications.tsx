@@ -40,7 +40,7 @@ function Notifications() {
     markNotificationsAsRead,
     fetchNextPage,
   } = useNotifications(
-    notificationsPerPage
+    notificationsPerPage,
     // isInfiniteScroll,
     // address, // Which address is passed here?
     // appDomain,
@@ -51,7 +51,7 @@ function Notifications() {
   // console.log("NOTIFICATIONS ", notifications);
 
   const [unreadCount, setUnreadCount] = useState(
-    subscription?.unreadNotificationCount || 0
+    subscription?.unreadNotificationCount || 0,
   );
 
   // // Doesnt work

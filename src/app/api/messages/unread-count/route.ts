@@ -11,7 +11,7 @@ export async function GET() {
     }
 
     const { total_unread_count } = await streamServerClient.getUnreadCount(
-      user.id
+      user.id,
     );
 
     const data: MessageCountInfo = {

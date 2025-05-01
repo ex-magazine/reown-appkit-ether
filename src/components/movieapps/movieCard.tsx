@@ -64,7 +64,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
   const { selectedType } = useStore(
     useShallow((state) => ({
       selectedType: state.selectedType,
-    }))
+    })),
   );
 
   const releaseDateStr = movie.release_date || movie.first_air_date;

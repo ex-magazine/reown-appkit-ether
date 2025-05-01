@@ -43,7 +43,7 @@ const DynamicRecommendation = dynamic(
   () => import('@/Fragments/Recommendation'),
   {
     ssr: false,
-  }
+  },
 );
 
 // const DetailMovie = async (props: Props) => {
@@ -86,7 +86,7 @@ function DetailMovie({ params }: { params: Promise<{ id: string }> }) {
   });
 
   const trailer = movie?.videos?.results.find(
-    (video: Video) => video.site === 'YouTube' && video.type === 'Trailer'
+    (video: Video) => video.site === 'YouTube' && video.type === 'Trailer',
   );
 
   if (isLoading) {
@@ -144,14 +144,14 @@ function DetailMovie({ params }: { params: Promise<{ id: string }> }) {
           )}
         </button>
       );
-    }
+    },
   );
 
   function Tabs() {
     // Gunakan useMemo agar daftar tab tidak dihitung ulang di setiap render
     const tabs = useMemo(
       () => ['Financials', 'Production', 'Languages', 'Status', 'Cast'],
-      []
+      [],
     );
 
     return (
@@ -309,7 +309,7 @@ function DetailMovie({ params }: { params: Promise<{ id: string }> }) {
                               ((movie?.budget ?? 0) /
                                 (movie?.revenue ?? (movie?.budget ?? 0) * 2)) *
                                 100,
-                              100
+                              100,
                             )}%`,
                           }}
                         />
@@ -339,7 +339,7 @@ function DetailMovie({ params }: { params: Promise<{ id: string }> }) {
                                 ((movie?.budget ?? 0) * 4 ||
                                   (movie?.revenue ?? 0) * 2)) *
                                 100,
-                              100
+                              100,
                             )}%`,
                           }}
                         />
@@ -393,7 +393,7 @@ function DetailMovie({ params }: { params: Promise<{ id: string }> }) {
                                 'A'.charCodeAt(0)),
                             0x1f1e6 +
                               (lang.iso_639_1.toUpperCase().charCodeAt(1) -
-                                'A'.charCodeAt(0))
+                                'A'.charCodeAt(0)),
                           )}
                         </div>
                         <div className="space-y-1">

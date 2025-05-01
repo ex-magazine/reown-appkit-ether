@@ -101,7 +101,7 @@ function ContextProvider({
 }) {
   const initialState = cookieToInitialState(
     wagmiAdapter.wagmiConfig as Config,
-    cookies
+    cookies,
   );
 
   return (

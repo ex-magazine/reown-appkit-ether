@@ -44,7 +44,7 @@ export const MovieCardSecond = ({
             <div className="mt-2 flex items-center justify-between">
               <span className="text-sm text-cyan-400">
                 {new Date(
-                  movie.release_date ?? movie.first_air_date
+                  movie.release_date ?? movie.first_air_date,
                 ).getFullYear()}
               </span>
               <Rating value={movie.vote_average} />

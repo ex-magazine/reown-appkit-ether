@@ -22,7 +22,7 @@ export const Rating = ({ value, className }: RatingProps) => {
               ? 'text-amber-400'
               : index === fullStars && hasHalfStar
                 ? 'text-amber-400'
-                : 'text-slate-600'
+                : 'text-slate-600',
           )}
         />
       ))}

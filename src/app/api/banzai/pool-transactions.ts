@@ -26,7 +26,7 @@ const handler = async (
       new (): any;
       json: { (arg0: { error: string }): void; new (): any };
     };
-  }
+  },
 ) => {
   const addr = req.query.address;
 

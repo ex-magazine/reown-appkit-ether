@@ -140,7 +140,7 @@ export const Navbar = () => {
                                 setActiveDropdown(
                                   activeDropdown === item.title
                                     ? null
-                                    : item.title
+                                    : item.title,
                                 );
                               }
                             }}

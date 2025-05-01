@@ -18,7 +18,7 @@ export default function Comments({ post }: CommentsProps) {
         kyInstance
           .get(
             `/api/posts/${post.id}/comments`,
-            pageParam ? { searchParams: { cursor: pageParam } } : {}
+            pageParam ? { searchParams: { cursor: pageParam } } : {},
           )
           .json<CommentsPage>(),
       initialPageParam: null as string | null,

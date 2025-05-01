@@ -38,7 +38,7 @@ export default function RegisterPage() {
         };
       }
     },
-    { error: null, success: false }
+    { error: null, success: false },
   );
 
   useEffect(() => {

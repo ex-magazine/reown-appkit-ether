@@ -31,11 +31,11 @@ const Marquee = ({
       className={`overflow-hidden whitespace-nowrap ${className}`}
       onMouseEnter={useCallback(
         () => pauseOnHover && setIsHovered(true),
-        [pauseOnHover]
+        [pauseOnHover],
       )}
       onMouseLeave={useCallback(
         () => pauseOnHover && setIsHovered(false),
-        [pauseOnHover]
+        [pauseOnHover],
       )}
       role="marquee"
       aria-live="polite"

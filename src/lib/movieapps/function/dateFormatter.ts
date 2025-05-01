@@ -25,7 +25,7 @@ const indonesianDays = [
 
 export function formatIndonesianDate(
   date: Date,
-  includeTime: boolean = true
+  includeTime: boolean = true,
 ): string {
   const day = indonesianDays[date.getDay()];
   const dateNum = date.getDate();

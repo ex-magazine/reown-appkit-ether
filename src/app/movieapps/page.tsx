@@ -39,7 +39,7 @@ export default function Home() {
       genresId: state.genresId,
       historyData: state.historyData,
       setSelectedGenresId: state.setSelectedGenresId,
-    }))
+    })),
   );
 
   const {
@@ -74,7 +74,7 @@ export default function Home() {
           {},
           {
             headers: { 'Content-Type': 'application/json' },
-          }
+          },
         );
       } catch (error) {
         console.error('Tracking error:', error);
@@ -177,7 +177,7 @@ export default function Home() {
                 🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{' '}
                 <span
                   className={cn(
-                    `animate-gradient gradient inline bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+                    `animate-gradient gradient inline bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
                   )}
                 >
                   Your Ultimate Movie Destination!

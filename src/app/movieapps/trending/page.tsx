@@ -44,7 +44,7 @@ const TrendingPage = () => {
                   'rounded-full px-6 py-2 transition-colors',
                   timeWindow === 'day'
                     ? 'bg-cyan-500 text-white'
-                    : 'text-slate-300 hover:bg-slate-700'
+                    : 'text-slate-300 hover:bg-slate-700',
                 )}
               >
                 Today
@@ -55,7 +55,7 @@ const TrendingPage = () => {
                   'rounded-full px-6 py-2 transition-colors',
                   timeWindow === 'week'
                     ? 'bg-cyan-500 text-white'
-                    : 'text-slate-300 hover:bg-slate-700'
+                    : 'text-slate-300 hover:bg-slate-700',
                 )}
               >
                 This Week

@@ -38,12 +38,12 @@ const PersonDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
   const sortedCredits = [...creditsData.cast].sort(
     (a, b) =>
       new Date(b.release_date || b.first_air_date).getTime() -
-      new Date(a.release_date || a.first_air_date).getTime()
+      new Date(a.release_date || a.first_air_date).getTime(),
   );
   const tabs = ['movies', 'tv'];
   const handleClick = (
     tab: 'movies' | 'tv',
-    setActiveTab: (tab: 'movies' | 'tv') => void
+    setActiveTab: (tab: 'movies' | 'tv') => void,
   ) => {
     setActiveTab(tab);
   };
@@ -151,7 +151,7 @@ const PersonDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
                 .filter((credit) =>
                   activeTab === 'movies'
                     ? credit.media_type === 'movie'
-                    : credit.media_type === 'tv'
+                    : credit.media_type === 'tv',
                 )
                 .map((credit) => (
                   <Link
@@ -194,7 +194,7 @@ const PersonDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
                           </span>
                           <span className="text-sm text-gray-400">
                             {new Date(
-                              credit.release_date || credit.first_air_date
+                              credit.release_date || credit.first_air_date,
                             ).getFullYear()}
                           </span>
                         </div>

@@ -67,7 +67,7 @@ async function WhoToFollow() {
             initialState={{
               followers: user._count.followers,
               isFollowedByUser: user.followers.some(
-                ({ followerId }) => followerId === user.id
+                ({ followerId }) => followerId === user.id,
               ),
             }}
           />
@@ -95,7 +95,7 @@ const getTrendingTopics = unstable_cache(
   ['trending_topics'],
   {
     revalidate: 3 * 60 * 60,
-  }
+  },
 );
 
 async function TrendingTopics() {

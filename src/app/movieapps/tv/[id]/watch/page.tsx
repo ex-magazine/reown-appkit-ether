@@ -174,7 +174,7 @@ function page() {
           (latest: any, current: any) =>
             new Date(current.watchedDate) > new Date(latest.watchedDate)
               ? current
-              : latest
+              : latest,
         );
 
         if (lastWatched) {
@@ -223,7 +223,7 @@ function page() {
 
       await addRecentlyWatched(historyItem);
     },
-    [show, season, episode]
+    [show, season, episode],
   );
 
   const getVideoUrl = () => {
@@ -250,7 +250,7 @@ function page() {
   }
 
   const selectedSeasonData = show?.seasons?.find(
-    (s: any) => s.season_number === parseInt(season)
+    (s: any) => s.season_number === parseInt(season),
   );
 
   // const totalEpisodes = selectedSeasonData?.episode_count || 0;
@@ -262,17 +262,17 @@ function page() {
   // next and previous episode handle
   const currentEpisodeIndex = useMemo(() => {
     return episodes.findIndex(
-      (ep: any) => ep.episode_number === parseInt(episode)
+      (ep: any) => ep.episode_number === parseInt(episode),
     );
   }, [episode, episodes]);
 
   const hasPreviousEpisode = useMemo(
     () => currentEpisodeIndex > 0,
-    [currentEpisodeIndex]
+    [currentEpisodeIndex],
   );
   const hasNextEpisode = useMemo(
     () => currentEpisodeIndex < episodes.length - 1,
-    [currentEpisodeIndex, episodes.length]
+    [currentEpisodeIndex, episodes.length],
   );
 
   const { previousEpisode, nextEpisode } = useMemo(() => {
@@ -292,7 +292,7 @@ function page() {
         setEpisode(nextEpisode.episode_number.toString());
       }
     },
-    [hasPreviousEpisode, hasNextEpisode, previousEpisode, nextEpisode]
+    [hasPreviousEpisode, hasNextEpisode, previousEpisode, nextEpisode],
   );
 
   const handleEpisodeChange = useCallback(
@@ -311,7 +311,7 @@ function page() {
         }
       }, 0);
     },
-    [] // Empty dependency array since it doesn't depend on any changing values
+    [], // Empty dependency array since it doesn't depend on any changing values
   );
 
   return (
@@ -373,7 +373,7 @@ function page() {
                     <div>
                       <Calendar className="mr-2 inline-block h-4 w-4" />
                       {new Date(
-                        currentEpisodeData?.air_date || show?.first_air_date
+                        currentEpisodeData?.air_date || show?.first_air_date,
                       ).toLocaleDateString()}
                     </div>
                     {currentEpisodeData?.director && (
@@ -429,7 +429,7 @@ function page() {
                           setSelectedServer(`Media ${num}`);
                           localStorage.setItem(
                             'selectedVideoServer',
-                            `Media ${num}`
+                            `Media ${num}`,
                           );
                           setShowServerDropdown(false);
                         }}
@@ -536,7 +536,7 @@ function page() {
                           progress?.episodes?.find(
                             (e: any) =>
                               e.season === parseInt(season) &&
-                              e.episode === ep.episode_number
+                              e.episode === ep.episode_number,
                           )?.progressPercentage || 0;
 
                         const isCurrentEpisode =

@@ -37,7 +37,7 @@ const LazyImage = memo(
       prevProps.height === nextProps.height;
 
     return isSame;
-  }
+  },
 );
 
 LazyImage.displayName = 'LazyImage';
