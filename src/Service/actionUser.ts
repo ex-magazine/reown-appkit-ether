@@ -7,7 +7,7 @@ export const fetchWatchlist = async () => {
   const token = getCookie('user');
   if (!token) {
     const localData = JSON.parse(
-      localStorage.getItem('watchlist-storage') || '{}',
+      localStorage.getItem('watchlist-storage') || '{}'
     );
     return localData?.state?.watchlist || [];
   }
@@ -80,7 +80,7 @@ export const addRecentlyWatched = async (item: WatchHistory) => {
         genres: item.genres,
         progressPercentage: item.progressPercentage,
       }),
-    },
+    }
   );
 
   if (!response.ok) throw new Error(response.statusText);
@@ -95,7 +95,7 @@ export const removeRecentlyWatched = async (id: string) => {
     {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
-    },
+    }
   );
 
   if (!response.ok) throw new Error('Failed to remove from watchlist');
@@ -110,7 +110,7 @@ export const clearAllRecentlyWatched = async () => {
     {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
-    },
+    }
   );
 
   if (!response.ok) throw new Error('Gagal menghapus semua riwayat');
@@ -126,7 +126,7 @@ export const fetchVideoProgress = async ({ id, season, episode }: any) => {
         headers: {
           Authorization: `Bearer ${getCookie('user')}`,
         },
-      },
+      }
     );
 
     if (!response.ok) {

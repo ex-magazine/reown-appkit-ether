@@ -21,7 +21,7 @@ export const movieDetailsSchema = movieSchema.extend({
     z.object({
       id: z.number(),
       name: z.string(),
-    }),
+    })
   ),
   runtime: z.number().optional(),
 });
@@ -35,7 +35,7 @@ export const creditsSchema = z.object({
       name: z.string(),
       character: z.string(),
       profile_path: z.string().nullable(),
-    }),
+    })
   ),
 });
 

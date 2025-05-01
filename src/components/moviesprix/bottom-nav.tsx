@@ -17,7 +17,7 @@ export function BottomNav() {
             key={link.name}
             className={cn(
               'flex flex-col items-center font-semibold text-muted-foreground',
-              pathname.startsWith(link.href) && 'font-bold text-primary',
+              pathname.startsWith(link.href) && 'font-bold text-primary'
             )}
           >
             <link.icons className="size-5" />

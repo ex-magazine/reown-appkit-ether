@@ -56,7 +56,7 @@ const MovieInfo = ({ info }: Props) => {
               className={cn(
                 'z-30 size-6 transition-all duration-300',
                 isFavorited(info as unknown as IMovie) &&
-                  'fill-primary text-primary',
+                  'fill-primary text-primary'
               )}
             />
           </div>

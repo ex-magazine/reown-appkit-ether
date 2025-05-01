@@ -88,7 +88,7 @@ export class AppSIWX implements SIWXConfig {
 
   async getSessions(
     chainId: CaipNetworkId,
-    address: string,
+    address: string
   ): Promise<SIWXSession[]> {
     console.log('getSession', chainId, address);
 
@@ -127,7 +127,7 @@ export class AppSIWX implements SIWXConfig {
 
   async revokeSession(
     _chainId: CaipNetworkId,
-    _address: string,
+    _address: string
   ): Promise<void> {
     return Promise.resolve(this.clearStorageTokens());
   }
@@ -139,7 +139,7 @@ export class AppSIWX implements SIWXConfig {
       const session = (sessions.find(
         (s) =>
           s.data.chainId ===
-          ChainController.getActiveCaipNetwork()?.caipNetworkId,
+          ChainController.getActiveCaipNetwork()?.caipNetworkId
       ) || sessions[0]) as SIWXSession;
 
       await this.addSession(session);
@@ -151,14 +151,14 @@ export class AppSIWX implements SIWXConfig {
   }
 
   private getStorageToken(
-    key: keyof SafeLocalStorageItems,
+    key: keyof SafeLocalStorageItems
   ): string | undefined {
     return SafeLocalStorage.getItem(key);
   }
 
   private setStorageToken(
     token: string,
-    key: keyof SafeLocalStorageItems,
+    key: keyof SafeLocalStorageItems
   ): void {
     SafeLocalStorage.setItem(key, token);
   }

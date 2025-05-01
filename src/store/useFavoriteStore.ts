@@ -139,7 +139,7 @@ export const useFavoriteStore = create<FavoriteState>()(
                 state: {
                   favorites: value.state.favorites,
                 },
-              }),
+              })
             );
           }
         },
@@ -147,8 +147,8 @@ export const useFavoriteStore = create<FavoriteState>()(
           localStorage.removeItem(name);
         },
       },
-    },
-  ),
+    }
+  )
 );
 
 //     removeFromFavorites: async (itemId, type) => {

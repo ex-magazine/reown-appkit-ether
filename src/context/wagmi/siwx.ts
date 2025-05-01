@@ -101,7 +101,7 @@ const DEFAULTS = {
           : document.location.href,
       getNonce: async (input: SIWXMessage.Input): Promise<string> => {
         const nonce = await fetch(
-          `/api/auth/nonce?address=${input.accountAddress}`,
+          `/api/auth/nonce?address=${input.accountAddress}`
         )
           .then((res) => res.json())
           .then((res) => res.data.nonce);

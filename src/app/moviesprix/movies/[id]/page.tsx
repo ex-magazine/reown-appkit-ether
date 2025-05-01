@@ -20,7 +20,7 @@ interface Props {
 
 export async function generateMetadata(
   { params }: Props,
-  parent: ResolvingMetadata,
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const id = (await params).id;
   const response = await getMovieInfo(id);

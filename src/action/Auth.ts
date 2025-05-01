@@ -5,7 +5,7 @@ import { RegisterFormData, LoginFormData, AuthResponse } from '@/types/auth';
 const base_url = process.env.BASE_URL_BACKEND;
 
 export const loginUser = async (
-  formData: LoginFormData,
+  formData: LoginFormData
 ): Promise<AuthResponse> => {
   const res = await fetch(`${base_url}auth/login`, {
     method: 'POST',
@@ -24,7 +24,7 @@ export const loginUser = async (
 };
 
 export const registerUser = async (
-  formData: RegisterFormData,
+  formData: RegisterFormData
 ): Promise<AuthResponse> => {
   const res = await fetch(`${base_url}auth/register`, {
     method: 'POST',

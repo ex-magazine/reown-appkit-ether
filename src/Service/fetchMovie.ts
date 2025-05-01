@@ -7,7 +7,7 @@ const url = process.env.NEXT_PUBLIC_THEMOVIEDB_URL;
 export const getSearch = async (q: string) => {
   try {
     const response = await axios.get(
-      `${url}/search/movie?api_key=${api_key}&query=${q}&page=1&`,
+      `${url}/search/movie?api_key=${api_key}&query=${q}&page=1&`
     );
 
     const data = await response.data;
@@ -20,11 +20,11 @@ export const getSearch = async (q: string) => {
 export const getSearchFilter = async (
   q: string,
   type: string,
-  page: string,
+  page: string
 ) => {
   try {
     const response = await axios.get(
-      `${url}/search/${type}?api_key=${api_key}&query=${q}&page=${page}&`,
+      `${url}/search/${type}?api_key=${api_key}&query=${q}&page=${page}&`
     );
 
     const data = await response.data;
@@ -38,7 +38,7 @@ export const getSearchFilter = async (
 export const getSearchShow = async (q: string) => {
   try {
     const response = await axios.get(
-      `${url}/search/movie?api_key=${api_key}&query=${q}&page=1&`,
+      `${url}/search/movie?api_key=${api_key}&query=${q}&page=1&`
     );
 
     const data = await response.data;
@@ -52,7 +52,7 @@ export const getSearchShow = async (q: string) => {
 export const getNowPlaying = async () => {
   try {
     const response = await fetch(
-      `${url}/movie/now_playing?page=1&api_key=${api_key}`,
+      `${url}/movie/now_playing?page=1&api_key=${api_key}`
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -68,7 +68,7 @@ export const getNowPlaying = async () => {
 export const getGenres = async () => {
   try {
     const response = await fetch(
-      `${url}/genre/movie/list?api_key=${api_key}&language=en`,
+      `${url}/genre/movie/list?api_key=${api_key}&language=en`
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -91,7 +91,7 @@ export const getPopularMovie = async (page: number, params = {}) => {
           page: page,
           ...params,
         },
-      },
+      }
     );
 
     const data = await response.data?.results;
@@ -105,7 +105,7 @@ export const getPopularMovie = async (page: number, params = {}) => {
 const getTopRated = async () => {
   try {
     const response = await fetch(
-      `${url}/movie/top_rated?page=1&api_key=${api_key}`,
+      `${url}/movie/top_rated?page=1&api_key=${api_key}`
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -120,11 +120,11 @@ const getTopRated = async () => {
 
 export const getTrending = async (
   type: 'movie' | 'tv',
-  timeWindow: 'day' | 'week',
+  timeWindow: 'day' | 'week'
 ) => {
   try {
     const response = await axios.get(
-      `${url}/trending/${type}/${timeWindow}?api_key=${api_key}`,
+      `${url}/trending/${type}/${timeWindow}?api_key=${api_key}`
     );
 
     const data = await response.data;
@@ -169,7 +169,7 @@ export const getDetailShow = async (id: number, params = {}) => {
 export const getCastsDetailMovie = async (id: string) => {
   try {
     const response = await axios.get(
-      `${url}/movie/${id}/credits?api_key=${api_key}`,
+      `${url}/movie/${id}/credits?api_key=${api_key}`
     );
 
     const data = await response.data;
@@ -182,7 +182,7 @@ export const getCastsDetailMovie = async (id: string) => {
 export const getCastsDetailShow = async (id: string) => {
   try {
     const response = await axios.get(
-      `${url}/tv/${id}/credits?api_key=${api_key}`,
+      `${url}/tv/${id}/credits?api_key=${api_key}`
     );
 
     const data = await response.data;
@@ -195,7 +195,7 @@ export const getCastsDetailShow = async (id: string) => {
 const getUpcoming = async () => {
   try {
     const response = await fetch(
-      `${url}/movie/upcoming?page=1&api_key=${api_key}`,
+      `${url}/movie/upcoming?page=1&api_key=${api_key}`
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -227,7 +227,7 @@ const getUpcoming = async () => {
 export const getSearchByGenre = async (genreId: string, page: unknown) => {
   try {
     const response = await axios.get(
-      `${url}/discover/movie?api_key=${api_key}&with_genres=${genreId}&page=${page}`,
+      `${url}/discover/movie?api_key=${api_key}&with_genres=${genreId}&page=${page}`
     );
 
     const data = await response.data;
@@ -241,7 +241,7 @@ export const getSearchByGenre = async (genreId: string, page: unknown) => {
 export const getPopularCasts = async (page: string) => {
   try {
     const response = await axios.get(
-      `${url}/person/popular?api_key=${api_key}&page=${page}`,
+      `${url}/person/popular?api_key=${api_key}&page=${page}`
     );
 
     const data = await response.data;
@@ -255,7 +255,7 @@ export const getPopularCasts = async (page: string) => {
 export const getDetailCasts = async (id: string) => {
   try {
     const response = await axios.get(
-      `${url}/person/${id}/credits?api_key=${api_key}`,
+      `${url}/person/${id}/credits?api_key=${api_key}`
     );
 
     const data = await response.data;
@@ -277,7 +277,7 @@ export const getDetailPerson = async (id: string) => {
 export const getCreditPerson = async (id: string) => {
   try {
     const response = await axios.get(
-      `${url}/person/${id}/combined_credits?api_key=${api_key}`,
+      `${url}/person/${id}/combined_credits?api_key=${api_key}`
     );
 
     const data = await response.data;
@@ -301,7 +301,7 @@ export const getPlayerMovie = async (id: string) => {
 export const getTrailerTV = async (id: string) => {
   try {
     const response = await axios.get(
-      `${url}/tv/${id}/videos?api_key=${api_key}`,
+      `${url}/tv/${id}/videos?api_key=${api_key}`
     );
     const data = await response.data;
     return data;
@@ -313,7 +313,7 @@ export const getTrailerTV = async (id: string) => {
 export const getSimilarMovies = async (id: string, type: string) => {
   try {
     const response = await axios.get(
-      `${url}/${type}/${id}/similar?api_key=${api_key}`,
+      `${url}/${type}/${id}/similar?api_key=${api_key}`
     );
     const data = await response.data;
     return data;
@@ -325,7 +325,7 @@ export const getSimilarMovies = async (id: string, type: string) => {
 export const getRecommendedMovies = async (id: string, type: string) => {
   try {
     const response = await axios.get(
-      `${url}/${type}/${id}/recommendations?api_key=${api_key}`,
+      `${url}/${type}/${id}/recommendations?api_key=${api_key}`
     );
     const data = await response.data;
     return data;
@@ -337,7 +337,7 @@ export const getRecommendedMovies = async (id: string, type: string) => {
 export const getUpcomingShow = async (
   type: 'movie' | 'tv',
   page: string,
-  dateRange?: { start?: string; end?: string },
+  dateRange?: { start?: string; end?: string }
 ) => {
   try {
     const params: Record<string, string> = {
@@ -388,11 +388,11 @@ export const getFiltered = async (params: Record<string, any>) => {
 
 export const getSeasonDetails = async (
   showId: string,
-  seasonNumber: string,
+  seasonNumber: string
 ) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/tv/${showId}/season/${seasonNumber}?api_key=${api_key}`,
+      `https://api.themoviedb.org/3/tv/${showId}/season/${seasonNumber}?api_key=${api_key}`
     );
     const data = await response.data;
     return data;
@@ -403,7 +403,7 @@ export const getSeasonDetails = async (
 
 export const getReleaseMovieCurrentMonth = async (
   thisDate: string,
-  country: string,
+  country: string
 ) => {
   try {
     const date = new Date();
@@ -419,7 +419,7 @@ export const getReleaseMovieCurrentMonth = async (
         : country.toLowerCase();
 
     const response = await fetch(
-      `${url}/discover/movie?api_key=${api_key}&region=${country}&sort_by=release_date.desc&primary_release_date.gte=${formattedThisDate}&primary_release_date.lte=${next30Days}&with_release_type=3%7C2&page=1&language=${language}`,
+      `${url}/discover/movie?api_key=${api_key}&region=${country}&sort_by=release_date.desc&primary_release_date.gte=${formattedThisDate}&primary_release_date.lte=${next30Days}&with_release_type=3%7C2&page=1&language=${language}`
     );
 
     if (!response.ok) {
