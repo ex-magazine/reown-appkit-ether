@@ -25,9 +25,9 @@ import {
   fetchVideoProgress,
 } from '@/Service/actionUser';
 import { getShowProgressUser, addRecentlyWatched } from '@/Service/fetchUser';
-import { Metadata } from '@/app/Metadata';
+import { Metadata } from '@/app/movieapps/Metadata';
 import Image from 'next/image';
-import useIsMobile from '@/hook/useIsMobile';
+import useIsMobile from '@/hooks/useIsMobile';
 
 function page() {
   const pathname = usePathname();

@@ -8,7 +8,7 @@ import { Star, Play, X, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import { useWatchlistStore } from '@/store/useWatchListStore';
 import { AddToWatchListButton } from '@/components/movieapps/AddWatchListButton';
-import { Metadata } from '@/app/Metadata';
+import { Metadata } from '@/app/movieapps/Metadata';
 
 export default function Page() {
   const {

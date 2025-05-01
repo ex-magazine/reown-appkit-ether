@@ -9,7 +9,7 @@ import { Heart, Play, Star, X, Calendar, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import { useFavoriteStore } from '@/store/useFavoriteStore';
 import { AddFavoriteButton } from '@/components/movieapps/AddFavoriteButton';
-import { Metadata } from '@/app/Metadata';
+import { Metadata } from '@/app/movieapps/Metadata';
 
 const FavoriteCard = ({
   movie,

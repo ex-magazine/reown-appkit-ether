@@ -8,7 +8,7 @@ import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 import { AddFavoriteButton } from '@/components/movieapps/AddFavoriteButton';
 import BiographySection from '@/components/movieapps/common/Biography';
-import { Metadata } from '@/app/Metadata';
+import { Metadata } from '@/app/movieapps/Metadata';
 
 const PersonDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = use(params);

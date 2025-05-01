@@ -27,7 +27,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 // import { useAuth } from "@/context/AuthContext";
 import { AddFavoriteButton } from '@/components/movieapps/AddFavoriteButton';
-import { Metadata } from '@/app/Metadata';
+import { Metadata } from '@/app/movieapps/Metadata';
 
 const DynamicRecommendation = dynamic(
   () => import('@/Fragments/Recommendation'),

@@ -17,7 +17,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import useIsMobile from '@/hooks/useIsMobile';
 import WatchStatistics from '@/Fragments/WatchStatistics';
-import { Metadata } from '@/app/Metadata';
+import { Metadata } from '@/app/movieapps/Metadata';
 
 // Data dummy untuk contoh
 const userData = {

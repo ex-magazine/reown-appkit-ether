@@ -23,7 +23,7 @@ import {
 } from '@/Service/actionUser';
 import { toast } from 'sonner';
 import { Modal } from '@/components/movieapps/common/Modal';
-import { Metadata } from '@/app/Metadata';
+import { Metadata } from '@/app/movieapps/Metadata';
 
 const MovieHistoryCard = ({
   item,

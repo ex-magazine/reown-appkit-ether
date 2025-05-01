@@ -15,7 +15,7 @@ import {
   Calendar,
 } from 'lucide-react';
 import { addRecentlyWatched, WatchHistory } from '@/Service/actionUser';
-import { Metadata } from '@/app/Metadata';
+import { Metadata } from '@/app/movieapps/Metadata';
 import Image from 'next/image';
 
 function Watch() {
