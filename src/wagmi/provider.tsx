@@ -51,8 +51,8 @@ export const modal = createAppKit({
   themeVariables: {
     "--w3m-accent": "#000000",
   },
-  // siwx: new AppSIWX(),
-  siwx: siwx,
+  siwx: new AppSIWX(),
+  // siwx: siwx,
   debug: true,
 });
 
