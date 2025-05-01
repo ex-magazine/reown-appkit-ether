@@ -37,8 +37,8 @@
           "jsx": true
         }
       },
-      "rules": {ßß
-          "no-debugger": "off"
+      "rules": {
+        "no-debugger": "off"
       }
     }
   },
