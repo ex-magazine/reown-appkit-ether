@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postinstall": "npm install --legacy-peer-deps"
+}
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
