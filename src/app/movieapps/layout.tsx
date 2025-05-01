@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import './globals.css';
+import '../globals.css';
 import { Navbar } from '@/components/movieapps/ui/navbar';
 import ReactQueryProvider from '@/lib/movieapps/ReactQueryProvider';
 import Footer from '@/components/movieapps/Footer';
