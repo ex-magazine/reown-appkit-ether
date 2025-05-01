@@ -12,19 +12,19 @@ import PageTransition from '@/components/movieapps/PageTransition';
 import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin';
 import { ThemeProvider } from 'next-themes';
 import { extractRouterConfig } from 'uploadthing/server';
-import { fileRouter } from './api/uploadthing/core';
+import { fileRouter } from '../api/uploadthing/core';
 
 import type { Viewport } from 'next';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
 
 const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
+  src: '../fonts/GeistVF.woff',
   variable: '--font-geist-sans',
   weight: '100 900',
 });
 const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
+  src: '../fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
   weight: '100 900',
 });
