@@ -5,7 +5,7 @@ import ContentSection from '@/components/ContentSection';
 import { MproAbi } from '@/utils/MproAbi';
 import { ethers } from 'ethers';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from "react";
 import { etherUnits } from 'viem';
 import {
   useAccount,
@@ -13,20 +13,69 @@ import {
   useWriteContract,
   useReadContract,
 } from 'wagmi';
+import { Address, formatEther, formatUnits } from "viem";
+
+import {
+  useAppKitState,
+  useAppKitTheme,
+  useAppKitEvents,
+  useAppKitAccount,
+  useWalletInfo,
+} from '@reown/appkit/react';
+
+
+import Link from 'next/link';
+import { Button } from '@/components/ethereumdashboard/ui/button';
+import HomePageWalletForm from '@/components/ethereumdashboard/HomePageWalletForm';
+import HomePageMarketDataSection from '@/components/ethereumdashboard/HomePageMarketDataSection';
+import HomePageGlobalMarketCapChart from '@/components/ethereumdashboard/HomePageGlobalMarketCapChart';
+import HomePageTrendingCoinsTable from '@/components/ethereumdashboard/HomePageTrendingCoinsTable';
+import HomePageTrendingCollectionsTable from '@/components/ethereumdashboard/HomePageTrendingCollectionsTable';
+import type { Metadata } from "next"
+
 
 // import { cookieStorage, createStorage, http } from '@wagmi/core'
 import { ConnectButton } from '@/components/ConnectButton';
 import { InfoList } from '@/components/InfoList';
 import { ActionButtonList } from '@/components/ActionButtonList';
-
+// import erc20Abi from "@/abi/erc20";
 const contractAddressMpro = '0x83b37130b8f6a8edd4e34c46a2fed1ac281bfb05'; // Token contract
 const contractAddressUSDT = '0x55d398326f99059fF775485246999027B3197955'; // Token contract
 const contractABIMpro = MproAbi();
 
 import NoSsr from '@/components/NoSsr';
 
+
+
+
+
+
 export default function Home() {
+  // const [chewyBalance, setChewyBalance] = useState<string>("")
   const { isConnected, address } = useAccount();
+  const { walletInfo } = useWalletInfo()
+
+  // const tokenContract = {
+  //   address: '0x2761723006d3Eb0d90B19B75654DbE543dcd974f',
+  //   abi: erc20Abi,
+  // } as const
+
+
+  // const { data: tokenData, isError } = useReadContract({
+  //   abi: erc20Abi,
+  //   address: '0x2761723006d3Eb0d90B19B75654DbE543dcd974f',
+  //   functionName: "balanceOf",
+  //   args: [address as Address]
+  // })
+
+
+  // useEffect(() => {
+  //   if (tokenData) {
+  //     setChewyBalance(formatUnits(tokenData as any, 18));
+  //   }
+  // }, [tokenData, isConnected]);
+
+
   const {
     data: usdtBalance,
     isLoading,
@@ -102,7 +151,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-6">
           {/* Section Header */}
@@ -304,6 +352,21 @@ export default function Home() {
             </div>
           </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           {/* Features Grid */}
           <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-2">
             {/* Feature 1 */}
@@ -366,9 +429,23 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       <ContentSection />
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

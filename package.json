@@ -110,7 +110,21 @@
     "bip322-js": "^2.0.0",
     "bs58": "^6.0.0",
     "iron-session": "^8.0.4",
-    "tweetnacl": "^1.0.3"
+    "tweetnacl": "^1.0.3",
+    "@ai-sdk/anthropic": "^1.1.6",
+    "@ai-sdk/groq": "^1.1.7",
+    "@ai-sdk/openai": "^1.1.9",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@mendable/firecrawl-js": "^1.15.7",
+    "ag-grid-community": "^33.0.3",
+    "ag-grid-react": "^33.0.3",
+    "ai": "^4.1.7",
+    "api": "^6.1.2",
+    "recharts": "^2.15.0",
+    "swr": "^2.3.0"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.8",

@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed z-50 w-full bg-white shadow-md">
+    <header className="z-10 w-full bg-white shadow-md">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <a
           href="/"
