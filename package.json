@@ -10,7 +10,6 @@
     "postinstall": "prisma generate",
     "format": "prettier --write .",
     "lint-fix": "eslint --fix ./src",
-    "prebuild": "npm run lint",
     "lint-eslint": "eslint ."
   },
   "dependencies": {
