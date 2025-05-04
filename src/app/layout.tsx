@@ -80,16 +80,16 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body>
-        <AppProvider>
-          <ContextProvider cookies={cookies}>
-            {/* <WagmiProvider cookies={cookies}> */}
-            <Header />
-            {children}
-            <Footer2 />
-            <Footer />
-            {/* </WagmiProvider> */}
-          </ContextProvider>
-        </AppProvider>
+
+        <ContextProvider cookies={cookies}>
+          {/* <WagmiProvider cookies={cookies}> */}
+          <Header />
+          {children}
+          <Footer2 />
+          <Footer />
+          {/* </WagmiProvider> */}
+        </ContextProvider>
+
       </body>
     </html>
   );

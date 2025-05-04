@@ -23,12 +23,81 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React, { type ReactNode } from 'react';
 import { cookieToInitialState, WagmiProvider, type Config } from 'wagmi';
 
+
+import { useState } from 'react';
+import { createConfig, http } from 'wagmi';
+
+import { ReactQueryStreamedHydration } from '@tanstack/react-query-next-experimental';
+
+import StoreProvider from '@/providers/store-provider';
+import ThemeProvider from '@/providers/theme-provider';
+import Updater from '@/providers/updater';
+
+import { sepolia } from 'wagmi/chains';
+import { injected } from 'wagmi/connectors';
+
+// const config = createConfig({
+//   chains: [mainnet, sepolia],
+//   ssr: true,
+//   transports: {
+//     [mainnet.id]: http(
+//       process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
+//         ? `https://eth-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
+//         : undefined,
+//     ),
+//     [sepolia.id]: http(
+//       process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
+//         ? `https://eth-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
+//         : undefined,
+//     ),
+//   },
+//   connectors: [injected({ target: 'metaMask' })],
+// });
+
+// const AppProvider = ({ children }: { children: ReactNode }) => {
+//   const [queryClient] = useState(
+//     () =>
+//       new QueryClient({
+//         defaultOptions: {
+//           queries: {
+//             staleTime: 5 * 1000,
+//           },
+//         },
+//       }),
+//   );
+
+//   return (
+//     <ThemeProvider
+//       attribute="class"
+//       defaultTheme="system"
+//       enableSystem
+//       disableTransitionOnChange
+//     >
+//       <StoreProvider>
+//         <WagmiProvider config={config}>
+//           <QueryClientProvider client={queryClient}>
+//             <ReactQueryStreamedHydration>
+//               {children}
+//               <Updater />
+//             </ReactQueryStreamedHydration>
+//           </QueryClientProvider>
+//         </WagmiProvider>
+//       </StoreProvider>
+//     </ThemeProvider>
+//   );
+// };
+
+
+
 // Set up queryClient
 const queryClient = new QueryClient();
 
 if (!projectId) {
   throw new Error('Project ID is not defined');
 }
+
+
+
 
 // Set up metadata
 const metadata = {
@@ -107,12 +176,26 @@ function ContextProvider({
   );
 
   return (
-    <WagmiProvider
-      config={wagmiAdapter.wagmiConfig as Config}
-      initialState={initialState}
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
     >
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    </WagmiProvider>
+      <StoreProvider>
+        <WagmiProvider
+          config={wagmiAdapter.wagmiConfig as Config}
+          initialState={initialState}
+        >
+          <QueryClientProvider client={queryClient}>
+            <ReactQueryStreamedHydration>
+              {children}
+              <Updater />
+            </ReactQueryStreamedHydration>
+          </QueryClientProvider>
+        </WagmiProvider>
+      </StoreProvider>
+    </ThemeProvider>
   );
 }
 

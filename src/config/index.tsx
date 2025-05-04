@@ -1,5 +1,7 @@
 import { cookieStorage, createStorage, http } from '@wagmi/core';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
+import { sepolia } from 'wagmi/chains';
+import { injected } from 'wagmi/connectors';
 import {
   mainnet,
   arbitrum,
@@ -30,6 +32,7 @@ if (!projectId) {
 
 export const networks = [
   mainnet,
+  sepolia,
   arbitrum,
   scroll,
   morph,
@@ -55,6 +58,19 @@ export const wagmiAdapter = new WagmiAdapter({
   ssr: true,
   networks,
   projectId,
+  transports: {
+    [mainnet.id]: http(
+      process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
+        ? `https://eth-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
+        : undefined,
+    ),
+    [sepolia.id]: http(
+      process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
+        ? `https://eth-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
+        : undefined,
+    ),
+  },
+  connectors: [injected({ target: 'metaMask' })],
   /*
   transports: {
     [mainnet.id]: http(),
