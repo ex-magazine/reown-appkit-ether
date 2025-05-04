@@ -3,54 +3,86 @@
 import { useState } from 'react';
 import useSWR from 'swr';
 import PostFetcher from '@/utils/functions/PostFetcher';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Card, CardContent, CardDescription, CardHeader } from "./ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
+import { Card, CardContent, CardDescription, CardHeader } from './ui/card';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from './ui/select';
 import ERC721CollectionExtraDataType from '@/utils/types/ERC721CollectionExtraDataType';
 import PostFetcherArgumentsType from '@/utils/types/PostFetcherArgumentsType';
 
 // ERC721 Collection Floor Price Chart Custom Component
-export default function ERC721CollectionFloorPriceChart(props: { data: ERC721CollectionExtraDataType, address: string }) {
+export default function ERC721CollectionFloorPriceChart(props: {
+  data: ERC721CollectionExtraDataType;
+  address: string;
+}) {
   const { address, data } = props;
   const [interval, setInterval] = useState<string>('14');
 
   // Fetch data for chart display
-  const { data: erc721FloorPriceData, error: erc721ChartError, isLoading: erc721ChartLoading } =
-    useSWR(['/api/erc721-collection-chart-data', { address, interval }], ([url, body]: [string, PostFetcherArgumentsType]) => PostFetcher(url, { arg: body }), { refreshInterval: 100000 });
+  const {
+    data: erc721FloorPriceData,
+    error: erc721ChartError,
+    isLoading: erc721ChartLoading,
+  } = useSWR(
+    ['/api/erc721-collection-chart-data', { address, interval }],
+    ([url, body]: [string, PostFetcherArgumentsType]) =>
+      PostFetcher(url, { arg: body }),
+    { refreshInterval: 100000 }
+  );
 
   // Conditionally render data
   if (erc721ChartError) {
     throw new Error();
-  }
-  else if (erc721ChartLoading) {
-    return <div><p className='text-white-100'>Loading Floor Price Chart Data...</p></div>
-  }
-  else {
+  } else if (erc721ChartLoading) {
+    return (
+      <div>
+        <p className="text-white-100">Loading Floor Price Chart Data...</p>
+      </div>
+    );
+  } else {
     // Retrieve key information
     const chartData = erc721FloorPriceData.floorPrices;
 
     // Modifying the y-axis domain for appropriate ranges
-    const prices = erc721FloorPriceData.floorPrices.map((item: { price: number }) => item.price);
+    const prices = erc721FloorPriceData.floorPrices.map(
+      (item: { price: number }) => item.price
+    );
     const min = Math.min(...prices);
     const max = Math.max(...prices);
     const buffer = (max - min) * 0.1; // 10% buffer
 
     // Render data based on market information
     return (
-      <div className="mt-10 bg-gray-800 text-gray-300 py-10 px-4 sm:px-6 lg:px-8 shadow-lg">
-        <h4 className="text-5xl font-bold mb-6 text-center">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-gray-100">
+      <div className="mt-10 bg-gray-800 px-4 py-10 text-gray-300 shadow-lg sm:px-6 lg:px-8">
+        <h4 className="mb-6 text-center text-5xl font-bold">
+          <span className="bg-gradient-to-r from-gray-400 to-gray-100 bg-clip-text text-transparent">
             Historical Floor Price Information
           </span>
         </h4>
-        <Card className="w-full bg-gray-900 border-gray-700 mt-10">
+        <Card className="mt-10 w-full border-gray-700 bg-gray-900">
           <CardHeader>
-            <CardDescription className="text-gray-100">Contract Address: <b>{' ' + data.contract_address}</b></CardDescription>
+            <CardDescription className="text-gray-100">
+              Contract Address: <b>{' ' + data.contract_address}</b>
+            </CardDescription>
             <div className="flex items-center space-x-2">
-              <CardDescription className='text-gray-100'>
+              <CardDescription className="text-gray-100">
                 Floor Price:
               </CardDescription>
-              <CardDescription className='text-gray-100'>
+              <CardDescription className="text-gray-100">
                 <b>{' $' + String(data.floor_price.usd)}</b>
               </CardDescription>
             </div>
@@ -73,7 +105,7 @@ export default function ERC721CollectionFloorPriceChart(props: { data: ERC721Col
                     top: 20,
                     right: 30,
                     left: 80,
-                    bottom: 20
+                    bottom: 20,
                   }}
                 >
                   <CartesianGrid strokeDasharray="3 3" stroke="#444" />
@@ -89,7 +121,14 @@ export default function ERC721CollectionFloorPriceChart(props: { data: ERC721Col
                     tick={{ fill: '#888' }}
                     domain={[Math.max(0, min - buffer), max + buffer]}
                     padding={{ top: 10, bottom: 10 }}
-                    tickFormatter={(value) => value.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    tickFormatter={(value) =>
+                      value.toLocaleString('en-US', {
+                        style: 'currency',
+                        currency: 'USD',
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })
+                    }
                   />
                   <Tooltip
                     contentStyle={{ backgroundColor: '#333', border: 'none' }}
@@ -111,6 +150,6 @@ export default function ERC721CollectionFloorPriceChart(props: { data: ERC721Col
           </CardContent>
         </Card>
       </div>
-    )
+    );
   }
 }

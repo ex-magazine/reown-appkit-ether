@@ -1,16 +1,27 @@
 'use client';
 
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./ui/table";
-import Link from "next/link";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from './ui/table';
+import Link from 'next/link';
 
 // Custom Component for viewing account details
-export default function ENSToAddressInfoTable(props: { data: { name: string, address: string } }) {
+export default function ENSToAddressInfoTable(props: {
+  data: { name: string; address: string };
+}) {
   const { data } = props;
 
   // Render table containing this key information
   return (
-    <div className="p-4 bg-gray-900 mt-10 shadow-lg">
-      <h2 className="text-2xl font-bold mb-4 text-gray-100">Account Information</h2>
+    <div className="mt-10 bg-gray-900 p-4 shadow-lg">
+      <h2 className="mb-4 text-2xl font-bold text-gray-100">
+        Account Information
+      </h2>
       <Table>
         <TableHeader>
           <TableRow>
@@ -30,5 +41,5 @@ export default function ENSToAddressInfoTable(props: { data: { name: string, add
         </TableBody>
       </Table>
     </div>
-  )
+  );
 }

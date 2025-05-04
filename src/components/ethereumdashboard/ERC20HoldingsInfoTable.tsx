@@ -1,17 +1,26 @@
 'use client';
 
-import ERC20HoldingsType from "@/utils/types/ERC20HoldingsType";
-import { Table, TableCell, TableBody, TableHead, TableHeader, TableRow } from "./ui/table";
-import Link from "next/link";
+import ERC20HoldingsType from '@/utils/types/ERC20HoldingsType';
+import {
+  Table,
+  TableCell,
+  TableBody,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from './ui/table';
+import Link from 'next/link';
 
 // Custom ERC20 Holdings Info Table Component
-export default function ERC20HoldingsInfoTable(props: { data: ERC20HoldingsType[] }) {
+export default function ERC20HoldingsInfoTable(props: {
+  data: ERC20HoldingsType[];
+}) {
   const { data } = props;
 
   // Render ERC20 Holdings Info Table Component
   return (
-    <div className="p-4 bg-gray-900 mt-10 shadow-lg">
-      <h2 className="text-2xl font-bold mb-4 text-gray-100">Holdings</h2>
+    <div className="mt-10 bg-gray-900 p-4 shadow-lg">
+      <h2 className="mb-4 text-2xl font-bold text-gray-100">Holdings</h2>
       <Table>
         <TableHeader>
           <TableRow>
@@ -25,12 +34,21 @@ export default function ERC20HoldingsInfoTable(props: { data: ERC20HoldingsType[
         <TableBody>
           {data?.map((transfer, index: number) => (
             <TableRow key={index} className="border-b border-gray-800">
-              <TableCell className="text-gray-300">{String(transfer.name)}</TableCell>
-              <TableCell className="text-gray-300">{transfer.token_address}</TableCell>
-              <TableCell className="text-gray-300">{transfer.symbol}</TableCell>
-              <TableCell className="text-gray-300">{transfer.balance}</TableCell>
               <TableCell className="text-gray-300">
-                <Link target="_blank" href={'https://etherscan.io/token/' + transfer.token_address}>
+                {String(transfer.name)}
+              </TableCell>
+              <TableCell className="text-gray-300">
+                {transfer.token_address}
+              </TableCell>
+              <TableCell className="text-gray-300">{transfer.symbol}</TableCell>
+              <TableCell className="text-gray-300">
+                {transfer.balance}
+              </TableCell>
+              <TableCell className="text-gray-300">
+                <Link
+                  target="_blank"
+                  href={'https://etherscan.io/token/' + transfer.token_address}
+                >
                   <u>Etherscan Link</u>
                 </Link>
               </TableCell>
@@ -39,5 +57,5 @@ export default function ERC20HoldingsInfoTable(props: { data: ERC20HoldingsType[
         </TableBody>
       </Table>
     </div>
-  )
-}   
+  );
+}

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { ConnectButton } from '@/components/ConnectButton';
+import ThemeControlSwitch from '@/components/ethereumdapp/theme-control-switch';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -69,6 +70,9 @@ const Header: React.FC = () => {
               ></path>
             </svg>
           </button>
+        </div>
+        <div className="flex items-center gap-2">
+          <ThemeControlSwitch />
         </div>
       </div>
 

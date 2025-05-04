@@ -52,8 +52,8 @@ const modal = createAppKit({
     48900: '/zircuit.svg',
     11_124: '/abstract.png',
     30: '/rootstock.png',
-    109: "https://chewyswap.dog/images/chains/109.png",
-    2000: "https://chewyswap.dog/images/chains/2000.png",
+    109: 'https://chewyswap.dog/images/chains/109.png',
+    2000: 'https://chewyswap.dog/images/chains/2000.png',
   },
   projectId,
   networks: [

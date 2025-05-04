@@ -2,35 +2,52 @@
 
 import useSWR from 'swr';
 import GenericFetcher from '@/utils/functions/GenericFetcher';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 
 // Home Page Market Data Section Component
 export default function HomePageGlobalMarketCapChart() {
-  const { data: marketChartData, error: marketChartError, isLoading: marketChartLoading } = useSWR('/api/global-market-cap-chart-data', GenericFetcher, { refreshInterval: 50000 });
+  const {
+    data: marketChartData,
+    error: marketChartError,
+    isLoading: marketChartLoading,
+  } = useSWR('/api/global-market-cap-chart-data', GenericFetcher, {
+    refreshInterval: 50000,
+  });
 
   // Conditionally render data
   if (marketChartError) {
-    return <div>Error Loading Market Cap Chart Data...</div>
-  }
-  else if (marketChartLoading) {
-    return <div>Loading Market Cap Chart Data...</div>
-  }
-  else {
+    return <div>Error Loading Market Cap Chart Data...</div>;
+  } else if (marketChartLoading) {
+    return <div>Loading Market Cap Chart Data...</div>;
+  } else {
     // Retrieve key information
     const chartData = marketChartData.capValues;
 
     // Adjusting the y-axis for display
-    const chart = marketChartData.capValues.map((item: { price: string }) => item.price);
+    const chart = marketChartData.capValues.map(
+      (item: { price: string }) => item.price
+    );
     const min = Math.min(...chart);
     const max = Math.max(...chart);
     const buffer = (max - min) * 0.1; // 10% buffer
 
     // Render data based on market information
     return (
-      <Card className="w-full bg-gray-800 border-gray-700 mt-10">
+      <Card className="mt-10 w-full border-gray-700 bg-gray-800">
         <CardHeader>
-          <CardTitle className="text-xl text-gray-100">Global Market Cap (Last 30 Days)</CardTitle>
+          <CardTitle className="text-xl text-gray-100">
+            Global Market Cap (Last 30 Days)
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-[400px] w-full">
@@ -41,7 +58,7 @@ export default function HomePageGlobalMarketCapChart() {
                   top: 5,
                   right: 30,
                   left: 20,
-                  bottom: 5
+                  bottom: 5,
                 }}
               >
                 <CartesianGrid strokeDasharray="3 3" stroke="#444" />
@@ -56,12 +73,16 @@ export default function HomePageGlobalMarketCapChart() {
                   dataKey="price"
                   tick={{ fill: '#888' }}
                   domain={[Math.max(0, min - buffer), max + buffer]}
-                  tickFormatter={(value) => `$${(value / 1e12).toFixed(2)}B`} />
+                  tickFormatter={(value) => `$${(value / 1e12).toFixed(2)}B`}
+                />
                 <Tooltip
                   contentStyle={{ backgroundColor: '#333', border: 'none' }}
                   labelStyle={{ color: '#888' }}
                   itemStyle={{ color: '#fff' }}
-                  formatter={(value: number) => [`$${(value / 1e12).toFixed(2)}B`, 'Price']}
+                  formatter={(value: number) => [
+                    `$${(value / 1e12).toFixed(2)}B`,
+                    'Price',
+                  ]}
                 />
                 <Legend />
                 <Line
@@ -77,6 +98,6 @@ export default function HomePageGlobalMarketCapChart() {
           </div>
         </CardContent>
       </Card>
-    )
+    );
   }
 }

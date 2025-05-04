@@ -1,19 +1,26 @@
 'use client';
 
-import { useRef, useState } from "react";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card";
-import { Alert, AlertDescription } from "./ui/alert";
-import ENSValidator from "@/utils/functions/ENSValidator";
-import ENSTransferByNameInfoTable from "./ENSTransferByNameInfoTable";
-import ENSTransfersByNameType from "@/utils/types/ENSTransfersByNameType";
+import { useRef, useState } from 'react';
+import { Input } from './ui/input';
+import { Button } from './ui/button';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from './ui/card';
+import { Alert, AlertDescription } from './ui/alert';
+import ENSValidator from '@/utils/functions/ENSValidator';
+import ENSTransferByNameInfoTable from './ENSTransferByNameInfoTable';
+import ENSTransfersByNameType from '@/utils/types/ENSTransfersByNameType';
 
 // ENS Transfer By Name Custom Component
 export default function ENSTransferByNameForm() {
   const walletDomainRef = useRef<HTMLInputElement>(null);
   const [showAlert, setShowAlert] = useState<boolean>(false);
-  const [addressInformation, updateAddressInformation] = useState<ENSTransfersByNameType[]>();
+  const [addressInformation, updateAddressInformation] =
+    useState<ENSTransfersByNameType[]>();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,43 +28,46 @@ export default function ENSTransferByNameForm() {
     // Handle form submission logic here
     if (!ENSValidator(walletDomainRef.current!.value.trim())) {
       setShowAlert(true);
-    }
-    else {
+    } else {
       // FETCH API for ENS data from a given wallet address
       setShowAlert(false);
 
       const res = await fetch('/api/ens-transfers-by-name', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ address: walletDomainRef.current!.value.trim() })
+        body: JSON.stringify({
+          address: walletDomainRef.current!.value.trim(),
+        }),
       });
 
       // Check condition of FETCH request
       if (res.ok) {
         const data = await res.json();
         updateAddressInformation(data.results);
-      }
-      else {
+      } else {
         throw new Error();
       }
     }
-  }
+  };
 
   // Render the ENS Transfers By Name Component
   return (
     <>
-      <div className="container mx-auto px-4 w-full max-w-3xl">
+      <div className="container mx-auto w-full max-w-3xl px-4">
         {showAlert && (
           <Alert variant="destructive" className="mb-6">
             <AlertDescription>
-              There was an error processing your request. Please ensure you are entering a valid ENS domain.
+              There was an error processing your request. Please ensure you are
+              entering a valid ENS domain.
             </AlertDescription>
           </Alert>
         )}
-        <Card className="bg-gray-900 border-gray-800 shadow-xl w-full">
+        <Card className="w-full border-gray-800 bg-gray-900 shadow-xl">
           <CardHeader className="border-b border-gray-800 pb-6">
-            <CardTitle className="text-3xl font-bold text-gray-100">Analyze Transfers</CardTitle>
-            <CardDescription className="text-gray-400 text-lg font-light">
+            <CardTitle className="text-3xl font-bold text-gray-100">
+              Analyze Transfers
+            </CardTitle>
+            <CardDescription className="text-lg font-light text-gray-400">
               Enter ENS domain for in-depth analysis
             </CardDescription>
           </CardHeader>
@@ -66,13 +76,13 @@ export default function ENSTransferByNameForm() {
               <Input
                 placeholder="Enter Wallet Domain"
                 ref={walletDomainRef}
-                className="w-full bg-gray-800 text-gray-100 border-gray-700 focus:ring-gray-400 placeholder-gray-500"
+                className="w-full border-gray-700 bg-gray-800 text-gray-100 placeholder-gray-500 focus:ring-gray-400"
                 required
               />
               <div className="flex justify-center space-x-4 pt-4">
                 <Button
                   type="submit"
-                  className="bg-gradient-to-r from-gray-600 to-gray-400 text-white py-2 px-6 rounded-md hover:from-gray-500 hover:to-gray-300 transition-all duration-300 transform hover:scale-105 font-medium"
+                  className="transform rounded-md bg-gradient-to-r from-gray-600 to-gray-400 px-6 py-2 font-medium text-white transition-all duration-300 hover:scale-105 hover:from-gray-500 hover:to-gray-300"
                 >
                   Analyze Transfers
                 </Button>
@@ -81,7 +91,9 @@ export default function ENSTransferByNameForm() {
           </CardContent>
         </Card>
       </div>
-      {addressInformation ? <ENSTransferByNameInfoTable data={addressInformation} /> : null}
+      {addressInformation ? (
+        <ENSTransferByNameInfoTable data={addressInformation} />
+      ) : null}
     </>
-  )
+  );
 }

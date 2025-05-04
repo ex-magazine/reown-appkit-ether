@@ -8,20 +8,10 @@
   "prettier.tabWidth": 2,
   "prettier.useTabs": true,
   "editor.formatOnSave": true,
-  "tailwindCSS.classAttributes": [
-    "class",
-    "className",
-    "theme"
-  ],
+  "tailwindCSS.classAttributes": ["class", "className", "theme"],
   "tailwindCSS.experimental.classRegex": [
-    [
-      "twMerge\\(([^)]*)\\)",
-      "[\"'`]([^\"'`]*).*?[\"'`]"
-    ],
-    [
-      "createTheme\\(([^)]*)\\)",
-      "[\"'`]([^\"'`]*).*?[\"'`]"
-    ]
+    ["twMerge\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["createTheme\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
   "eslint.options": {
@@ -41,5 +31,5 @@
         "no-debugger": "off"
       }
     }
-  },
+  }
 }

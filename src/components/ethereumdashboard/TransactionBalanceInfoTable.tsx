@@ -1,33 +1,51 @@
 'use client';
 
-import useSWR from "swr";
-import PostFetcher from "@/utils/functions/PostFetcher";
-import { Table, TableCell, TableBody, TableHead, TableHeader, TableRow } from "./ui/table";
-import WalletBalanceInfoType from "@/utils/types/WalletBalanceInfoType";
+import useSWR from 'swr';
+import PostFetcher from '@/utils/functions/PostFetcher';
+import {
+  Table,
+  TableCell,
+  TableBody,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from './ui/table';
+import WalletBalanceInfoType from '@/utils/types/WalletBalanceInfoType';
 import PostFetcherArgumentsType from '@/utils/types/PostFetcherArgumentsType';
 
 // Custom Transaction Balance Info Table Component
-export default function TransactionBalanceInfoTable(props: { address: string, network: string }) {
+export default function TransactionBalanceInfoTable(props: {
+  address: string;
+  network: string;
+}) {
   const { address, network } = props;
 
   // Make API call upon loading the custom component
-  const { data, error: walletBalanceError, isLoading: loadingWalletBalance } =
-    useSWR(['/api/address-net-worth', { address, network }], ([url, body]: [string, PostFetcherArgumentsType]) => PostFetcher(url, { arg: body }), { refreshInterval: 100000 });
+  const {
+    data,
+    error: walletBalanceError,
+    isLoading: loadingWalletBalance,
+  } = useSWR(
+    ['/api/address-net-worth', { address, network }],
+    ([url, body]: [string, PostFetcherArgumentsType]) =>
+      PostFetcher(url, { arg: body }),
+    { refreshInterval: 100000 }
+  );
 
-  // Conditionally render the info table 
+  // Conditionally render the info table
   if (loadingWalletBalance) {
-    return <div>Loading Transaction Balance Info Table Component</div>
-  }
-  else if (walletBalanceError) {
+    return <div>Loading Transaction Balance Info Table Component</div>;
+  } else if (walletBalanceError) {
     throw new Error();
-  }
-  else {
+  } else {
     const walletBalanceData: WalletBalanceInfoType = data;
 
     // Render Transaction Balance Info Table Component
     return (
-      <div className="p-4 bg-gray-900 mt-10 shadow-lg">
-        <h2 className="text-2xl font-bold mb-4 text-gray-100">Wallet Balance</h2>
+      <div className="mt-10 bg-gray-900 p-4 shadow-lg">
+        <h2 className="mb-4 text-2xl font-bold text-gray-100">
+          Wallet Balance
+        </h2>
         <Table>
           <TableHeader>
             <TableRow>
@@ -39,14 +57,23 @@ export default function TransactionBalanceInfoTable(props: { address: string, ne
           </TableHeader>
           <TableBody>
             <TableRow className="border-b border-gray-800">
-              <TableCell className="text-gray-300">{walletBalanceData?.chains[0]?.native_balance_formatted + ' ETH'}</TableCell>
-              <TableCell className="text-gray-300">{"$" + walletBalanceData?.chains[0]?.native_balance_usd}</TableCell>
-              <TableCell className="text-gray-300">{"$" + walletBalanceData?.chains[0]?.token_balance_usd}</TableCell>
-              <TableCell className="text-gray-300">{"$" + walletBalanceData?.total_networth_usd}</TableCell>
+              <TableCell className="text-gray-300">
+                {walletBalanceData?.chains[0]?.native_balance_formatted +
+                  ' ETH'}
+              </TableCell>
+              <TableCell className="text-gray-300">
+                {'$' + walletBalanceData?.chains[0]?.native_balance_usd}
+              </TableCell>
+              <TableCell className="text-gray-300">
+                {'$' + walletBalanceData?.chains[0]?.token_balance_usd}
+              </TableCell>
+              <TableCell className="text-gray-300">
+                {'$' + walletBalanceData?.total_networth_usd}
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
       </div>
-    )
+    );
   }
-}   
+}
