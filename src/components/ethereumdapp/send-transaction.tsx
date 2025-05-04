@@ -23,7 +23,10 @@ import { Button } from '@/components/ethereumdapp/ui/button';
 import Label from '@/components/ethereumdapp/ui/label';
 import Input from '@/components/ethereumdapp/ui/input';
 import NotConnectedInfoBox from '@/components/ethereumdapp/not-connected-info-box';
-import { ScrollArea, ScrollBar } from '@/components/ethereumdapp/ui/scroll-area';
+import {
+  ScrollArea,
+  ScrollBar,
+} from '@/components/ethereumdapp/ui/scroll-area';
 import CopyToClipboard from '@/components/ethereumdapp/copy-to-clipboard';
 
 const SendTransaction = () => {

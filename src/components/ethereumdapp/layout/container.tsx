@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 
-
 import MainContainer from './main-container';
 
 type Props = {
@@ -9,9 +8,7 @@ type Props = {
 
 const Container = ({ children }: Props) => (
   <>
-
     <MainContainer>{children}</MainContainer>
-
   </>
 );
 

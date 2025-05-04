@@ -30,14 +30,14 @@ export async function POST(request: Request) {
       '&sort=' +
       sort +
       '&apikey=' +
-      API_KEY
+      API_KEY,
   );
 
   // Fetch data using the Ethereum data endpoints
   if (!response.ok)
     return NextResponse.json(
       { error: 'Failed to fetch Ethereum price' },
-      { status: 500 }
+      { status: 500 },
     );
   else {
     const data = await response.json();

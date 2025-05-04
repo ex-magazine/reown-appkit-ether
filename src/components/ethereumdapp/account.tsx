@@ -18,7 +18,10 @@ import {
 } from '@/components/ethereumdapp/ui/card';
 import ErrorContent from '@/components/ethereumdapp/error-content';
 import { Button } from '@/components/ethereumdapp/ui/button';
-import { ScrollArea, ScrollBar } from '@/components/ethereumdapp/ui/scroll-area';
+import {
+  ScrollArea,
+  ScrollBar,
+} from '@/components/ethereumdapp/ui/scroll-area';
 import { useState, useTransition } from 'react';
 import CopyToClipboard from '@/components/ethereumdapp/copy-to-clipboard';
 

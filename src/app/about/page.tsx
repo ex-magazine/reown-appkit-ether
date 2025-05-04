@@ -61,7 +61,7 @@ export default function AboutPage() {
                     </Link>
                   </div>
                 </div>
-              )
+              ),
             )}
           </div>
         </div>

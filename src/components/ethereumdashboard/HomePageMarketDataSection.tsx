@@ -69,11 +69,11 @@ export default function HomePageMarketDataSection() {
                     {' '}
                     BTC{' '}
                     {Number(
-                      marketTableData?.market_cap_percentage?.btc
+                      marketTableData?.market_cap_percentage?.btc,
                     ).toFixed(2) + '%'}{' '}
                     | ETH{' '}
                     {Number(
-                      marketTableData?.market_cap_percentage?.eth
+                      marketTableData?.market_cap_percentage?.eth,
                     ).toFixed(2) + '%'}
                   </span>
                 </p>
@@ -83,7 +83,7 @@ export default function HomePageMarketDataSection() {
                     <span className="text-red-400">
                       {' ' +
                         Number(
-                          marketTableData?.market_cap_change_percentage_24h_usd
+                          marketTableData?.market_cap_change_percentage_24h_usd,
                         ).toFixed(2) +
                         '%'}
                     </span>
@@ -94,7 +94,7 @@ export default function HomePageMarketDataSection() {
                     <span className="text-green-400">
                       {' +' +
                         Number(
-                          marketTableData?.market_cap_change_percentage_24h_usd
+                          marketTableData?.market_cap_change_percentage_24h_usd,
                         ).toFixed(2) +
                         '%'}
                     </span>

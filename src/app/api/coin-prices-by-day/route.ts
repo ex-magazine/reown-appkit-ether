@@ -37,7 +37,7 @@ export async function POST(request: Request) {
   // Fetch data based on request parameters
   const response = await fetch(
     PRO_COINGECKO_URL + COIN_PRICE_ENDPOINT,
-    options
+    options,
   );
 
   if (!response.ok) {

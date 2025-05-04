@@ -22,7 +22,7 @@ export default function ERC721CollectionTransfersInfoTable(props: {
     ['/api/erc721-collection-transfers', { address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render component

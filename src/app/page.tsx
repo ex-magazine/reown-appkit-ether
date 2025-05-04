@@ -33,8 +33,6 @@ import HomePageTrendingCollectionsTable from '@/components/ethereumdashboard/Hom
 import type { Metadata } from 'next';
 import MainSection from '@/components/ethereumdapp/section/main-section';
 
-
-
 // import { cookieStorage, createStorage, http } from '@wagmi/core'
 import { ConnectButton } from '@/components/ConnectButton';
 import { InfoList } from '@/components/InfoList';
@@ -111,7 +109,7 @@ export default function Home() {
         recipient,
         ethers.parseUnits(
           amount.toString() == '' ? '0' : amount.toString(),
-          18
+          18,
         ),
       ],
       chainId: 56, // BSC chainId
@@ -134,7 +132,7 @@ export default function Home() {
         recipient,
         ethers.parseUnits(
           amount.toString() == '' ? '0' : amount.toString(),
-          18
+          18,
         ),
       ],
       chainId: 56, // BSC chainId

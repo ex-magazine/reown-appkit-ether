@@ -4,8 +4,6 @@ import { Button } from '@/components/ethereumdashboard/ui/button';
 
 import { FlameIcon } from 'lucide-react';
 
-
-
 export default function NotFound() {
   return (
     <div className="bg-gray-800 px-4 py-10 text-gray-300 shadow-lg sm:px-6 lg:px-8">

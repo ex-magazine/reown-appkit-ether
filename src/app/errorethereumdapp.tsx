@@ -3,7 +3,10 @@
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
-import { ScrollArea, ScrollBar } from '@/components/ethereumdapp/ui/scroll-area';
+import {
+  ScrollArea,
+  ScrollBar,
+} from '@/components/ethereumdapp/ui/scroll-area';
 
 export default function Errorethereumdapp({
   error,

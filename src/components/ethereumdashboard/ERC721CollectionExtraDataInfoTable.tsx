@@ -26,7 +26,7 @@ export default function ERC721CollectionExtraDataInfoTable(props: {
     ['/api/erc721-collection-extra-data', { address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render component
@@ -95,7 +95,7 @@ export default function ERC721CollectionExtraDataInfoTable(props: {
                     ? '+'
                     : ''}
                   {erc721CollectionExtraData?.market_cap_24h_percentage_change?.usd.toFixed(
-                    2
+                    2,
                   ) + '%'}
                 </TableCell>
               </TableRow>
@@ -122,7 +122,7 @@ export default function ERC721CollectionExtraDataInfoTable(props: {
                     ? '+'
                     : ''}
                   {erc721CollectionExtraData?.volume_24h_percentage_change?.usd.toFixed(
-                    2
+                    2,
                   ) + '%'}
                 </TableCell>
               </TableRow>
@@ -149,7 +149,7 @@ export default function ERC721CollectionExtraDataInfoTable(props: {
                     ? '+'
                     : ''}
                   {erc721CollectionExtraData?.floor_price_24h_percentage_change?.usd.toFixed(
-                    2
+                    2,
                   ) + '%'}
                 </TableCell>
               </TableRow>
@@ -170,7 +170,7 @@ export default function ERC721CollectionExtraDataInfoTable(props: {
                     ? '+'
                     : ''}
                   {erc721CollectionExtraData?.floor_price_7d_percentage_change?.usd.toFixed(
-                    2
+                    2,
                   ) + '%'}
                 </TableCell>
               </TableRow>
@@ -191,7 +191,7 @@ export default function ERC721CollectionExtraDataInfoTable(props: {
                     ? '+'
                     : ''}
                   {erc721CollectionExtraData?.floor_price_14d_percentage_change?.usd.toFixed(
-                    2
+                    2,
                   ) + '%'}
                 </TableCell>
               </TableRow>
@@ -212,7 +212,7 @@ export default function ERC721CollectionExtraDataInfoTable(props: {
                     ? '+'
                     : ''}
                   {erc721CollectionExtraData?.floor_price_30d_percentage_change?.usd.toFixed(
-                    2
+                    2,
                   ) + '%'}
                 </TableCell>
               </TableRow>
@@ -233,7 +233,7 @@ export default function ERC721CollectionExtraDataInfoTable(props: {
                     ? '+'
                     : ''}
                   {erc721CollectionExtraData?.floor_price_60d_percentage_change?.usd.toFixed(
-                    2
+                    2,
                   ) + '%'}
                 </TableCell>
               </TableRow>

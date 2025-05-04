@@ -22,7 +22,7 @@ import {
 export default function ENSSelectorSection() {
   const router = useRouter();
   const [conversionURL, setConversionURL] = useState<string>(
-    'address-to-ens-lookup'
+    'address-to-ens-lookup',
   );
 
   // Dynamically handle collection URL settings

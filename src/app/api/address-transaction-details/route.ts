@@ -35,14 +35,14 @@ export async function POST(request: Request) {
         '&sort=' +
         sort +
         '&apikey=' +
-        process.env.ETHERSCAN_API_KEY
+        process.env.ETHERSCAN_API_KEY,
     );
 
     // Fetch data using the Ethereum data endpoints
     if (!response.ok)
       return NextResponse.json(
         { error: 'Failed to fetch Ethereum price' },
-        { status: 500 }
+        { status: 500 },
       );
     else {
       const data = await response.json();
@@ -61,14 +61,14 @@ export async function POST(request: Request) {
     // Transactions endpoint for retrieving information related to a wallet's activity, on an ETH testnet
     const response = await fetch(
       MORALIS_URL + body.address + '?chain=' + body.network,
-      options
+      options,
     );
 
     // Fetch data using the Ethereum data endpoints
     if (!response.ok)
       return NextResponse.json(
         { error: 'Failed to fetch Ethereum price' },
-        { status: 500 }
+        { status: 500 },
       );
     else {
       const data = await response.json();

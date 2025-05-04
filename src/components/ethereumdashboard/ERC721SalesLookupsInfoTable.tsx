@@ -28,7 +28,7 @@ export default function ERC721SalesLookupsInfoTable(props: {
     ['/api/erc721-sales-by-id', { address, id: tokenID }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render the Info Table

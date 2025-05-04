@@ -26,7 +26,7 @@ export async function POST(request: Request) {
   const response = await fetch(
     'https://api.transpose.io/nft/sales-by-token-id?' +
       new URLSearchParams(params),
-    options
+    options,
   );
 
   // Conditionally return data based on fetch request

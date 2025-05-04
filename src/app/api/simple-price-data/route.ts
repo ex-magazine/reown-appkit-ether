@@ -26,7 +26,7 @@ export async function POST(request: Request) {
   // Fetch current coin price information using the coin ID provided by user
   const response = await fetch(
     PRO_COINGECKO_URL + CURRENCY_ENDPOINT + QUERY_STRING,
-    options
+    options,
   ); // Fetch current coin price
 
   // Return data based on status of fetch request
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
       {
         message: 'Could not retrieve data',
       },
-      { status: 400 }
+      { status: 400 },
     );
   }
 }

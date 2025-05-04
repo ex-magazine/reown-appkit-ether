@@ -2,8 +2,6 @@ import { type ClassValue, clsx } from 'clsx';
 import { formatDate, formatDistanceToNowStrict } from 'date-fns';
 import { twMerge } from 'tailwind-merge';
 
-
-
 import type { Abi } from 'viem';
 import BigNumber from 'bignumber.js';
 
@@ -12,8 +10,6 @@ export const shortenAddress = (account: string) =>
 
 export const replacer = (key: string, value: unknown) =>
   typeof value === 'bigint' ? value.toString() : value;
-
-
 
 export function parseAbiFileToJSON(file: File) {
   return new Promise((resolve: (value: Abi) => void, reject) => {

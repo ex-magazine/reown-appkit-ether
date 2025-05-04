@@ -22,7 +22,7 @@ export async function POST(request: Request) {
   // Safely fetching data using the FETCH API
   const response = await fetch(
     PRO_COINGECKO_URL + ERC20_INFO_ENDPOINT,
-    options
+    options,
   ); // Fetch ERC20 token prices by interval
 
   // Return data based on status of FETCH request
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
       {
         message: 'Could not fetch ERC20 coin data',
       },
-      { status: 400 }
+      { status: 400 },
     );
   } else {
     const information = await response.json();

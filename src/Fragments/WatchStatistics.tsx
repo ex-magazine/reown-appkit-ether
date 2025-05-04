@@ -33,7 +33,7 @@ const WatchStatistics = ({
   // Hitung max duration untuk scaling grafik
   const maxDuration = Math.max(
     ...periodData.map((e: any) => e.totalDuration || 0),
-    1 // Minimal 1 untuk menghindari pembagian 0
+    1, // Minimal 1 untuk menghindari pembagian 0
   );
 
   return (
@@ -102,7 +102,7 @@ const WatchStatistics = ({
           <StatBox
             icon={<Tv size={20} />}
             title={`Rasio ${capitalize(
-              overallData.contentTypeDistribution?.[0].type
+              overallData.contentTypeDistribution?.[0].type,
             )} : ${capitalize(overallData.contentTypeDistribution?.[1].type)}`}
             value={`${overallData.contentTypeDistribution?.[0].count || 0} : ${
               overallData.contentTypeDistribution?.[1].count || 0
@@ -138,7 +138,7 @@ const WatchStatistics = ({
                 {periodData.map((entry: any, index: number) => {
                   const maxDuration = Math.max(
                     ...periodData.map((e: any) => e.totalDuration),
-                    1 // Pastikan tidak division by zero
+                    1, // Pastikan tidak division by zero
                   );
 
                   const heightPercentage =
@@ -348,7 +348,7 @@ const WatchStatistics = ({
                 <span className="text-xl font-bold text-yellow-400">
                   {Math.round(
                     summaryData.avgProgressPercentage *
-                      (summaryData.completionRate / 100)
+                      (summaryData.completionRate / 100),
                   ) || 0}
                   /100
                 </span>

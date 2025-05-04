@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       address +
       '/market_chart?days=' +
       modifiedInterval,
-    options
+    options,
   );
 
   // Conditionally return response based on data fetch
@@ -58,7 +58,7 @@ export async function POST(request: Request) {
       {
         message: 'Could not fetch ERC721 collection chart data',
       },
-      { status: 400 }
+      { status: 400 },
     );
   }
 }

@@ -14,7 +14,7 @@ const CastCard = ({ cast, className }: Props) => {
       <div
         className={cn(
           'relative aspect-[3/4] h-40 overflow-hidden rounded-lg border shadow-md md:h-52',
-          className
+          className,
         )}
       >
         <div className="absolute inset-0 h-full w-full object-cover">

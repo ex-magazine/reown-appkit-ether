@@ -24,7 +24,6 @@ export default function Footer2() {
             ))}
           </nav>
         </div>
-
       </div>
     </footer>
   );

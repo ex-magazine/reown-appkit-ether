@@ -23,7 +23,7 @@ export default function HomePageTrendingCollectionsTable() {
   } = useSWR<{ trendingCoinData: { nfts: TrendingCollectionsType[] } }>(
     '/api/trending-coin-data',
     WalletFetcher,
-    { refreshInterval: 50000 }
+    { refreshInterval: 50000 },
   );
 
   // Conditionally render this component
@@ -82,21 +82,23 @@ export default function HomePageTrendingCollectionsTable() {
                 <TableCell
                   className={
                     Number(
-                      collection.data.floor_price_in_usd_24h_percentage_change
+                      collection.data.floor_price_in_usd_24h_percentage_change,
                     ) >= 0
                       ? 'text-green-500'
                       : 'text-red-500'
                   }
                 >
                   {Number(
-                    collection.data.floor_price_in_usd_24h_percentage_change
+                    collection.data.floor_price_in_usd_24h_percentage_change,
                   ) > 0
                     ? '+' +
                       Number(
-                        collection.data.floor_price_in_usd_24h_percentage_change
+                        collection.data
+                          .floor_price_in_usd_24h_percentage_change,
                       ).toFixed(2)
                     : Number(
-                        collection.data.floor_price_in_usd_24h_percentage_change
+                        collection.data
+                          .floor_price_in_usd_24h_percentage_change,
                       ).toFixed(2)}
                   %
                 </TableCell>

@@ -26,7 +26,7 @@ const Sidebar = () => {
               'flex items-center gap-2 rounded-full px-5 py-2 text-muted-foreground transition',
               'hover:bg-muted/75',
               pathname.startsWith(link.href) &&
-                'bg-secondary text-primary hover:bg-secondary'
+                'bg-secondary text-primary hover:bg-secondary',
             )}
           >
             <link.icons className="size-4" />

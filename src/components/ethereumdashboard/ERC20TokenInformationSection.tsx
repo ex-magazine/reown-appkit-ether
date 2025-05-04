@@ -19,7 +19,7 @@ export default function ERC20TokenInformationSection(props: {
     ['/api/ERC20-coin-information', { contract: address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render component

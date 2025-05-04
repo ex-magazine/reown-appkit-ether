@@ -18,10 +18,17 @@ import ErrorContent from '@/components/ethereumdapp/error-content';
 import { Button } from '@/components/ethereumdapp/ui/button';
 import Label from '@/components/ethereumdapp/ui/label';
 import Textarea from '@/components/ethereumdapp/ui/textarea';
-import { ScrollArea, ScrollBar } from '@/components/ethereumdapp/ui/scroll-area';
+import {
+  ScrollArea,
+  ScrollBar,
+} from '@/components/ethereumdapp/ui/scroll-area';
 import Input from '@/components/ethereumdapp/ui/input';
 import { recoverMessageAddress } from 'viem';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ethereumdapp/ui/alert';
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from '@/components/ethereumdapp/ui/alert';
 import { CircleXIcon } from 'lucide-react';
 import CopyToClipboard from '@/components/ethereumdapp/copy-to-clipboard';
 

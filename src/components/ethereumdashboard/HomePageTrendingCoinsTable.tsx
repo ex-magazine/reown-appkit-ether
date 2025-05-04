@@ -23,7 +23,7 @@ export default function HomePageTrendingCoinsTable() {
   } = useSWR<{ trendingCoinData: { coins: TrendingCoinsType[] } }>(
     '/api/trending-coin-data',
     GenericFetcher,
-    { refreshInterval: 50000 }
+    { refreshInterval: 50000 },
   );
 
   // Conditionally render this component
@@ -83,10 +83,10 @@ export default function HomePageTrendingCoinsTable() {
                   {Number(coin.item.data.price_change_percentage_24h.usd) > 0
                     ? '+' +
                       Number(
-                        coin.item.data.price_change_percentage_24h.usd
+                        coin.item.data.price_change_percentage_24h.usd,
                       ).toFixed(2)
                     : Number(
-                        coin.item.data.price_change_percentage_24h.usd
+                        coin.item.data.price_change_percentage_24h.usd,
                       ).toFixed(2)}
                   %
                 </TableCell>

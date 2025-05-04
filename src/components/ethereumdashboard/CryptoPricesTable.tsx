@@ -37,7 +37,7 @@ export default function CryptoPriceTable() {
     const filteredCoinsData = coins?.filter(
       (coin) =>
         coin.name.toLowerCase().includes(filter) ||
-        coin.symbol.toLowerCase().includes(filter)
+        coin.symbol.toLowerCase().includes(filter),
     );
 
     // Render component using the information provided

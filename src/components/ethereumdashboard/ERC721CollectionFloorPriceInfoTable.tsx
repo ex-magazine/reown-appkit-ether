@@ -23,7 +23,7 @@ export default function ERC721CollectionFloorPriceInfoTable(props: {
     ['/api/erc721-collection-floor-price', { address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render component

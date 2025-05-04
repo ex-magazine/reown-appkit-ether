@@ -28,7 +28,7 @@ export default function InternalTransactionsActivityTable(props: {
     ['/api/address-internal-transaction-history', { address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render component

@@ -37,7 +37,7 @@ export const fetchUserProfile = async () => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }
+      },
     );
     return response.data;
   } catch (error) {
@@ -59,7 +59,7 @@ export const getWatchlistUser = async () => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }
+      },
     );
     return response.data;
   } catch (error) {
@@ -81,7 +81,7 @@ export const getHistoryWatchUser = async () => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }
+      },
     );
     return response.data;
   } catch (error) {
@@ -103,7 +103,7 @@ export const getFavoritesUser = async () => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }
+      },
     );
     return response.data;
   } catch (error) {
@@ -129,7 +129,7 @@ export const getStatsUser = async (type: 'week' | 'month' = 'week') => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }
+      },
     );
     return response.data;
   } catch (error) {
@@ -148,7 +148,7 @@ export const getEpisodeAndSeasonUser = async ({ id, season, episode }: any) => {
   try {
     const response = await axios.get(
       `https://backend-movie-apps-api-one.vercel.app/api/recently-watched/tv/${id}/season/${season}/episode/${episode}`,
-      { headers: { Authorization: `Bearer ${token}` } }
+      { headers: { Authorization: `Bearer ${token}` } },
     );
     return response.data;
   } catch (error) {
@@ -167,7 +167,7 @@ export const getShowProgressUser = async (id: string) => {
     try {
       const response = await axios.get(
         `https://backend-movie-apps-api-one.vercel.app/api/recently-watched/tv-progress/${id}`,
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } },
       );
       return response.data;
     } catch (error) {
@@ -198,12 +198,12 @@ export const getShowProgressUser = async (id: string) => {
               progressPercentage: episodeData.progress.percentage,
               isCompleted: episodeData.progress.percentage >= 90,
               watchedDate: episodeData.last_updated,
-            })
-          )
+            }),
+          ),
       ),
       totalEpisodesWatched: Object.values(showData.seasons).reduce(
         (acc: number, season: any) => acc + Object.keys(season.episodes).length,
-        0
+        0,
       ),
       hasWatchedEpisodes: true,
     };
@@ -225,7 +225,7 @@ export const addRecentlyWatched = async (historyItem: any) => {
       await axios.post(
         'https://backend-movie-apps-api-one.vercel.app/api/recently-watched',
         historyItem,
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } },
       );
     }
 

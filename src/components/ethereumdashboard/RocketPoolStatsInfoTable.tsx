@@ -17,7 +17,7 @@ export default function RocketPoolStatsInfoTable() {
   const rocketPoolStatsData = useSWR<RocketPoolStatsType>(
     '/api/rocket-pool-stats',
     GenericFetcher,
-    { refreshInterval: 50000 }
+    { refreshInterval: 50000 },
   );
   const { data: poolData, error, isLoading } = rocketPoolStatsData;
 

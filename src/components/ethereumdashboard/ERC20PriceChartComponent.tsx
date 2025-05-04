@@ -39,7 +39,7 @@ export default function ERC20PriceChartComponent(props: {
   const { address, data } = props;
   const [interval, setInterval] = useState<string>('7');
   const current_price = !priceFormatValidator(
-    data.market_data.current_price.usd
+    data.market_data.current_price.usd,
   )
     ? ' $' + data.market_data.current_price.usd
     : ' $' + Number(data.market_data.current_price.usd).toFixed(2);
@@ -53,7 +53,7 @@ export default function ERC20PriceChartComponent(props: {
     ['/api/ERC20-coin-price-duration', { contract: address, interval }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render data
@@ -71,7 +71,7 @@ export default function ERC20PriceChartComponent(props: {
 
     // Modifying the y-axis domain for appropriate ranges
     const prices = erc20ChartData.coinPrices.map(
-      (item: { price: string }) => item.price
+      (item: { price: string }) => item.price,
     );
     const min = Math.min(...prices);
     const max = Math.max(...prices);
@@ -107,7 +107,7 @@ export default function ERC20PriceChartComponent(props: {
                 </b>
                 <b>
                   {priceFormatValidator(
-                    Number(data.market_data.price_change_24h)
+                    Number(data.market_data.price_change_24h),
                   )
                     ? Number(data.market_data.price_change_24h) + '%'
                     : Number(data.market_data.price_change_24h).toFixed(2) +

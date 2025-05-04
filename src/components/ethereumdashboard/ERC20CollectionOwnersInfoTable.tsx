@@ -26,7 +26,7 @@ export default function ERC20collectionOwnersInfoTable(props: {
     ['/api/erc20-owners', { contract: address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render the info table
@@ -64,7 +64,7 @@ export default function ERC20collectionOwnersInfoTable(props: {
                 </TableCell>
                 <TableCell className="text-gray-300">
                   {Number(owner.percentage_relative_to_total_supply).toFixed(
-                    2
+                    2,
                   ) + '%'}
                 </TableCell>
               </TableRow>

@@ -33,7 +33,7 @@ export const discoverMovies = async (props: DiscoverMoviesProps) => {
           ...(props.with_cast && { with_cast: props.with_cast }),
           ...(props.with_people && { with_people: props.with_people }),
         },
-      }
+      },
     );
 
     return response.data.results;
@@ -46,7 +46,7 @@ export const discoverMovies = async (props: DiscoverMoviesProps) => {
 export const getTrendingMovies = async () => {
   try {
     const response = await tmdbClient.get<IApiResponse<IMovie[]>>(
-      '/trending/movie/week'
+      '/trending/movie/week',
     );
     return response.data.results;
   } catch (error) {
@@ -85,7 +85,7 @@ export const searchMovies = async ({
           include_video: false,
           page: 1,
         },
-      }
+      },
     );
     return response.data.results;
   } catch (error) {
@@ -104,13 +104,13 @@ export const getMovieInfo = async (id: string) => {
       `/movie/${id}/similar`,
       {
         params: { language: 'en-US' },
-      }
+      },
     );
     const castData = await tmdbClient.get<{ cast: ICast[] }>(
       `/movie/${id}/credits?language=en-US`,
       {
         params: { language: 'en-US' },
-      }
+      },
     );
 
     return {

@@ -4,7 +4,7 @@ import { type ChangeEvent, useMemo, useRef, useState } from 'react';
 import { useAccount, useChains, useReadContract } from 'wagmi';
 import { type AbiFunction, erc20Abi, erc4626Abi, erc721Abi } from 'viem';
 import { CircleXIcon, InfoIcon, LoaderCircleIcon } from 'lucide-react';
-
+import BigNumber from 'bignumber.js';
 import useEstimateContractGas from '@/hooks/use-estimate-contract-gas';
 import useWriteContract from '@/hooks/use-write-contract';
 import {
@@ -35,8 +35,15 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { ScrollArea, ScrollBar } from '@/components/ethereumdapp/ui/scroll-area';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ethereumdapp/ui/alert';
+import {
+  ScrollArea,
+  ScrollBar,
+} from '@/components/ethereumdapp/ui/scroll-area';
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from '@/components/ethereumdapp/ui/alert';
 import Separator from '@/components/ethereumdapp/ui/separator';
 import { Badge } from '@/components/ethereumdapp/ui/badge';
 import CopyToClipboard from '@/components/ethereumdapp/copy-to-clipboard';

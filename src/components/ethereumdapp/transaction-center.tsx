@@ -19,7 +19,10 @@ import {
 } from '@/components/ethereumdapp/ui/card';
 import NotConnectedInfoBox from '@/components/ethereumdapp/not-connected-info-box';
 import ErrorContent from '@/components/ethereumdapp/error-content';
-import { ScrollArea, ScrollBar } from '@/components/ethereumdapp/ui/scroll-area';
+import {
+  ScrollArea,
+  ScrollBar,
+} from '@/components/ethereumdapp/ui/scroll-area';
 
 const TransactionCenter = () => {
   const { address } = useAccount();

@@ -21,14 +21,14 @@ export async function POST(request: Request) {
   // Fetch data based on parameter values
   const response = await fetch(
     MORALIS_URL + erc20Endpoint + body.address + '/price',
-    options
+    options,
   ); // Pass in address and chain values
 
   // Fetch data using the Ethereum data endpoints
   if (!response.ok)
     return NextResponse.json(
       { error: 'Failed to fetch Ethereum price' },
-      { status: 500 }
+      { status: 500 },
     );
   else {
     const data = await response.json();

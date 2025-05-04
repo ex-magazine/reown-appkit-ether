@@ -58,7 +58,7 @@ const HistoryTontonan = () => {
                   Object.entries(seasonData.episodes).forEach(
                     ([episodeNum, episodeData]: [string, any]) => {
                       const episodeTimestamp = new Date(
-                        episodeData.last_updated
+                        episodeData.last_updated,
                       ).getTime();
                       const currentLatest = latestTimestamp; // ✅ Directly use latestTimestamp (already a number)
 
@@ -67,9 +67,9 @@ const HistoryTontonan = () => {
                         latestEpisode = parseInt(episodeNum);
                         latestTimestamp = episodeTimestamp;
                       }
-                    }
+                    },
                   );
-                }
+                },
               );
             }
 
@@ -280,7 +280,7 @@ const HistoryTontonan = () => {
                       {media.release_date && (
                         <span className="text-xs text-gray-300">
                           {new Date(
-                            media.release_date || media.first_air_date
+                            media.release_date || media.first_air_date,
                           ).getFullYear()}
                         </span>
                       )}

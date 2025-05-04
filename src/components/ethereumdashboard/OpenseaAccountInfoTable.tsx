@@ -26,7 +26,7 @@ export default function OpenseaAccountInfoTable(props: { address: string }) {
     ['/api/opensea-account-information', { address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render component

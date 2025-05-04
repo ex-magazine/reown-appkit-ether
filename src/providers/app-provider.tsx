@@ -55,7 +55,6 @@ const AppProvider = ({ children }: { children: ReactNode }) => {
             <ReactQueryStreamedHydration>
               {children}
               <Updater />
-
             </ReactQueryStreamedHydration>
           </QueryClientProvider>
         </WagmiProvider>

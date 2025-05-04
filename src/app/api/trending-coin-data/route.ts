@@ -18,7 +18,7 @@ export async function GET() {
 
   const response = await fetch(
     PRO_COINGECKO_URL + TRENDINGCOINS_ENDPOINT,
-    options
+    options,
   ); // Fetch data related to trending coins
 
   // Conditionally return data based on data fetch
@@ -35,7 +35,7 @@ export async function GET() {
       {
         message: 'Could not fetch trending coins data',
       },
-      { status: 400 }
+      { status: 400 },
     );
   }
 }

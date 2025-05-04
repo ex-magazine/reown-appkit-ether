@@ -28,7 +28,7 @@ export async function POST(request: Request) {
       {
         message: 'Could not fetch information',
       },
-      { status: 400 }
+      { status: 400 },
     );
   } else {
     const data = await response.json();

@@ -33,7 +33,7 @@ export async function POST(request: Request) {
         address +
         '/nfts/' +
         id,
-      options
+      options,
     );
 
     // Conditionally returning data based on fetch request

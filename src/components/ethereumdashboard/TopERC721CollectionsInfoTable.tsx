@@ -22,7 +22,7 @@ export default function TopERC721CollectionsInfoTable() {
   } = useSWR<{ topCollections: TopERC721CollectionsType[] }>(
     '/api/erc721-top-trending-collections',
     GenericFetcher,
-    { refreshInterval: 50000 }
+    { refreshInterval: 50000 },
   );
 
   // Conditionally render this component
@@ -87,11 +87,11 @@ export default function TopERC721CollectionsInfoTable() {
                   {Number(collection.floor_price_usd_24hr_percent_change) >= 0
                     ? '+' +
                       Number(
-                        collection.floor_price_usd_24hr_percent_change
+                        collection.floor_price_usd_24hr_percent_change,
                       ).toFixed(2) +
                       '%'
                     : Number(
-                        collection.floor_price_usd_24hr_percent_change
+                        collection.floor_price_usd_24hr_percent_change,
                       ).toFixed(2) + '%'}
                 </TableCell>
                 <TableCell className="text-gray-300">

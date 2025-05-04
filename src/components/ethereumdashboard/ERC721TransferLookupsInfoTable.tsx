@@ -28,7 +28,7 @@ export default function ERC721TransferLookupsInfoTable(props: {
     ['/api/erc721-lookup-transfer-by-id', { address, id: tokenID, network }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render the info table

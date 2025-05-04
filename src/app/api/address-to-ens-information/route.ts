@@ -19,14 +19,14 @@ export async function POST(request: Request) {
   // Fetch data using data
   const response = await fetch(
     MORALIS_URL + 'resolve/' + body.address + '/reverse',
-    options
+    options,
   );
 
   // Fetch data using the Ethereum data endpoints
   if (!response.ok)
     return NextResponse.json(
       { error: 'Failed to fetch Ethereum price' },
-      { status: 500 }
+      { status: 500 },
     );
   else {
     const data = await response.json();

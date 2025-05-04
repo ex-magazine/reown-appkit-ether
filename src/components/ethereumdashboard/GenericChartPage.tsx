@@ -45,7 +45,7 @@ export default function GenericChartPage(props: { data: CoinChartInfoType }) {
     ['/api/coin-prices-by-day', { coin: data.id, interval }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 50000 }
+    { refreshInterval: 50000 },
   );
 
   // Conditionally render data
@@ -67,13 +67,13 @@ export default function GenericChartPage(props: { data: CoinChartInfoType }) {
 
     // Modifying the y-axis domain for appropriate ranges
     const prices = coinChartData.coinPrices.map(
-      (item: { price: string }) => item.price
+      (item: { price: string }) => item.price,
     );
     const min = Math.min(...prices);
     const max = Math.max(...prices);
     const buffer = (max - min) * 0.1; // 10% buffer
     const current_price = !priceFormatValidator(
-      data.market_data.current_price.usd
+      data.market_data.current_price.usd,
     )
       ? ' $' + data.market_data.current_price.usd
       : ' $' + Number(data.market_data.current_price.usd).toFixed(2);
@@ -110,7 +110,7 @@ export default function GenericChartPage(props: { data: CoinChartInfoType }) {
                 </b>
                 <b>
                   {Number(data.market_data.price_change_percentage_24h).toFixed(
-                    2
+                    2,
                   ) + '%'}
                 </b>
               </CardDescription>

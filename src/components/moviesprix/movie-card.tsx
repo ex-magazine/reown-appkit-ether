@@ -27,7 +27,7 @@ const MovieCardsprix = ({ movie, className }: Props) => {
       <div
         className={cn(
           'group relative aspect-[3/4] h-44 overflow-hidden rounded-lg border shadow-md transition-all duration-300 hover:border-primary md:aspect-[3/4] md:h-52 2xl:h-56',
-          className
+          className,
         )}
       >
         <div className="absolute inset-0 h-full w-full object-cover transition-all duration-300 group-hover:brightness-50">

@@ -15,14 +15,14 @@ export async function GET() {
   // Retrieve top ERC20 tokens by market cap
   const response = await fetch(
     'https://deep-index.moralis.io/api/v2.2/market-data/erc20s/top-tokens',
-    options
+    options,
   );
 
   // Fetch data using the Ethereum data endpoints
   if (!response.ok)
     return NextResponse.json(
       { error: 'Failed to fetch Ethereum price' },
-      { status: 500 }
+      { status: 500 },
     );
   else {
     const data = await response.json();

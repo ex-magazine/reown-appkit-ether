@@ -21,7 +21,7 @@ export default function ERC721CollectionAttributeSummaryInfoTable(props: {
     ['/api/erc721-collection-attributes', { address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 1000000000 }
+    { refreshInterval: 1000000000 },
   );
 
   // Conditionally render component

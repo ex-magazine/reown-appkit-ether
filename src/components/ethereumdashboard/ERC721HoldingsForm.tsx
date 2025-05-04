@@ -52,7 +52,7 @@ export default function ERC721HoldingsForm() {
             address: walletAddressRef.current!.value.trim(),
             network,
           }),
-        }
+        },
       );
 
       const erc721Holdings = await fetch('/api/address-erc721-holdings', {

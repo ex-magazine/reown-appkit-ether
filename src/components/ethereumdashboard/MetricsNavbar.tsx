@@ -16,7 +16,7 @@ export default function MetricsNavbar() {
   } = useSWR<NavbarEthereumDataType>(
     '/api/navbar/ethereum-price',
     GenericFetcher,
-    { refreshInterval: 50000 }
+    { refreshInterval: 50000 },
   );
   const {
     data: gasData,

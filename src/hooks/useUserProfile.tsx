@@ -44,7 +44,7 @@ export function useUserProfile({
 
   const { data, isLoading, error, refetch } = useQuery({
     queryKey: [queryType, queryType === 'stats' ? type : undefined].filter(
-      Boolean
+      Boolean,
     ),
     queryFn: fetchFunction,
   });
@@ -53,7 +53,7 @@ export function useUserProfile({
   const refetchData = () => {
     queryClient.invalidateQueries({
       queryKey: [queryType, queryType === 'stats' ? type : undefined].filter(
-        Boolean
+        Boolean,
       ),
     });
   };

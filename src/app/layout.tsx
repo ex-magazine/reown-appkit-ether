@@ -40,12 +40,11 @@ import Footer2 from '@/components/ethereumdashboard/Footer2';
 import Navbar from '@/components/ethereumdashboard/Navbar';
 import Script from 'next/script';
 
-
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://reown-appkit-ether.vercel.app'),
   title: 'Stylish Ethereum DApp | AppKit Ethereum Dashboard',
-  description: 'Create your Stylish DApp | Powered by Next.js, lookup everything there is to know within the Ethereum ecosystem',
+  description:
+    'Create your Stylish DApp | Powered by Next.js, lookup everything there is to know within the Ethereum ecosystem',
   keywords: ['DApp', 'Next.js template'],
   openGraph: {
     title: 'Stylish Ethereum DApp',
@@ -67,8 +66,6 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
 };
-
-
 
 export default async function RootLayout({
   children,

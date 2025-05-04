@@ -32,7 +32,7 @@ export async function POST(request: Request) {
       '?chain=' +
       network +
       '&format=decimal',
-    options
+    options,
   );
 
   // Conditionally return data based on request status

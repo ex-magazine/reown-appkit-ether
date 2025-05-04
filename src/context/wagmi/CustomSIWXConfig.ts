@@ -64,7 +64,7 @@ export class CustomSIWXConfig implements SIWXConfigInterface {
    */
   public async setSessions(sessions: SIWXSession[]): Promise<void> {
     const verifications = await Promise.all(
-      sessions.map((session) => this.verifySession(session))
+      sessions.map((session) => this.verifySession(session)),
     );
 
     const invalidSession = sessions.find((_, index) => !verifications[index]);
@@ -85,7 +85,7 @@ export class CustomSIWXConfig implements SIWXConfigInterface {
    */
   public async getSessions(
     chainId: CaipNetworkId,
-    address: string
+    address: string,
   ): Promise<SIWXSession[]> {
     const sessions = await this.storage.get(chainId, address);
     const verifications = await Promise.all(
@@ -96,11 +96,11 @@ export class CustomSIWXConfig implements SIWXConfigInterface {
 
         await this.storage.delete(
           session.data.chainId,
-          session.data.accountAddress
+          session.data.accountAddress,
         );
 
         return false;
-      })
+      }),
     );
 
     return sessions.filter((_, index) => verifications[index]);
@@ -115,7 +115,7 @@ export class CustomSIWXConfig implements SIWXConfigInterface {
    */
   public async revokeSession(
     chainId: CaipNetworkId,
-    address: string
+    address: string,
   ): Promise<void> {
     return this.storage.delete(chainId, address);
   }
@@ -130,10 +130,10 @@ export class CustomSIWXConfig implements SIWXConfigInterface {
    */
   protected async verifySession(session: SIWXSession): Promise<boolean> {
     const chainVerifiers = this.verifiers.filter((verifier) =>
-      verifier.shouldVerify(session)
+      verifier.shouldVerify(session),
     );
     const verifications = await Promise.all(
-      chainVerifiers.map((verifier) => verifier.verify(session))
+      chainVerifiers.map((verifier) => verifier.verify(session)),
     );
 
     return verifications.length > 0 && verifications.every((result) => result);
