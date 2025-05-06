@@ -3,7 +3,7 @@
 import { useState, use, useMemo } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { getCreditPerson, getDetailPerson } from '@/service/fetchMovie';
+import { getCreditPerson, getDetailPerson } from '../../../../service/fetchMovie';
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 
@@ -128,11 +128,10 @@ const PersonDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
                   onClick={() =>
                     handleClick(tab as 'movies' | 'tv', setActiveTab)
                   }
-                  className={`px-6 py-2 text-lg font-medium ${
-                    activeTab === tab
-                      ? 'border-b-2 border-purple-600 text-purple-600 dark:text-purple-400'
-                      : 'text-gray-600 hover:text-white dark:text-gray-400 dark:hover:text-gray-200'
-                  }`}
+                  className={`px-6 py-2 text-lg font-medium ${activeTab === tab
+                    ? 'border-b-2 border-purple-600 text-purple-600 dark:text-purple-400'
+                    : 'text-gray-600 hover:text-white dark:text-gray-400 dark:hover:text-gray-200'
+                    }`}
                 >
                   {tab === 'movies' ? 'Movies' : 'TV Shows'}
                 </button>

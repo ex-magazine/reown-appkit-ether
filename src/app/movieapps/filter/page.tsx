@@ -11,7 +11,7 @@ import {
   types,
 } from '@/components/ether/movieapps/common/FilterComponent';
 import { useQuery } from '@tanstack/react-query';
-import { getFiltered } from '@/service/fetchMovie';
+import { getFiltered } from '../../../service/fetchMovie';
 import MovieCard from '@/components/ether/movieapps/movieCard';
 import { Movie } from '@/types/movie.';
 import { ChevronLeft, ChevronRight, RefreshCw } from 'lucide-react';
@@ -212,11 +212,10 @@ function page() {
                     key={pageNum}
                     onClick={() => setPage(pageNum)}
                     disabled={isFetching}
-                    className={`h-10 min-w-[2.5rem] rounded-lg transition-colors ${
-                      pageNum === page
-                        ? 'bg-cyan-500/20 text-cyan-400'
-                        : 'bg-slate-800 text-slate-400 hover:text-cyan-400'
-                    } disabled:cursor-not-allowed disabled:opacity-50`}
+                    className={`h-10 min-w-[2.5rem] rounded-lg transition-colors ${pageNum === page
+                      ? 'bg-cyan-500/20 text-cyan-400'
+                      : 'bg-slate-800 text-slate-400 hover:text-cyan-400'
+                      } disabled:cursor-not-allowed disabled:opacity-50`}
                   >
                     {pageNum}
                   </button>

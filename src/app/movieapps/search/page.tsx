@@ -15,7 +15,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
-import { getSearch, getSearchFilter } from '@/service/fetchMovie';
+import { getSearch, getSearchFilter } from '../../../service/fetchMovie';
 import MovieCardSkeleton from '@/components/ether/movieapps/MovieCardSkeleton';
 import { Movie } from '@/types/movie.';
 import MovieCard from '@/components/ether/movieapps/movieCard';
@@ -178,11 +178,10 @@ const SearchResultsPage = () => {
                   setSelectedType(type.value);
                   setPage(1);
                 }}
-                className={`flex flex-col items-center justify-center gap-2 rounded-lg p-3 transition-all duration-200 ${
-                  isSelected
-                    ? 'bg-cyan-500/20 text-cyan-400 shadow-lg'
-                    : 'text-slate-400 hover:bg-slate-600/50 hover:text-slate-200'
-                } `}
+                className={`flex flex-col items-center justify-center gap-2 rounded-lg p-3 transition-all duration-200 ${isSelected
+                  ? 'bg-cyan-500/20 text-cyan-400 shadow-lg'
+                  : 'text-slate-400 hover:bg-slate-600/50 hover:text-slate-200'
+                  } `}
               >
                 <Icon
                   className={`h-5 w-5 ${isSelected ? 'text-cyan-400' : ''}`}
@@ -266,7 +265,7 @@ const SearchResultsPage = () => {
                   >
                     {(selectedType === 'multi' &&
                       movie.media_type === 'person') ||
-                    selectedType === 'person' ? (
+                      selectedType === 'person' ? (
                       <CastsCard numberOrder={false} member={movie} />
                     ) : (
                       <MovieCard movie={movie} />
@@ -292,11 +291,10 @@ const SearchResultsPage = () => {
                   key={pageNum}
                   onClick={() => handlePageChange(pageNum)}
                   disabled={isLoading}
-                  className={`h-10 min-w-[2.5rem] rounded-lg transition-colors ${
-                    pageNum === currentPage
-                      ? 'bg-cyan-500/20 text-cyan-400'
-                      : 'bg-slate-800 text-slate-400 hover:text-cyan-400'
-                  } disabled:cursor-not-allowed disabled:opacity-50`}
+                  className={`h-10 min-w-[2.5rem] rounded-lg transition-colors ${pageNum === currentPage
+                    ? 'bg-cyan-500/20 text-cyan-400'
+                    : 'bg-slate-800 text-slate-400 hover:text-cyan-400'
+                    } disabled:cursor-not-allowed disabled:opacity-50`}
                 >
                   {pageNum}
                 </button>

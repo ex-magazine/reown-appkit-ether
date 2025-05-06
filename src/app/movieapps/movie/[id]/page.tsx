@@ -6,7 +6,7 @@ import {
   getDetailMovie,
   getSimilarMovies,
   getRecommendedMovies,
-} from '@/service/fetchMovie';
+} from '../../../../service/fetchMovie';
 import { Genre, Movie, Video } from '@/types/movie.';
 import { memo, Suspense, use, useMemo, useRef, useState } from 'react';
 import { Loader } from '@/components/ether/movieapps/common/Loader';
@@ -134,9 +134,8 @@ function DetailMovie({ params }: { params: Promise<{ id: string }> }) {
       return (
         <button
           onClick={() => onClick(tab.toLowerCase())}
-          className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
-            isActive ? 'text-cyan-400' : 'text-slate-400 hover:text-slate-300'
-          }`}
+          className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${isActive ? 'text-cyan-400' : 'text-slate-400 hover:text-slate-300'
+            }`}
         >
           {tab}
           {isActive && (
@@ -182,9 +181,8 @@ function DetailMovie({ params }: { params: Promise<{ id: string }> }) {
           <div className="relative h-[100vh] pb-8">
             {movie.backdrop_path && (
               <Image
-                src={`https://image.tmdb.org/t/p/original${
-                  isMobile ? movie.poster_path : movie.backdrop_path
-                }`}
+                src={`https://image.tmdb.org/t/p/original${isMobile ? movie.poster_path : movie.backdrop_path
+                  }`}
                 alt={movie.title ?? movie.name ?? ''}
                 fill
                 priority
@@ -291,7 +289,7 @@ function DetailMovie({ params }: { params: Promise<{ id: string }> }) {
                             width: `${Math.min(
                               ((movie?.budget ?? 0) /
                                 (movie?.revenue ?? (movie?.budget ?? 0) * 2)) *
-                                100,
+                              100,
                               100,
                             )}%`,
                           }}
@@ -321,7 +319,7 @@ function DetailMovie({ params }: { params: Promise<{ id: string }> }) {
                               ((movie?.revenue ?? 0) /
                                 ((movie?.budget ?? 0) * 4 ||
                                   (movie?.revenue ?? 0) * 2)) *
-                                100,
+                              100,
                               100,
                             )}%`,
                           }}
@@ -372,11 +370,11 @@ function DetailMovie({ params }: { params: Promise<{ id: string }> }) {
                         <div className="mb-2 text-4xl">
                           {String.fromCodePoint(
                             0x1f1e6 +
-                              (lang.iso_639_1.toUpperCase().charCodeAt(0) -
-                                'A'.charCodeAt(0)),
+                            (lang.iso_639_1.toUpperCase().charCodeAt(0) -
+                              'A'.charCodeAt(0)),
                             0x1f1e6 +
-                              (lang.iso_639_1.toUpperCase().charCodeAt(1) -
-                                'A'.charCodeAt(0)),
+                            (lang.iso_639_1.toUpperCase().charCodeAt(1) -
+                              'A'.charCodeAt(0)),
                           )}
                         </div>
                         <div className="space-y-1">

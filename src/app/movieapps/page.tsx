@@ -6,7 +6,7 @@ import MovieCard from '@/components/ether/movieapps/movieCard';
 import MovieCardSkeleton from '@/components/ether/movieapps/MovieCardSkeleton';
 import { Button } from '@/components/ether/movieapps/ui/button';
 // import HistoryTontonan from "@/Fragments/HistoryWatch";
-import { getPopularMovie, getSearchByGenre } from '@/service/fetchMovie';
+import { getPopularMovie, getSearchByGenre } from '../../service/fetchMovie';
 import { useStore } from '@/store/useStore';
 import { Movie } from '@/types/movie.';
 import { useQuery } from '@tanstack/react-query';

@@ -1,7 +1,7 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import { getGenres, getSearchByGenre } from '@/service/fetchMovie';
+import { getGenres, getSearchByGenre } from '../../../service/fetchMovie';
 import { Movie } from '@/types/movie.';
 import { motion } from 'framer-motion';
 import { useState, useCallback, useMemo } from 'react';
@@ -132,8 +132,8 @@ const GenrePage = () => {
                     onClick={() => handlePageChange(pageNum)}
                     disabled={isLoading}
                     className={`h-10 min-w-[2.5rem] rounded-lg transition-colors ${pageNum === currentPage
-                        ? 'bg-cyan-500/20 text-cyan-400'
-                        : 'bg-slate-800 text-slate-400 hover:text-cyan-400'
+                      ? 'bg-cyan-500/20 text-cyan-400'
+                      : 'bg-slate-800 text-slate-400 hover:text-cyan-400'
                       } disabled:cursor-not-allowed disabled:opacity-50`}
                   >
                     {pageNum}

@@ -1,7 +1,7 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import { getTrending } from '@/service/fetchMovie';
+import { getTrending } from '../../../service/fetchMovie';
 import { Movie } from '@/types/movie.';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';

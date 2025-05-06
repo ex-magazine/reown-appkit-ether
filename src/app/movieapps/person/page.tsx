@@ -4,7 +4,7 @@ import { memo, useMemo, useState } from 'react';
 import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getPopularCasts } from '@/service/fetchMovie';
+import { getPopularCasts } from '../../../service/fetchMovie';
 import { ChevronRight, Film, Filter, Loader, Tv } from 'lucide-react';
 import { PopularityChart } from '@/components/ether/movieapps/PopularityChart';
 import { NetworkGraph } from '@/components/ether/movieapps/NetworkGraph';
@@ -200,11 +200,10 @@ const DepartmentButton = memo(
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => onClick(dept)}
-        className={`flex items-center gap-2 rounded-full border px-4 py-2 transition-all ${
-          isSelected
-            ? 'border-transparent bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg'
-            : 'border-gray-300 bg-white text-gray-600 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
-        }`}
+        className={`flex items-center gap-2 rounded-full border px-4 py-2 transition-all ${isSelected
+          ? 'border-transparent bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg'
+          : 'border-gray-300 bg-white text-gray-600 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+          }`}
       >
         <MemoizedFilterIcon className="shrink-0" />
         {dept}
@@ -231,11 +230,10 @@ const DepartmentFilter = ({
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => setSelected(dept === selected ? '' : dept)}
-            className={`rounded-full px-3 py-1.5 text-sm transition-colors ${
-              selected === dept
-                ? 'bg-purple-600/90 text-white'
-                : 'bg-gray-700/50 text-gray-300 hover:bg-gray-700'
-            }`}
+            className={`rounded-full px-3 py-1.5 text-sm transition-colors ${selected === dept
+              ? 'bg-purple-600/90 text-white'
+              : 'bg-gray-700/50 text-gray-300 hover:bg-gray-700'
+              }`}
           >
             {dept}
           </motion.button>
@@ -258,11 +256,10 @@ const ViewToggle = memo(
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         onClick={() => setViewMode('simple')}
-        className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm transition-colors ${
-          viewMode === 'simple'
-            ? 'bg-gray-700 text-purple-400'
-            : 'text-gray-400 hover:bg-gray-700/50'
-        }`}
+        className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm transition-colors ${viewMode === 'simple'
+          ? 'bg-gray-700 text-purple-400'
+          : 'text-gray-400 hover:bg-gray-700/50'
+          }`}
       >
         <Film className="h-4 w-4" />
         Simple
@@ -272,11 +269,10 @@ const ViewToggle = memo(
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         onClick={() => setViewMode('detailed')}
-        className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm transition-colors ${
-          viewMode === 'detailed'
-            ? 'bg-gray-700 text-blue-400'
-            : 'text-gray-400 hover:bg-gray-700/50'
-        }`}
+        className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm transition-colors ${viewMode === 'detailed'
+          ? 'bg-gray-700 text-blue-400'
+          : 'text-gray-400 hover:bg-gray-700/50'
+          }`}
       >
         <Tv className="h-4 w-4" />
         Detailed
