@@ -10,7 +10,7 @@ import { useMobile } from '@/hooks/useMobile';
 import { useEffect } from 'react';
 import { FooterLinks } from '@/utils/constants/FooterLinks';
 import { ExternalLink } from 'lucide-react';
-
+import Footer from '@/components/ether/movieapps/Footer';
 import Hero from '@/components/ether/Hero';
 
 import { MproAbi } from '@/utils/MproAbi';
@@ -191,9 +191,8 @@ export default function HomePage() {
       )}
       {/* Sidebar with mobile state */}
       <div
-        className={`fixed top-0 left-0 h-screen w-64 transition-transform duration-300 ease-in-out z-50 ${
-          isMobileOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`fixed top-0 left-0 h-screen w-64 transition-transform duration-300 ease-in-out z-50 ${isMobileOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
       >
         <Sidebar
           mobileOpen={isMobileOpen}
@@ -738,6 +737,7 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+      <Footer />
     </div>
   );
 }

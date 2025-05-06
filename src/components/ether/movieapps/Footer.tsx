@@ -56,18 +56,17 @@ const Footer = () => {
         '/moviestmdb/watchlist',
         '/main/messages',
       ].includes(pathname) ||
-      match === 'moviesprix' ||
-      match === 'main' ||
-      match === 'moviestmdb' ? (
+        match === 'moviesprix' ||
+        match === 'main' ||
+        match === 'moviestmdb' ? (
         ''
       ) : (
         <footer
-          className={`relative overflow-hidden bg-slate-900 tracking-tight text-gray-100 antialiased ${
-            ['/login', '/register', '/dashboard'].includes(pathname) ||
+          className={`relative overflow-hidden bg-slate-900 tracking-tight text-gray-100 antialiased ${['/login', '/register', '/dashboard'].includes(pathname) ||
             pathname.startsWith('/dashboard/')
-              ? 'hidden'
-              : 'block'
-          }`}
+            ? 'hidden'
+            : 'block'
+            }`}
         >
           {/* Animated background elements */}
           <div className="absolute inset-0 opacity-10">
@@ -135,11 +134,11 @@ const Footer = () => {
               <div className="space-y-4">
                 <h3 className="mb-4 font-semibold text-white">Explore</h3>
                 {[
-                  { name: 'Movies', href: '/movieapps/movies' },
-                  { name: 'TV Shows', href: '/movieapps/tv' },
-                  { name: 'Trending', href: '/movieapps/trending' },
-                  { name: 'Genres', href: '/movieapps/genre' },
-                  { name: 'Upcoming', href: '/movieapps/upcoming' },
+                  { name: 'Movies', href: '/moviestmdb/movies' },
+                  { name: 'TV Shows', href: '/moviestmdb/search' },
+                  { name: 'Trending', href: '/moviestmdb/watchlist' },
+                  { name: 'Genres', href: '/moviesprix/favorites' },
+                  { name: 'Upcoming', href: '/moviesprix/home' },
                 ].map((link) => (
                   <motion.div
                     key={link.name}

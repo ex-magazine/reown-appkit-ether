@@ -10,7 +10,7 @@ const MainContainer = ({ children }: Props) => (
   <>
     <section
       className={cn(
-        'flex flex-col max-w-[100rem] min-h-[calc(100vh-3.5rem-10rem)] mx-auto my-0 px-6',
+        'flex flex-col w-full min-h-[calc(100vh-3.5rem-10rem)] mx-auto my-0 px-6',
         'sm:min-h-[calc(100vh-3.5rem-8rem)]',
       )}
     >
