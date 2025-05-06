@@ -1,6 +1,6 @@
 'use client';
 
-import { wagmiAdapter, projectId } from '@/config/network';
+import { wagmiAdapter } from '@/config/network';
 import { createAppKit } from '@reown/appkit/react';
 import {
   mainnet,
@@ -34,6 +34,8 @@ import Updater from '@/providers/updater';
 
 // Set up queryClient
 const queryClient = new QueryClient();
+// Get projectId from https://cloud.reown.com
+const projectId = process.env.REOWN_CLOUD_PROJECT_ID;
 
 if (!projectId) {
   throw new Error('Project ID is not defined');
