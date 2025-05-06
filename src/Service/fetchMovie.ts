@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const api_key = process.env.NEXT_PUBLIC_API_KEY;
-const url = process.env.NEXT_PUBLIC_THEMOVIEDB_URL;
+const api_key = process.env.THEMOVIEDB_API_KEY;
+const url = process.env.THEMOVIEDB_URL;
 
 // Search movie
 export const getSearch = async (q: string) => {
