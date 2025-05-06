@@ -49,14 +49,7 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  rewrites: () => {
-    return [
-      {
-        source: '/hashtag/:tag',
-        destination: '/search?q=%23:tag',
-      },
-    ];
-  },
+
   reactStrictMode: true,
   webpack: (config, context) => {
     config.module.rules.push({

@@ -131,11 +131,10 @@ const GenrePage = () => {
                     key={pageNum}
                     onClick={() => handlePageChange(pageNum)}
                     disabled={isLoading}
-                    className={`h-10 min-w-[2.5rem] rounded-lg transition-colors ${
-                      pageNum === currentPage
+                    className={`h-10 min-w-[2.5rem] rounded-lg transition-colors ${pageNum === currentPage
                         ? 'bg-cyan-500/20 text-cyan-400'
                         : 'bg-slate-800 text-slate-400 hover:text-cyan-400'
-                    } disabled:cursor-not-allowed disabled:opacity-50`}
+                      } disabled:cursor-not-allowed disabled:opacity-50`}
                   >
                     {pageNum}
                   </button>
