@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { useShallow } from 'zustand/react/shallow';
 import { useStore } from '@/store/useStore';
 import useIsMobile from '@/hooks/useIsMobile';
-import { getHistoryWatchUser } from '@/Service/fetchUser';
-import { removeRecentlyWatched } from '@/Service/actionUser';
-import { useAuth } from '@/context/AuthContext';
+import { getHistoryWatchUser } from '@/service/fetchUser';
+import { removeRecentlyWatched } from '@/service/actionUser';
+import { useAuth } from '@/contexts/AuthContext';
 
 const HistoryTontonan = () => {
   // const { setHistoryData } = useStore(

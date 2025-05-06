@@ -3,7 +3,7 @@
 
 import { motion } from 'framer-motion';
 import { Film, Tv, Clock, Star, Zap, Calendar, Activity } from 'lucide-react';
-import capitalize from '@/lib/movieapps/function/capitalize';
+import capitalize from '@/lib/ether/movieapps/function/capitalize';
 
 interface WatchStatisticsProps {
   statsData: any;

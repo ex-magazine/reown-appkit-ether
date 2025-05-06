@@ -4,7 +4,7 @@ import {
   getHistoryWatchUser,
   getFavoritesUser,
   getStatsUser,
-} from '@/Service/fetchUser';
+} from '@/service/fetchUser';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 
 type QueryType =

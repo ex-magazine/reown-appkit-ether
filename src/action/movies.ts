@@ -5,7 +5,7 @@ import {
   movieDetailsSchema,
   recommendationsSchema,
   TMovie,
-} from '@/lib/moviestmdb/schemas/movie-schemas';
+} from '@/lib/ether/moviestmdb/schemas/movie-schemas';
 import { notFound } from 'next/navigation';
 
 const API_KEY = process.env.TMDB_API_KEY;

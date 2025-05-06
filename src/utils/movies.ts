@@ -1,4 +1,4 @@
-import tmdbClient from '@/lib/moviesprix/tmdb';
+import tmdbClient from '@/lib/ether/moviesprix/tmdb';
 import { IApiResponse, ICast, IMovie, IMovieInfo } from '@/types/api-response';
 import { GenericAbortSignal } from 'axios';
 

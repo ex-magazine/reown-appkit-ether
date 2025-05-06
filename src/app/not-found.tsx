@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Home } from 'lucide-react';
-import { Button } from '@/components/ethereumdashboard/ui/button';
+import { Button } from '@/components/ether/ethereumdashboard/ui/button';
 
 import { FlameIcon } from 'lucide-react';
 
