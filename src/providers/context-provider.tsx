@@ -1,6 +1,6 @@
 'use client';
 
-import { wagmiAdapter } from '@/config';
+
 import { createAppKit } from '@reown/appkit/react';
 import {
   mainnet,
@@ -25,9 +25,9 @@ import { cookieToInitialState, WagmiProvider, type Config } from 'wagmi';
 
 import { useState } from 'react';
 import { createConfig, http } from 'wagmi';
-
+import { cookieStorage, createStorage } from '@wagmi/core';
 import { ReactQueryStreamedHydration } from '@tanstack/react-query-next-experimental';
-
+import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
 import StoreProvider from '@/providers/store-provider';
 import ThemeProvider from '@/providers/theme-provider';
 import Updater from '@/providers/updater';
@@ -48,6 +48,21 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/179229932'],
 };
 
+const networks = [mainnet, arbitrum]
+
+export const wagmiAdapter = new WagmiAdapter({
+  storage: createStorage({
+    storage: cookieStorage,
+  }),
+  ssr: true,
+  networks,
+  projectId
+  /*
+  transports: {
+    [mainnet.id]: http(),
+    [bsc.id]: http(),
+  }, */
+});
 // Create the modal
 const modal = createAppKit({
   adapters: [wagmiAdapter],

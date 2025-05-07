@@ -29,8 +29,8 @@ import { cookieToInitialState, WagmiProvider, type Config } from 'wagmi';
 const queryClient = new QueryClient();
 
 // 1. Get projectId from https://cloud.reown.com
-// const projectId = 'b675b7e440958031e616f93b09d45cc7'
-const projectId = process.env.REOWN_CLOUD_PROJECT_ID;
+const projectId = 'b675b7e440958031e616f93b09d45cc7'
+// const projectId = process.env.REOWN_CLOUD_PROJECT_ID;
 
 // 2. Create a metadata object - optional
 // Set up metadata
@@ -43,16 +43,33 @@ const metadata = {
 };
 
 // 3. Set the networks
-const networks = [mainnet, arbitrum]
+const networks = [
+  mainnet,
+  arbitrum,
+  scroll,
+  morph,
+  berachainTestnetbArtio,
+  mantle,
+  soneium,
+  zircuit,
+  rootstock,
+  abstract,
+  viction,
+  monadTestnet,
+  celo,
+  apeChain,
+  victionTestnet
+]
 
 // 4. Create Wagmi Adapter
 export const wagmiAdapter = new WagmiAdapter({
   storage: createStorage({
     storage: cookieStorage,
   }),
-  ssr: true,
+
   networks,
-  projectId
+  projectId,
+  ssr: true
   /*
   transports: {
     [mainnet.id]: http(),
@@ -76,25 +93,9 @@ const modal = createAppKit({
     109: 'https://chewyswap.dog/images/chains/109.png',
     2000: 'https://chewyswap.dog/images/chains/2000.png',
   },
+  networks,
   projectId,
-  networks: [
-    mainnet,
-    arbitrum,
-    scroll,
-    morph,
-    berachainTestnetbArtio,
-    mantle,
-    soneium,
-    zircuit,
-    rootstock,
-    abstract,
-    viction,
-    monadTestnet,
-    celo,
-    apeChain,
-    victionTestnet,
-  ],
-  defaultNetwork: mainnet,
+  // defaultNetwork: mainnet,
   metadata: metadata,
   features: {
     analytics: true, // Optional - defaults to your Cloud configuration
