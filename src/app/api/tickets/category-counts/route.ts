@@ -21,7 +21,7 @@ export async function GET() {
 
     return NextResponse.json(categoryCounts, {
       headers: {
-        'Cache-Control': 'max-age=300', // Cache for 5 minutes
+        'Cache-Control': 'max-age=3000000', // Cache for 5 minutes
       },
     });
   } catch (error) {

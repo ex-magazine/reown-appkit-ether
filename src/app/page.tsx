@@ -59,24 +59,6 @@ export default function HomePage() {
   const { isConnected, address } = useAccount();
   const { walletInfo } = useWalletInfo();
 
-  // const tokenContract = {
-  //   address: '0x2761723006d3Eb0d90B19B75654DbE543dcd974f',
-  //   abi: erc20Abi,
-  // } as const
-
-  // const { data: tokenData, isError } = useReadContract({
-  //   abi: erc20Abi,
-  //   address: '0x2761723006d3Eb0d90B19B75654DbE543dcd974f',
-  //   functionName: "balanceOf",
-  //   args: [address as Address]
-  // })
-
-  // useEffect(() => {
-  //   if (tokenData) {
-  //     setChewyBalance(formatUnits(tokenData as any, 18));
-  //   }
-  // }, [tokenData, isConnected]);
-
   const {
     data: usdtBalance,
     isLoading,
@@ -577,26 +559,26 @@ export default function HomePage() {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/dashboard"
+                    href="/moviestmdb"
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
-                    Dashboard
+                    Moviestmdb
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/tickets"
+                    href="/moviestmdb/watchlist"
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
-                    Tickets
+                    Watchlist
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/settings"
+                    href="/moviesprix/home"
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
-                    Settings
+                    Moviesprix
                   </Link>
                 </li>
               </ul>
@@ -608,26 +590,26 @@ export default function HomePage() {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/docs"
+                    href="/moviesprix/search"
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
-                    Documentation
+                    Search
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/support"
+                    href="/moviesprix/movies"
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
-                    Support
+                    Movies
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/blog"
+                    href="/moviesprix/favorites"
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
-                    Blog
+                    Favorites
                   </Link>
                 </li>
               </ul>
@@ -639,7 +621,7 @@ export default function HomePage() {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/contact"
+                    href="#"
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
                     Contact Us
@@ -647,7 +629,7 @@ export default function HomePage() {
                 </li>
                 <li>
                   <Link
-                    href="/privacy"
+                    href="#"
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
                     Privacy Policy
@@ -655,7 +637,7 @@ export default function HomePage() {
                 </li>
                 <li>
                   <Link
-                    href="/terms"
+                    href="#"
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
                     Terms of Service
