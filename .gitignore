@@ -12,7 +12,8 @@
 
 # testing
 /coverage
-
+/.husky
+.husky
 # next.js
 /.next/
 /out/
