@@ -1,7 +1,8 @@
 'use client';
 
-import { wagmiAdapter, projectId } from '@/config';
-import { createAppKit } from '@reown/appkit/react';
+import { createAppKit } from '@reown/appkit/react'
+
+import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 import {
   mainnet,
   arbitrum,
@@ -17,8 +18,9 @@ import {
   monadTestnet,
   celo,
   apeChain,
+  victionTestnet
 } from '@reown/appkit/networks';
-
+import { cookieStorage, createStorage } from '@wagmi/core';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React, { type ReactNode } from 'react';
 import { cookieToInitialState, WagmiProvider, type Config } from 'wagmi';
@@ -26,11 +28,11 @@ import { cookieToInitialState, WagmiProvider, type Config } from 'wagmi';
 // Set up queryClient
 const queryClient = new QueryClient();
 
-if (!projectId) {
-  // throw new Error('Project ID is not defined');
-  const projectId = process.env.REOWN_CLOUD_PROJECT_ID;
-}
+// 1. Get projectId from https://cloud.reown.com
+// const projectId = 'b675b7e440958031e616f93b09d45cc7'
+const projectId = process.env.REOWN_CLOUD_PROJECT_ID;
 
+// 2. Create a metadata object - optional
 // Set up metadata
 const metadata = {
   //this is optional
@@ -40,7 +42,25 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/179229932'],
 };
 
-// Create the modal
+// 3. Set the networks
+const networks = [mainnet, arbitrum]
+
+// 4. Create Wagmi Adapter
+export const wagmiAdapter = new WagmiAdapter({
+  storage: createStorage({
+    storage: cookieStorage,
+  }),
+  ssr: true,
+  networks,
+  projectId
+  /*
+  transports: {
+    [mainnet.id]: http(),
+    [bsc.id]: http(),
+  }, */
+});
+
+// 5. Create modal
 const modal = createAppKit({
   adapters: [wagmiAdapter],
   chainImages: {
@@ -53,6 +73,8 @@ const modal = createAppKit({
     48900: '/zircuit.svg',
     11_124: '/abstract.png',
     30: '/rootstock.png',
+    109: 'https://chewyswap.dog/images/chains/109.png',
+    2000: 'https://chewyswap.dog/images/chains/2000.png',
   },
   projectId,
   networks: [
@@ -70,6 +92,7 @@ const modal = createAppKit({
     monadTestnet,
     celo,
     apeChain,
+    victionTestnet,
   ],
   defaultNetwork: mainnet,
   metadata: metadata,
@@ -116,6 +139,7 @@ function ContextProvider({
 }
 
 export default ContextProvider;
+
 
 
 

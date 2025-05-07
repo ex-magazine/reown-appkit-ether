@@ -34,19 +34,10 @@ import {
   useWalletInfo,
 } from '@reown/appkit/react';
 
-import Container from '@/components/ether/ethereumdapp/layout/container';
-import HomePageWalletForm from '@/components/ether/ethereumdashboard/HomePageWalletForm';
-import HomePageMarketDataSection from '@/components/ether/ethereumdashboard/HomePageMarketDataSection';
-import HomePageGlobalMarketCapChart from '@/components/ether/ethereumdashboard/HomePageGlobalMarketCapChart';
-import HomePageTrendingCoinsTable from '@/components/ether/ethereumdashboard/HomePageTrendingCoinsTable';
-import HomePageTrendingCollectionsTable from '@/components/ether/ethereumdashboard/HomePageTrendingCollectionsTable';
-import type { Metadata } from 'next';
-// import MainSection from '@/components/ether/ethereumdapp/section/main-section';
 
-// import { cookieStorage, createStorage, http } from '@wagmi/core'
 import { ConnectButton } from '@/components/ether/ConnectButton';
 import { InfoList } from '@/components/ether/InfoList';
-import { ActionButtonList } from '@/components/ether/ActionButtonList';
+
 
 
 
@@ -331,7 +322,8 @@ export default function HomePage() {
                     />
                   </svg>
                 </div>
-                <ActionButtonList />
+                <p>Learn about the common protocols within the Ethereum ecosystem.
+                  Full list of the protocols can be found here.</p>
               </div>
             </div>
           </div>
