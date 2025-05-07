@@ -1,7 +1,5 @@
-import { cookieStorage, createStorage, http } from '@wagmi/core';
+import { cookieStorage, createStorage } from '@wagmi/core';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
-import { sepolia } from 'wagmi/chains';
-
 import {
   mainnet,
   arbitrum,
@@ -18,21 +16,19 @@ import {
   celo,
   apeChain,
   arbitrumSepolia,
+  victionTestnet,
   bsc,
 } from '@reown/appkit/networks';
+
 
 import type { AppKitNetwork } from '@reown/appkit/networks';
 
 // Get projectId from https://cloud.reown.com
-const projectId = process.env.REOWN_CLOUD_PROJECT_ID;
+export const projectId = process.env.REOWN_CLOUD_PROJECT_ID;
 
-if (!projectId) {
-  throw new Error('Project ID is not defined');
-}
 
 export const networks = [
   mainnet,
-  sepolia,
   arbitrum,
   scroll,
   morph,
@@ -48,29 +44,18 @@ export const networks = [
   apeChain,
   arbitrumSepolia,
   bsc,
+  victionTestnet,
 ];
 
-//Set up the Wagmi Adapter (Config)
+
+
 export const wagmiAdapter = new WagmiAdapter({
   storage: createStorage({
     storage: cookieStorage,
   }),
   ssr: true,
   networks,
-  projectId,
-  // transports: {
-  //   [mainnet.id]: http(
-  //     process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
-  //       ? `https://eth-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
-  //       : undefined,
-  //   ),
-  //   [sepolia.id]: http(
-  //     process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
-  //       ? `https://eth-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
-  //       : undefined,
-  //   ),
-  // },
-  // connectors: [injected({ target: 'metaMask' })],
+  projectId
   /*
   transports: {
     [mainnet.id]: http(),

@@ -1,6 +1,6 @@
 'use client';
 
-import { wagmiAdapter } from '@/config';
+import { wagmiAdapter, projectId } from '@/config';
 import { createAppKit } from '@reown/appkit/react';
 import {
   mainnet,
@@ -23,22 +23,14 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React, { type ReactNode } from 'react';
 import { cookieToInitialState, WagmiProvider, type Config } from 'wagmi';
 
-import { useState } from 'react';
-import { createConfig, http } from 'wagmi';
-
-import { ReactQueryStreamedHydration } from '@tanstack/react-query-next-experimental';
-
-import StoreProvider from '@/providers/store-provider';
-import ThemeProvider from '@/providers/theme-provider';
-import Updater from '@/providers/updater';
-
 // Set up queryClient
 const queryClient = new QueryClient();
 
-// if (!projectId) {
-//   throw new Error('Project ID is not defined');
-// }
-const projectId = process.env.REOWN_CLOUD_PROJECT_ID;
+if (!projectId) {
+  // throw new Error('Project ID is not defined');
+  const projectId = process.env.REOWN_CLOUD_PROJECT_ID;
+}
+
 // Set up metadata
 const metadata = {
   //this is optional
@@ -61,8 +53,6 @@ const modal = createAppKit({
     48900: '/zircuit.svg',
     11_124: '/abstract.png',
     30: '/rootstock.png',
-    109: 'https://chewyswap.dog/images/chains/109.png',
-    2000: 'https://chewyswap.dog/images/chains/2000.png',
   },
   projectId,
   networks: [
@@ -112,31 +102,20 @@ function ContextProvider({
 }) {
   const initialState = cookieToInitialState(
     wagmiAdapter.wagmiConfig as Config,
-    cookies,
+    cookies
   );
 
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
+    <WagmiProvider
+      config={wagmiAdapter.wagmiConfig as Config}
+      initialState={initialState}
     >
-      <StoreProvider>
-        <WagmiProvider
-          config={wagmiAdapter.wagmiConfig as Config}
-          initialState={initialState}
-        >
-          <QueryClientProvider client={queryClient}>
-            <ReactQueryStreamedHydration>
-              {children}
-              <Updater />
-            </ReactQueryStreamedHydration>
-          </QueryClientProvider>
-        </WagmiProvider>
-      </StoreProvider>
-    </ThemeProvider>
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    </WagmiProvider>
   );
 }
 
 export default ContextProvider;
+
+
+
