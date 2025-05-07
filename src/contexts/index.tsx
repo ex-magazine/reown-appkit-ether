@@ -18,8 +18,10 @@ import {
   monadTestnet,
   celo,
   apeChain,
-  victionTestnet
+  victionTestnet,
+  polygon, AppKitNetwork, sepolia,
 } from '@reown/appkit/networks';
+
 import { cookieStorage, createStorage } from '@wagmi/core';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React, { type ReactNode } from 'react';
@@ -43,7 +45,7 @@ const metadata = {
 };
 
 // 3. Set the networks
-const networks = [
+const networks: [AppKitNetwork, ...AppKitNetwork[]] = [
   mainnet,
   arbitrum,
   scroll,
@@ -96,7 +98,7 @@ const modal = createAppKit({
   networks,
   projectId,
   // defaultNetwork: mainnet,
-  metadata: metadata,
+  metadata,
   features: {
     analytics: true, // Optional - defaults to your Cloud configuration
     email: true, // default to true
