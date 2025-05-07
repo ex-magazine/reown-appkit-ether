@@ -8,7 +8,7 @@ import { ClientProviders } from '@/providers/client-providers';
 import NexTopLoader from 'nextjs-toploader';
 import { CreateTicketFAB } from '@/components/create-ticket-fab';
 
-import ContextProvider from '@/providers/context-provider';
+import ContextProvider from '@/contexts';
 
 import { headers } from 'next/headers';
 

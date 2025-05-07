@@ -41,16 +41,14 @@ import HomePageGlobalMarketCapChart from '@/components/ether/ethereumdashboard/H
 import HomePageTrendingCoinsTable from '@/components/ether/ethereumdashboard/HomePageTrendingCoinsTable';
 import HomePageTrendingCollectionsTable from '@/components/ether/ethereumdashboard/HomePageTrendingCollectionsTable';
 import type { Metadata } from 'next';
-import MainSection from '@/components/ether/ethereumdapp/section/main-section';
+// import MainSection from '@/components/ether/ethereumdapp/section/main-section';
 
 // import { cookieStorage, createStorage, http } from '@wagmi/core'
 import { ConnectButton } from '@/components/ether/ConnectButton';
 import { InfoList } from '@/components/ether/InfoList';
 import { ActionButtonList } from '@/components/ether/ActionButtonList';
-// import erc20Abi from "@/abi/erc20";
-const contractAddressMpro = '0x83b37130b8f6a8edd4e34c46a2fed1ac281bfb05'; // Token contract
-const contractAddressUSDT = '0x55d398326f99059fF775485246999027B3197955'; // Token contract
-const contractABIMpro = MproAbi();
+
+
 
 import NoSsr from '@/components/ether/NoSsr';
 
@@ -98,56 +96,8 @@ export default function HomePage() {
   const [recipient, setRecipient] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const {
-    writeContract,
-    isPending: isWriteLoading,
-    isSuccess,
-    error: isWriteError,
-  } = useWriteContract();
 
-  const handleSubmitMpro = (e: any) => {
-    e.preventDefault();
-    setErrorMessage('');
-    if (isNaN(parseFloat(amount)) || amount.trim() === '') {
-      return setErrorMessage('Please enter a valid number');
-    }
-    writeContract({
-      address: contractAddressMpro,
-      abi: contractABIMpro,
-      functionName: 'transfer',
-      args: [
-        recipient,
-        ethers.parseUnits(
-          amount.toString() == '' ? '0' : amount.toString(),
-          18,
-        ),
-      ],
-      chainId: 56, // BSC chainId
-    });
-  };
 
-  const handleSubmitUSDT = (e: any) => {
-    //set error
-    e.preventDefault();
-    setErrorMessage('');
-    if (isNaN(parseFloat(amount)) || amount.trim() === '') {
-      return setErrorMessage('Please enter a valid number');
-    }
-
-    writeContract({
-      address: contractAddressUSDT,
-      abi: contractABIMpro,
-      functionName: 'transfer',
-      args: [
-        recipient,
-        ethers.parseUnits(
-          amount.toString() == '' ? '0' : amount.toString(),
-          18,
-        ),
-      ],
-      chainId: 56, // BSC chainId
-    });
-  };
 
   const { isMobileOpen, setIsMobileOpen, isInitialized, setInitialized } =
     useMobile();
@@ -203,7 +153,7 @@ export default function HomePage() {
       <Navbar onMobileMenuClick={() => setIsMobileOpen(!isMobileOpen)} />
 
       <Hero />
-      <MainSection />
+      {/* <MainSection /> */}
 
       {/* Main Content */}
       <section className="flex flex-1 flex-col items-center justify-center px-4 pt-20">
@@ -730,10 +680,6 @@ export default function HomePage() {
                 <ExternalLink className="ml-1 h-4 w-4 text-muted-foreground hover:text-primary" />
               </Link>
             ))}
-          </div>
-          {/* Copyright */}
-          <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} AppKit Connect. All rights reserved.
           </div>
         </div>
       </footer>

@@ -10,7 +10,7 @@ export const Links: LinkType[] = [
   { name: 'Moralis', href: 'https://developers.moralis.com/' },
   { name: 'Opensea', href: 'https://docs.opensea.io/reference/api-overview' },
   { name: 'Transpose', href: 'https://docs.transpose.io/' },
-  { name: 'Twitter', href: 'https://twitter.com/KA95doteth' },
+  { name: 'Ethereumdashboard', href: 'https://www.ethereumdashboard.dev' },
   { name: 'GitHub', href: 'https://github.com/CodingAbdullah' },
   { name: 'About', href: '/about' },
   { name: 'Analytics', href: '/analytics' },
