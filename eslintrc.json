@@ -22,8 +22,14 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "ignorePatterns": ["*.config.[jt]s", "*.config.m[jt]s"],
-  "plugins": ["@typescript-eslint", "testing-library"],
+  "ignorePatterns": [
+    "*.config.[jt]s",
+    "*.config.m[jt]s"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "testing-library"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -92,7 +98,6 @@
       }
     ],
     "jsx-a11y/label-has-associated-control": [
-      2,
       {
         "depth": 2
       }
@@ -101,22 +106,29 @@
       "error",
       {
         "props": true,
-        "ignorePropertyModificationsForRegex": ["^state$", "^ctx$"]
+        "ignorePropertyModificationsForRegex": [
+          "^state$",
+          "^ctx$"
+        ]
       }
     ],
     "react-hooks/rules-of-hooks": "error",
     "react/display-name": "off",
     "react/function-component-definition": [
-      2,
       {
-        "namedComponents": ["arrow-function", "function-declaration"],
+        "namedComponents": [
+          "arrow-function",
+          "function-declaration"
+        ],
         "unnamedComponents": "arrow-function"
       }
     ],
     "react/jsx-filename-extension": [
-      1,
       {
-        "extensions": [".ts", ".tsx"]
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ]
       }
     ],
     "react/jsx-props-no-spreading": "off",
