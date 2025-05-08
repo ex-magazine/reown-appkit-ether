@@ -1,0 +1,69 @@
+'use client';
+
+import useSWR from 'swr';
+import PostFetcher from '@/utils/functions/PostFetcher';
+import {
+  Table,
+  TableCell,
+  TableBody,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from './ui/table';
+import PostFetcherArgumentsType from '@/utils/types/PostFetcherArgumentsType';
+
+// ERC721 Collection Attribute Summary Info Table Custom Component
+export default function ERC721CollectionAttributeSummaryInfoTable(props: {
+  address: string;
+}) {
+  const { address } = props;
+  const { data, error, isLoading } = useSWR(
+    ['/api/erc721-collection-attributes', { address }],
+    ([url, body]: [string, PostFetcherArgumentsType]) =>
+      PostFetcher(url, { arg: body }),
+    { refreshInterval: 1000000000 },
+  );
+
+  // Conditionally render component
+  if (isLoading) {
+    return <div>Loading ERC721 Collection Attribute Summary Info Table...</div>;
+  } else if (error) {
+    throw new Error();
+  } else {
+    const erc721CollectionAttributeData = data.information.summary;
+
+    // Spread out, in an array, the attributes of the particular collection
+    const attributes = [...Object.keys(data.information.summary)];
+
+    // Render Attributes Summary Info Table Component
+    return (
+      <div className="mt-10 bg-gray-900 p-4 shadow-lg">
+        <h2 className="mb-4 text-2xl font-bold text-gray-100">
+          Attributes Summary
+        </h2>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="text-gray-300">Trait</TableHead>
+              <TableHead className="text-gray-300">Type & Count</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {attributes?.map((attribute, index) => {
+              return (
+                <TableRow key={index} className="border-b border-gray-800">
+                  <TableCell className="text-gray-300">{attribute}</TableCell>
+                  <TableCell className="text-gray-300">
+                    <code>
+                      {JSON.stringify(erc721CollectionAttributeData[attribute])}
+                    </code>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </div>
+    );
+  }
+}
