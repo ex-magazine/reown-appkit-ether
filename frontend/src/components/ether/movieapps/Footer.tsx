@@ -134,7 +134,7 @@ const Footer = () => {
               <div className="space-y-4">
                 <h3 className="mb-4 font-semibold text-white">Explore</h3>
                 {[
-                  { name: 'Movies', href: '/moviestmdb/movies' },
+                  { name: 'Movies', href: '/moviesprix/movies' },
                   { name: 'TV Shows', href: '/moviestmdb/search' },
                   { name: 'Trending', href: '/moviestmdb/watchlist' },
                   { name: 'Genres', href: '/moviesprix/favorites' },

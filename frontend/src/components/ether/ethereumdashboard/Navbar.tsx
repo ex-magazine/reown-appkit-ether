@@ -18,7 +18,7 @@ export default function Navbar() {
   // Render Navbar Custom Component Conditionally
   return (
     <nav className="border-b z-50">
-      <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
           <Link
