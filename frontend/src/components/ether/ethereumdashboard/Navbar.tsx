@@ -6,6 +6,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { NavbarLinks } from '@/utils/constants/NavbarLinks';
 import { ConnectButton } from '@/components/ether/ConnectButton';
 // Navbar Custom Component
+import Image from 'next/image';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -19,14 +20,30 @@ export default function Navbar() {
     <nav className="border-b z-50">
       <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center">Appkit Connect</div>
+          <div className="flex items-center">
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-xl font-semibold"
+          >
+            
+                      <Image
+                        src="/reown-logo.png"
+                        alt="Reown"
+                        width={160}
+                        height={70}
+                        priority
+                      />
+                   
+           
+          </Link>
+           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline">
               {NavbarLinks.map((item, index) => (
                 <div key={index} className="group relative">
                   <button
                     onClick={() => toggleDropdown(String(item.name))}
-                    className="flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    className="flex items-center rounded-md px-3 py-2 text-sm font-medium tracking-tight hover:bg-gray-700 hover:text-white"
                   >
                     {item.name}
                     <ChevronDown className="ml-1 h-4 w-4" />
@@ -43,7 +60,7 @@ export default function Navbar() {
                           <Link
                             key={dropdownItem.name}
                             href={dropdownItem.href}
-                            className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                            className="block px-4 py-2 text-sm text-white hover:bg-gray-700 hover:text-white"
                             role="menuitem"
                           >
                             {dropdownItem.name}
@@ -54,6 +71,7 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
+              <ConnectButton />
             </div>
           </div>
           <div className="md:hidden">
@@ -79,7 +97,7 @@ export default function Navbar() {
               <div key={index} className="relative">
                 <button
                   onClick={() => toggleDropdown(String(item.name))}
-                  className="block flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className="block flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-medium tracking-tight hover:bg-gray-700 hover:text-white"
                 >
                   {item.name}
                   <ChevronDown className="ml-1 h-4 w-4" />
@@ -100,6 +118,7 @@ export default function Navbar() {
                 )}
               </div>
             ))}
+            <ConnectButton />
           </div>
         </div>
       )}

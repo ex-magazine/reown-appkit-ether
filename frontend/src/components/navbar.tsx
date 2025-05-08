@@ -231,19 +231,19 @@ export function Navbar({ onMobileMenuClick }: NavbarProps) {
           <nav className="hidden space-x-6 md:flex bg-transparent">
             <a
               href="#features"
-              className="text-gray-600 transition duration-300 hover:text-indigo-600"
+              className="tracking-tight transition duration-300 hover:text-indigo-600"
             >
               Features
             </a>
             <a
               href="#docs"
-              className="text-gray-600 transition duration-300 hover:text-indigo-600"
+              className="tracking-tight transition duration-300 hover:text-indigo-600"
             >
               Documentation
             </a>
             <a
               href="#contact"
-              className="text-gray-600 transition duration-300 hover:text-indigo-600"
+              className="tracking-tight transition duration-300 hover:text-indigo-600"
             >
               Contact
             </a>
