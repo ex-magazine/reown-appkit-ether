@@ -5,11 +5,11 @@ export const NavbarLinks: NavbarLinkObject[] = [
   {
     name: 'Extra Data',
     dropdown: [
-      { name: 'EIP Protocols', href: '/eip-protocols' },
-      { name: 'Market Insights', href: '/market-insights' },
-      { name: 'Staking/Validators', href: '/staking' },
-      { name: 'Token Analytics', href: '/collections' },
-      { name: 'Wallet Analytics', href: '/wallet-analytics' },
+      { name: 'EIP Protocols', href: '/ethereumdashboard/eip-protocols' },
+      { name: 'Market Insights', href: '/ethereumdashboard/market-insights' },
+      { name: 'Staking/Validators', href: '/ethereumdashboard/staking' },
+      { name: 'Token Analytics', href: '/ethereumdashboard/collections' },
+      { name: 'Wallet Analytics', href: '/ethereumdashboard/wallet-analytics' },
     ],
   },
   {
@@ -17,7 +17,7 @@ export const NavbarLinks: NavbarLinkObject[] = [
     dropdown: [
       {
         name: 'Gas Information',
-        href: '/gas-tracker',
+        href: '/ethereumdashboard/gas-tracker',
       },
     ],
   },
@@ -32,22 +32,22 @@ export const NavbarLinks: NavbarLinkObject[] = [
   {
     name: 'Prices',
     dropdown: [
-      { name: 'Coin Prices', href: '/prices' },
-      { name: 'ERC20 Token Prices', href: '/erc20-token-prices' },
+      { name: 'Coin Prices', href: '/ethereumdashboard/prices' },
+      { name: 'ERC20 Token Prices', href: '/ethereumdashboard/erc20-token-prices' },
     ],
   },
   {
     name: 'Token Holdings',
     dropdown: [
-      { name: 'ERC20 Holdings', href: '/erc20-holdings' },
-      { name: 'ERC721 Holdings', href: '/erc721-holdings' },
+      { name: 'ERC20 Holdings', href: '/ethereumdashboard/erc20-holdings' },
+      { name: 'ERC721 Holdings', href: '/ethereumdashboard/erc721-holdings' },
     ],
   },
   {
     name: 'Token Lookups',
     dropdown: [
       { name: 'ENS', href: '/ens-lookup' },
-      { name: 'ERC721 Token Lookups', href: '/erc721-lookups' },
+      { name: 'ERC721 Token Lookups', href: '/ethereumdashboard/erc721-lookups' },
     ],
   },
 ];

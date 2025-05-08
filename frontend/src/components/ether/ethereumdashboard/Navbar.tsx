@@ -38,7 +38,7 @@ export default function Navbar() {
           </Link>
            </div>
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline">
+            <div className="ml-10 flex items-center">
               {NavbarLinks.map((item, index) => (
                 <div key={index} className="group relative">
                   <button

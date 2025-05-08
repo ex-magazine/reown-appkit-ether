@@ -209,9 +209,9 @@ const Footer = () => {
 
               <div className="flex items-center gap-6">
                 {[
-                  { name: 'Privacy Policy', href: '/movieapps/privacy' },
-                  { name: 'Terms of Service', href: '/movieapps/terms' },
-                  { name: 'FAQ', href: '/movieapps/faq' },
+                  { name: 'Privacy Policy', href: '/' },
+                  { name: 'Terms of Service', href: '/' },
+                  { name: 'FAQ', href: '/' },
                 ].map((link) => (
                   <Link
                     key={link.name}
