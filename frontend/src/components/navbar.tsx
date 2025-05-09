@@ -229,24 +229,24 @@ export function Navbar({ onMobileMenuClick }: NavbarProps) {
           <Logo />
           {/* Desktop Navigation */}
           <nav className="hidden space-x-6 md:flex bg-transparent">
-            <a
-              href="#features"
-              className="tracking-tight transition duration-300 hover:text-indigo-600"
-            >
-              Features
-            </a>
-            <a
-              href="#docs"
-              className="tracking-tight transition duration-300 hover:text-indigo-600"
-            >
-              Documentation
-            </a>
-            <a
-              href="#contact"
-              className="tracking-tight transition duration-300 hover:text-indigo-600"
-            >
-              Contact
-            </a>
+               <Link
+                      href="/bitgive"
+                      target="_blank"
+                      className="tracking-tight transition duration-300 hover:text-indigo-600"
+                    >
+                      
+                      Bit Give
+                    </Link>
+                    <Link
+                      href="/ethereumdashboard"
+                      target="_blank"
+                      className="tracking-tight transition duration-300 hover:text-indigo-600"
+                    >
+                      
+                      Ethereum dashboard
+                    </Link>
+          
+          
           </nav>
           {/* Search bar */}
           {session && (

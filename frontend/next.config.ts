@@ -46,6 +46,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'market-data-images.s3.us-east-1.amazonaws.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'gateway.pinata.cloud',
+      },
     ],
   },
 

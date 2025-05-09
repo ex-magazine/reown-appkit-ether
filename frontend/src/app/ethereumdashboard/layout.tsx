@@ -11,7 +11,7 @@ import Script from 'next/script';
 const EthereumdashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <Navbar />
+     
       <MetricsNavbar />
       {children}
       <Analytics mode="production" />
@@ -20,7 +20,7 @@ const EthereumdashboardLayout = ({ children }: { children: React.ReactNode }) =>
         src={process.env.UMAMI_URL}
         data-website-id={process.env.UMAMI_DATA_WEBSITE_ID}
       ></Script>
-      <Footer />
+    
     </>
   );
 };
