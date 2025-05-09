@@ -50,7 +50,7 @@ const Footer = () => {
         '/moviesprix/search',
         '/moviesprix/movies',
         '/moviesprix/favorites',
-        '/moviestmdb',
+        '/moviestmdb/home',
         '/moviestmdb/movies',
         '/moviestmdb/search',
         '/moviestmdb/watchlist',

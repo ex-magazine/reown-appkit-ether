@@ -482,7 +482,7 @@ export default function HomePage() {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/moviestmdb"
+                    href="/moviestmdb/home"
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
                     Moviestmdb

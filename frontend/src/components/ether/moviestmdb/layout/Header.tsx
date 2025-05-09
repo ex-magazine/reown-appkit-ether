@@ -23,7 +23,7 @@ export default function Header() {
     <header className="sticky left-0 top-0 z-[3] mb-4 border-b bg-background">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link
-          href="/moviestmdb"
+          href="/moviestmdb/home"
           className="flex size-10 items-center justify-center rounded-full border-[3px] text-xl font-medium"
         >
           M

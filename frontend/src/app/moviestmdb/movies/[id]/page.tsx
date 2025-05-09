@@ -18,7 +18,7 @@ interface Params {
   params: Promise<{ id: string }>;
 }
 
-// export const revalidate = 60;
+export const revalidate = 60;
 
 export const generateStaticParams = async () => {
   const movies = await getMovies(1);

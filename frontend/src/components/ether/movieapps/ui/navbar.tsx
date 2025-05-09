@@ -76,7 +76,7 @@ export const Navbar = () => {
         '/moviesprix/search',
         '/moviesprix/movies',
         '/moviesprix/favorites',
-        '/moviestmdb',
+        '/moviestmdb/home',
         // '/movieapps',
         '/moviestmdb/movies',
         '/moviestmdb/search',

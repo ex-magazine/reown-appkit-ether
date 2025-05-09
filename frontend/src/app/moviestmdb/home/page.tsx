@@ -2,7 +2,7 @@ import { getMovies } from '@/action/movies';
 import InfiniteMovies from '@/components/ether/moviestmdb/InfiniteMovies';
 import MovieCard from '@/components/ether/moviestmdb/MovieCard';
 
-export const revalidate = 60;
+// export const revalidate = 60;
 
 const Home = async () => {
   const movies = await getMovies(1);
