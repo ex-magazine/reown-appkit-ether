@@ -12,7 +12,7 @@ import {
 import { generateTmdbImagePath } from '@/lib/ether/moviestmdb/tmdb-image-path';
 import RecommendationSection from '@/components/ether/moviestmdb/RecommendationSection';
 import { getImageProps } from 'next/image';
-import ErrorMessage from '@/components/ether/moviestmdb/ErrorMessage';
+
 
 interface Params {
   params: Promise<{ id: string }>;

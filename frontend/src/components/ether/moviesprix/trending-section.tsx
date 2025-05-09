@@ -13,7 +13,7 @@ const TrendingSection = async () => {
   return (
     <CarouselComponent>
       {movies.map((movie) => (
-        <Link href={`/movies/${movie.id}`} key={movie.id} className="w-full">
+        <Link href={`/moviesprix/movies/${movie.id}`} key={movie.id} className="w-full">
           {/* for desktop */}
           <div className="relative hidden h-[26rem] w-full grid-cols-[4fr_6fr] items-center justify-between gap-2 overflow-hidden rounded-2xl border bg-card md:grid 2xl:h-[29rem] 2xl:grid-cols-[3fr_6fr]">
             <div className="relative z-10 flex h-full w-full flex-col gap-2 p-8">
