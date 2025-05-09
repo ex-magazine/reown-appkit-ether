@@ -44,7 +44,7 @@ export default function RecentDonations() {
                 Recent contributions to charities
               </CardDescription>
             </div>
-            <Link href="/donations">
+            <Link href="/bitgive/donations">
               <Button
                 variant="outline"
                 size="sm"
