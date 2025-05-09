@@ -2,7 +2,8 @@ import { createThirdwebClient, defineChain } from "thirdweb";
 import { inAppWallet, createWallet } from "thirdweb/wallets";
 
 export const client = createThirdwebClient({
-  clientId: process.env.THIRDWEB_CLIENT_ID!,
+  // clientId: process.env.THIRDWEB_CLIENT_ID
+  clientId: "9cda85e8d9cb253eb68257d697abb9da"
 });
 
 export const rootstockTestnet = defineChain({
