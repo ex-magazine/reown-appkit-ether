@@ -21,9 +21,9 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/components/bitgive/ui/select";
 import { Switch } from "@/components/ui/switch";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/bitgive/ui/tabs";
 import {
   Bitcoin,
   Calendar,
@@ -39,7 +39,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useActiveAccount } from "thirdweb/react";
 import ConnectBtn from "./connect-btn";
-import useCreateCampaign from "@/hooks/use-create-campaign";
+import useCreateCampaign from "@/hooks/bitgive/use-create-campaign";
 import { toast } from 'sonner';
 
 export default function CreateCampaignForm() {
