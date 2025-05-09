@@ -41,8 +41,10 @@ export const generateMetadata = async ({ params }: Params) => {
   };
 };
 
-export default async function MoviePage({ params }: Params) {
-  const movieId = (await params).id;
+
+const pages = async (params: Params) => {
+
+  const movieId = (await params.params).id;
 
   const [movie, credits, recommendations] = await Promise.all([
     getMovieDetails(movieId),
@@ -124,3 +126,5 @@ export default async function MoviePage({ params }: Params) {
     </>
   );
 }
+
+export default pages;
