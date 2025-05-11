@@ -16,15 +16,19 @@ export default function MetricsNavbar() {
   } = useSWR<NavbarEthereumDataType>(
     '/api/navbar/ethereum-price',
     GenericFetcher,
-    { refreshInterval: 50000 }
+    { refreshInterval: 50000 },
   );
   const {
     data: gasData,
     error: gasError,
     isLoading: gasLoading,
-  } = useSWR<EthereumGasDataType>('/api/ethereumdashboard/navbar/gas-track', GenericFetcher, {
-    refreshInterval: 50000,
-  });
+  } = useSWR<EthereumGasDataType>(
+    '/api/ethereumdashboard/navbar/gas-track',
+    GenericFetcher,
+    {
+      refreshInterval: 50000,
+    },
+  );
 
   // Conditionally rendering component
   if (ethError || gasError)

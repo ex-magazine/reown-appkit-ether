@@ -25,9 +25,13 @@ export default function HomePageGlobalMarketCapChart() {
     data: marketChartData,
     error: marketChartError,
     isLoading: marketChartLoading,
-  } = useSWR('/api/ethereumdashboard/global-market-cap-chart-data', GenericFetcher, {
-    refreshInterval: 50000,
-  });
+  } = useSWR(
+    '/api/ethereumdashboard/global-market-cap-chart-data',
+    GenericFetcher,
+    {
+      refreshInterval: 50000,
+    },
+  );
 
   // Conditionally render data
   if (marketChartError) {
@@ -40,7 +44,7 @@ export default function HomePageGlobalMarketCapChart() {
 
     // Adjusting the y-axis for display
     const chart = marketChartData.capValues.map(
-      (item: { price: string }) => item.price
+      (item: { price: string }) => item.price,
     );
     const min = Math.min(...chart);
     const max = Math.max(...chart);

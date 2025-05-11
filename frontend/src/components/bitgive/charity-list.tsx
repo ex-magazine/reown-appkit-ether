@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Card,
@@ -6,16 +6,18 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/bitgive/ui/button";
-import { Progress } from "@/components/bitgive/ui/progress";
-import { Badge } from "@/components/bitgive/ui/badge";
-import { ArrowRight, Loader2 } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import useFetchCampaigns, { Campaign } from "@/hooks/bitgive/use-fetch-campaigns";
-import { useState, useEffect } from "react";
+} from '@/components/ui/card';
+import { Button } from '@/components/bitgive/ui/button';
+import { Progress } from '@/components/bitgive/ui/progress';
+import { Badge } from '@/components/bitgive/ui/badge';
+import { ArrowRight, Loader2 } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import useFetchCampaigns, {
+  Campaign,
+} from '@/hooks/bitgive/use-fetch-campaigns';
+import { useState, useEffect } from 'react';
 
 export default function CharityList() {
   const [charities, setCharities] = useState<Campaign[]>([]);
@@ -42,7 +44,9 @@ export default function CharityList() {
           </div>
         )}
         {error && <div>An error occured fetching featured charities</div>}
-        {charities.length === 0 && !loading && !error && <div className="text-muted-foreground">No featured charities</div>}
+        {charities.length === 0 && !loading && !error && (
+          <div className="text-muted-foreground">No featured charities</div>
+        )}
         {charities.slice(0, 3).map((charity, index) => (
           <motion.div
             key={charity.id}
@@ -55,7 +59,7 @@ export default function CharityList() {
                 <div className="flex flex-col sm:flex-row gap-3 p-3">
                   <div className="relative w-full h-36 sm:h-20 sm:w-40 overflow-hidden rounded-md">
                     <Image
-                      src={charity.imageURI || "/placeholder.svg"}
+                      src={charity.imageURI || '/placeholder.svg'}
                       alt={charity.name}
                       fill
                       className="object-cover"
@@ -81,13 +85,13 @@ export default function CharityList() {
                     </div>
                     <div className="mt-1 flex items-center justify-between text-xs">
                       <span>
-                        Raised:{" "}
+                        Raised:{' '}
                         <span className="font-medium">
                           {charity.raisedAmount} RBTC
                         </span>
                       </span>
                       <span>
-                        Goal:{" "}
+                        Goal:{' '}
                         <span className="font-medium">{charity.goal} RBTC</span>
                       </span>
                     </div>

@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { Loader2 } from "lucide-react";
-import { useEffect, useState } from "react";
-import useDonations, { DonationRecord } from "@/hooks/bitgive/use-donations";
-import { formatDate, formatTime } from "@/lib/bitgive/utils";
-import { useActiveAccount } from "thirdweb/react";
-import Image from "next/image";
-import Link from "next/link";
+import { Loader2 } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import useDonations, { DonationRecord } from '@/hooks/bitgive/use-donations';
+import { formatDate, formatTime } from '@/lib/bitgive/utils';
+import { useActiveAccount } from 'thirdweb/react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function DonationHistory() {
   const [donations, setDonations] = useState<DonationRecord[]>([]);
@@ -45,7 +45,7 @@ export default function DonationHistory() {
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-muted overflow-hidden">
                   <Image
-                    src={donation.campaignImage || "/placeholder.jpg"}
+                    src={donation.campaignImage || '/placeholder.jpg'}
                     alt="campaign-image"
                     width={20}
                     height={20}
@@ -57,7 +57,7 @@ export default function DonationHistory() {
                     <h3 className="font-medium">{donation.campaignName}</h3>
                   </Link>
                   <p className="text-sm text-muted-foreground">
-                    {formatDate(donation.timestamp)} at{" "}
+                    {formatDate(donation.timestamp)} at{' '}
                     {formatTime(donation.timestamp)}
                   </p>
                 </div>

@@ -23,7 +23,7 @@ export default function TopWinningCoinsTable() {
   } = useSWR<{ top_gainers: TopWinningCoinsType[] }>(
     '/api/top-bottom-coin-prices',
     GenericFetcher,
-    { refreshInterval: 50000 }
+    { refreshInterval: 50000 },
   );
 
   // Conditionally render this component

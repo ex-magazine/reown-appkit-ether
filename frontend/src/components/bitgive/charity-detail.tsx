@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { Card, CardContent } from "@/components/bitgive/ui/card";
-import { Button } from "@/components/bitgive/ui/button";
-import { Progress } from "@/components/bitgive/ui/progress";
-import { Badge } from "@/components/bitgive/ui/badge";
+import { Card, CardContent } from '@/components/bitgive/ui/card';
+import { Button } from '@/components/bitgive/ui/button';
+import { Progress } from '@/components/bitgive/ui/progress';
+import { Badge } from '@/components/bitgive/ui/badge';
 import {
   Bitcoin,
   ArrowLeft,
@@ -11,16 +11,18 @@ import {
   Target,
   CheckCircle,
   Loader2,
-} from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import DonationForm from "@/components/bitgive/donation-form";
-import useFetchCampaigns, { Campaign } from "@/hooks/bitgive/use-fetch-campaigns";
-import { notFound } from "next/navigation";
-import { useState, useEffect } from "react";
-import { useActiveAccount } from "thirdweb/react";
-import WithdrawForm from "./withdraw-form";
+} from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import DonationForm from '@/components/bitgive/donation-form';
+import useFetchCampaigns, {
+  Campaign,
+} from '@/hooks/bitgive/use-fetch-campaigns';
+import { notFound } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useActiveAccount } from 'thirdweb/react';
+import WithdrawForm from './withdraw-form';
 
 export default function CharityDetail({ charityId }: { charityId: number }) {
   const { fetchCampaignDetails, loading, error } = useFetchCampaigns();
@@ -55,7 +57,7 @@ export default function CharityDetail({ charityId }: { charityId: number }) {
 
   const percentage = Math.min(
     Math.round((charity.raisedAmount / charity.goal) * 100),
-    100
+    100,
   );
 
   // Check if the current user is the owner of the campaign
@@ -95,7 +97,7 @@ export default function CharityDetail({ charityId }: { charityId: number }) {
         <Card className="overflow-hidden border-border/40 bg-card/50 backdrop-blur-sm">
           <div className="relative h-64 w-full md:h-80">
             <Image
-              src={charity.imageURI || "/placeholder.svg"}
+              src={charity.imageURI || '/placeholder.svg'}
               alt={charity.name}
               fill
               className="object-cover"
@@ -202,11 +204,13 @@ export default function CharityDetail({ charityId }: { charityId: number }) {
                 raisedAmount={charity.raisedAmount}
               />
             ) : (
-              <DonationForm campaignId={charityId} verified={charity?.verified} />
+              <DonationForm
+                campaignId={charityId}
+                verified={charity?.verified}
+              />
             )}
           </motion.div>
         )}
-
       </div>
     </div>
   );

@@ -46,7 +46,7 @@ export default function ERC721CollectionFloorPriceChart(props: {
     ['/api/erc721-collection-chart-data', { address, interval }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render data
@@ -64,7 +64,7 @@ export default function ERC721CollectionFloorPriceChart(props: {
 
     // Modifying the y-axis domain for appropriate ranges
     const prices = erc721FloorPriceData.floorPrices.map(
-      (item: { price: number }) => item.price
+      (item: { price: number }) => item.price,
     );
     const min = Math.min(...prices);
     const max = Math.max(...prices);

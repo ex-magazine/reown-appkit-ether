@@ -14,9 +14,13 @@ import GasBlockInfoType from '../utils/types/GasBlockInfoType';
 
 // Gas Block Info Table Custom Component
 export default function GasBlockInfoTable() {
-  const gasMetricsInfo = useSWR('/api/ethereumdashboard/navbar/gas-track', GenericFetcher, {
-    refreshInterval: 100000,
-  });
+  const gasMetricsInfo = useSWR(
+    '/api/ethereumdashboard/navbar/gas-track',
+    GenericFetcher,
+    {
+      refreshInterval: 100000,
+    },
+  );
   const { data, error, isLoading } = gasMetricsInfo;
 
   // Conditionally render the Gas Block Info Table Component

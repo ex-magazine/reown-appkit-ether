@@ -32,13 +32,16 @@ export default function ENSToAddressForm() {
       // FETCH API for ENS data from a given wallet address
       setShowAlert(false);
 
-      const res = await fetch('/api/ethereumdashboard/additional-address-to-ens-information', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ensName: walletDomainRef.current!.value.trim(),
-        }),
-      });
+      const res = await fetch(
+        '/api/ethereumdashboard/additional-address-to-ens-information',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ensName: walletDomainRef.current!.value.trim(),
+          }),
+        },
+      );
 
       // Check condition of FETCH request
       if (res.ok) {

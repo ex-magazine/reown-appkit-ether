@@ -14,7 +14,7 @@ import Footer from '@/components/ether/movieapps/Footer';
 import Hero from '@/components/ether/Hero';
 
 import { MproAbi } from '@/utils/MproAbi';
-import { ethers } from 'ethers';
+
 import Image from 'next/image';
 import { useState } from 'react';
 import { etherUnits } from 'viem';
@@ -34,12 +34,8 @@ import {
   useWalletInfo,
 } from '@reown/appkit/react';
 
-
 import { ConnectButton } from '@/components/ether/ConnectButton';
 import { InfoList } from '@/components/ether/InfoList';
-
-
-
 
 import NoSsr from '@/components/ether/NoSsr';
 
@@ -68,9 +64,6 @@ export default function HomePage() {
   const [amount, setAmount] = useState('');
   const [recipient, setRecipient] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
-
-
 
   const { isMobileOpen, setIsMobileOpen, isInitialized, setInitialized } =
     useMobile();
@@ -114,8 +107,9 @@ export default function HomePage() {
       )}
       {/* Sidebar with mobile state */}
       <div
-        className={`fixed top-0 left-0 h-screen w-64 transition-transform duration-300 ease-in-out z-50 ${isMobileOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
+        className={`fixed top-0 left-0 h-screen w-64 transition-transform duration-300 ease-in-out z-50 ${
+          isMobileOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
       >
         <Sidebar
           mobileOpen={isMobileOpen}
@@ -253,8 +247,10 @@ export default function HomePage() {
                     />
                   </svg>
                 </div>
-                <p>Learn about the common protocols within the Ethereum ecosystem.
-                  Full list of the protocols can be found here.</p>
+                <p>
+                  Learn about the common protocols within the Ethereum
+                  ecosystem. Full list of the protocols can be found here.
+                </p>
               </div>
             </div>
           </div>

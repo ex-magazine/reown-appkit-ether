@@ -10,6 +10,9 @@ export const NavbarLinks: NavbarLinkObject[] = [
       { name: 'Staking/Validators', href: '/staking' },
       { name: 'Token Analytics', href: '/collections' },
       { name: 'Wallet Analytics', href: '/wallet-analytics' },
+      { name: 'EVM Explorer', href: '/evmexplorer' },
+      { name: 'Popular EVM', href: '/evmexplorer/explore' },
+      { name: 'EVM Climate', href: '/evmexplorer/climate' },
     ],
   },
   {

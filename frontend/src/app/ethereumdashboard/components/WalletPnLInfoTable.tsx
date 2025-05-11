@@ -24,7 +24,7 @@ export default function WalletPnLInfoTable(props: { address: string }) {
     ['/api/wallet-pnl-data', { address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render Wallet PnL Info Table Component
@@ -78,7 +78,7 @@ export default function WalletPnLInfoTable(props: { address: string }) {
                   ? '-$'
                   : '+$'}
                 {Math.abs(
-                  Number(walletPnLData?.total_realized_profit_usd)
+                  Number(walletPnLData?.total_realized_profit_usd),
                 ).toFixed(2)}
               </TableCell>
             </TableRow>
@@ -97,7 +97,7 @@ export default function WalletPnLInfoTable(props: { address: string }) {
                   ? ''
                   : '+'}
                 {Number(
-                  walletPnLData?.total_realized_profit_percentage
+                  walletPnLData?.total_realized_profit_percentage,
                 ).toFixed(2) + '%'}
               </TableCell>
             </TableRow>

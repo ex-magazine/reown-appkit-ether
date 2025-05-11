@@ -23,9 +23,13 @@ export default function CryptoPriceTable() {
     data: coins,
     error: coinsError,
     isLoading: loadingCoins,
-  } = useSWR<CoinPricesType[]>('/api/ethereumdashboard/coin-prices', GenericFetcher, {
-    refreshInterval: 100000,
-  });
+  } = useSWR<CoinPricesType[]>(
+    '/api/ethereumdashboard/coin-prices',
+    GenericFetcher,
+    {
+      refreshInterval: 100000,
+    },
+  );
 
   // Conditionally render this component
   if (coinsError) {
@@ -37,7 +41,7 @@ export default function CryptoPriceTable() {
     const filteredCoinsData = coins?.filter(
       (coin) =>
         coin.name.toLowerCase().includes(filter) ||
-        coin.symbol.toLowerCase().includes(filter)
+        coin.symbol.toLowerCase().includes(filter),
     );
 
     // Render component using the information provided

@@ -52,26 +52,32 @@ export default function ERC721HoldingsForm() {
             address: walletAddressRef.current!.value.trim(),
             network,
           }),
-        }
+        },
       );
 
-      const erc721Holdings = await fetch('/api/ethereumdashboard/address-erc721-holdings', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          address: walletAddressRef.current!.value.trim(),
-          network,
-        }),
-      });
+      const erc721Holdings = await fetch(
+        '/api/ethereumdashboard/address-erc721-holdings',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            address: walletAddressRef.current!.value.trim(),
+            network,
+          }),
+        },
+      );
 
-      const erc721Transfers = await fetch('/api/ethereumdashboard/address-erc721-transfers', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          address: walletAddressRef.current!.value.trim(),
-          network,
-        }),
-      });
+      const erc721Transfers = await fetch(
+        '/api/ethereumdashboard/address-erc721-transfers',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            address: walletAddressRef.current!.value.trim(),
+            network,
+          }),
+        },
+      );
 
       // Check the status of ERC721 Holdings Data
       if (erc721Holdings.ok) {

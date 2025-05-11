@@ -1,26 +1,28 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/bitgive/ui/card";
-import { Button } from "@/components/bitgive/ui/button";
-import { Progress } from "@/components/bitgive/ui/progress";
-import { Badge } from "@/components/bitgive/ui/badge";
-import { Bitcoin, Search, Loader2 } from "lucide-react";
-import { Input } from "@/components/bitgive/ui/input";
-import Image from "next/image";
-import Link from "next/link";
-import useFetchCampaigns, { Campaign } from "@/hooks/bitgive/use-fetch-campaigns";
-import { useActiveAccount } from "thirdweb/react";
+} from '@/components/bitgive/ui/card';
+import { Button } from '@/components/bitgive/ui/button';
+import { Progress } from '@/components/bitgive/ui/progress';
+import { Badge } from '@/components/bitgive/ui/badge';
+import { Bitcoin, Search, Loader2 } from 'lucide-react';
+import { Input } from '@/components/bitgive/ui/input';
+import Image from 'next/image';
+import Link from 'next/link';
+import useFetchCampaigns, {
+  Campaign,
+} from '@/hooks/bitgive/use-fetch-campaigns';
+import { useActiveAccount } from 'thirdweb/react';
 
 export default function CharityExplorer() {
   const [charities, setCharities] = useState<Campaign[]>([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [filteredCharities, setFilteredCharities] = useState(charities);
   const { getOwnerCampaigns, loading, error } = useFetchCampaigns();
   const account = useActiveAccount();
@@ -30,8 +32,8 @@ export default function CharityExplorer() {
       const lowerSearch = search.toLowerCase();
       setFilteredCharities(
         charities.filter((charity) =>
-          charity.name.toLowerCase().includes(lowerSearch)
-        )
+          charity.name.toLowerCase().includes(lowerSearch),
+        ),
       );
     }, 400); // Debounce delay in ms
 
@@ -42,7 +44,7 @@ export default function CharityExplorer() {
     async function run() {
       if (!account) return;
       const campaigns = await getOwnerCampaigns(account?.address);
-      
+
       setCharities(campaigns);
       setFilteredCharities(campaigns);
     }
@@ -71,22 +73,26 @@ export default function CharityExplorer() {
 
       {charities.length === 0 && !loading && (
         <div className="flex items-center justify-center w-full h-full">
-          <p className="text-muted-foreground">You haven't created any charities yet</p>
+          <p className="text-muted-foreground">
+            You haven't created any charities yet
+          </p>
         </div>
       )}
 
       {filteredCharities.length === 0 && !loading && search && (
         <div className="flex items-center justify-center w-full h-full">
-          <p className="text-muted-foreground">No charities found matching your search.</p>
+          <p className="text-muted-foreground">
+            No charities found matching your search.
+          </p>
         </div>
       )}
-      
+
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {filteredCharities.map((charity) => (
           <Card key={charity.id} className="overflow-hidden">
             <div className="relative h-40 w-full ">
               <Image
-                src={charity.imageURI || "/placeholder.svg"}
+                src={charity.imageURI || '/placeholder.svg'}
                 alt={charity.name}
                 fill
                 className="object-cover"
@@ -120,7 +126,7 @@ export default function CharityExplorer() {
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span>
-                  Raised:{" "}
+                  Raised:{' '}
                   <span className="font-medium">
                     {charity.raisedAmount} RBTC
                   </span>

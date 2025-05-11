@@ -76,9 +76,9 @@ export class TicketBlockchainService {
   }
 
   private async getSigner(): Promise<Signer> {
-    if (!(this.provider instanceof providers.Web3Provider)) {
+    if (!(this.provider instanceof providers.BrowserProvider)) {
       throw new Error('Provider must be a Web3Provider');
     }
-    return this.provider.getSigner();
+    return await this.provider.getSigner();
   }
 }

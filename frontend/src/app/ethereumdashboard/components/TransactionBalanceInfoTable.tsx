@@ -29,7 +29,7 @@ export default function TransactionBalanceInfoTable(props: {
     ['/api/address-net-worth', { address, network }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render the info table

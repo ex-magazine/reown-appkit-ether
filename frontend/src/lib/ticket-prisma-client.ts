@@ -1,4 +1,3 @@
-
 // import { PrismaClient  } from '../../prisma/generated/ticket';
 
 // import { withAccelerate } from "@prisma/extension-accelerate"
@@ -15,14 +14,13 @@
 // if (process.env.NODE_ENV !== "production")
 //   globalForTicketDBPrismaClient.ticketDBPrismaClient = ticketDBPrismaClient;
 
-
 import { PrismaClient as MongodbClient } from '../../prisma/generated/ticket';
 declare global {
   var mongodbPrisma: MongodbClient;
 }
 let mongodbPrisma: MongodbClient;
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
   mongodbPrisma = new MongodbClient();
 } else {
   if (!global.mongodbPrisma) {

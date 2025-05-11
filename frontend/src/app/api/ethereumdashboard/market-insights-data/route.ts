@@ -31,7 +31,7 @@ export async function GET() {
   if (!scrapeResult.success) {
     return NextResponse.json(
       { error: 'Failed to fetch market insights' },
-      { status: 500 }
+      { status: 500 },
     );
   } else {
     // Generate an object containing valuable market information

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Card,
@@ -6,19 +6,22 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/bitgive/ui/avatar";
-import { Badge } from "@/components/bitgive/ui/badge";
-import { Bitcoin, ExternalLink } from "lucide-react";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { Loader2 } from "lucide-react";
-import { useEffect, useState } from "react";
-import useDonations, { DonationRecord } from "@/hooks/bitgive/use-donations";
-import { formatDate } from "@/lib/bitgive/utils";
-import { useActiveAccount } from "thirdweb/react";
+} from '@/components/ui/card';
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '@/components/bitgive/ui/avatar';
+import { Badge } from '@/components/bitgive/ui/badge';
+import { Bitcoin, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { Loader2 } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import useDonations, { DonationRecord } from '@/hooks/bitgive/use-donations';
+import { formatDate } from '@/lib/bitgive/utils';
+import { useActiveAccount } from 'thirdweb/react';
 import Image from 'next/image';
-
 
 export default function RecentActivity() {
   const [donations, setDonations] = useState<DonationRecord[]>([]);
@@ -47,42 +50,42 @@ export default function RecentActivity() {
   const activities = [
     {
       id: 1,
-      type: "donation",
+      type: 'donation',
       user: {
-        name: "Alex Johnson",
-        avatar: "/placeholder.svg",
-        initials: "AJ",
+        name: 'Alex Johnson',
+        avatar: '/placeholder.svg',
+        initials: 'AJ',
       },
-      charity: "Clean Water Fund",
-      amount: "0.05 RBTC",
-      time: "2 minutes ago",
-      txHash: "0x1a2b3c...",
+      charity: 'Clean Water Fund',
+      amount: '0.05 RBTC',
+      time: '2 minutes ago',
+      txHash: '0x1a2b3c...',
     },
     {
       id: 2,
-      type: "nft",
+      type: 'nft',
       user: {
-        name: "Maria Garcia",
-        avatar: "/placeholder.svg",
-        initials: "MG",
+        name: 'Maria Garcia',
+        avatar: '/placeholder.svg',
+        initials: 'MG',
       },
-      nft: "Silver Donor #124",
-      charity: "Education for All",
-      time: "15 minutes ago",
-      txHash: "0x4d5e6f...",
+      nft: 'Silver Donor #124',
+      charity: 'Education for All',
+      time: '15 minutes ago',
+      txHash: '0x4d5e6f...',
     },
     {
       id: 3,
-      type: "donation",
+      type: 'donation',
       user: {
-        name: "Sam Wilson",
-        avatar: "/placeholder.svg",
-        initials: "SW",
+        name: 'Sam Wilson',
+        avatar: '/placeholder.svg',
+        initials: 'SW',
       },
-      charity: "Disaster Relief",
-      amount: "0.1 RBTC",
-      time: "32 minutes ago",
-      txHash: "0x7g8h9i...",
+      charity: 'Disaster Relief',
+      amount: '0.1 RBTC',
+      time: '32 minutes ago',
+      txHash: '0x7g8h9i...',
     },
   ];
 
@@ -105,7 +108,7 @@ export default function RecentActivity() {
                 <div className="flex items-start gap-3 p-3">
                   <Avatar className="h-8 w-8 border border-border/40">
                     <AvatarImage
-                      src={activity.user.avatar || "/placeholder.svg"}
+                      src={activity.user.avatar || '/placeholder.svg'}
                       alt={activity.user.name}
                     />
                     <AvatarFallback>{activity.user.initials}</AvatarFallback>
@@ -117,22 +120,22 @@ export default function RecentActivity() {
                         variant="outline"
                         className="px-1 text-xs border-border/40"
                       >
-                        {activity.type === "donation"
-                          ? "Donated"
-                          : "Minted NFT"}
+                        {activity.type === 'donation'
+                          ? 'Donated'
+                          : 'Minted NFT'}
                       </Badge>
                     </div>
-                    {activity.type === "donation" ? (
+                    {activity.type === 'donation' ? (
                       <p className="text-sm text-muted-foreground">
-                        Donated{" "}
-                        <span className="font-medium">{activity.amount}</span>{" "}
-                        to{" "}
+                        Donated{' '}
+                        <span className="font-medium">{activity.amount}</span>{' '}
+                        to{' '}
                         <span className="font-medium">{activity.charity}</span>
                       </p>
                     ) : (
                       <p className="text-sm text-muted-foreground">
-                        Received{" "}
-                        <span className="font-medium">{activity.nft}</span> from{" "}
+                        Received{' '}
+                        <span className="font-medium">{activity.nft}</span> from{' '}
                         <span className="font-medium">{activity.charity}</span>
                       </p>
                     )}

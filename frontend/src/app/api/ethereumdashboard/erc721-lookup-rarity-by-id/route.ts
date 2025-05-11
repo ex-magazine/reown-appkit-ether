@@ -31,7 +31,7 @@ export async function POST(request: Request) {
         address +
         '&tokenId=' +
         id,
-      options
+      options,
     );
 
     // Conditionally return data based on request status

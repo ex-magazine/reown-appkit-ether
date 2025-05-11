@@ -58,7 +58,7 @@ export function BlockchainProvider({
 
       // Initialize contract
       if (typeof window !== 'undefined' && window.ethereum) {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const provider = new ethers.BrowserProvider(window.ethereum);
         const contractInstance = new ethers.Contract(
           process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!,
           TicketTrackerABI.abi,

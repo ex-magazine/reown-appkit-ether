@@ -1,5 +1,5 @@
-import DashboardLayout from "@/components/bitgive/dashboard-layout"
-import NftGallery from "@/components/bitgive/nft-gallery"
+import DashboardLayout from '@/components/bitgive/dashboard-layout';
+import NftGallery from '@/components/bitgive/nft-gallery';
 
 export default function MyNftsPage() {
   return (
@@ -10,5 +10,5 @@ export default function MyNftsPage() {
         <NftGallery />
       </div>
     </DashboardLayout>
-  )
+  );
 }

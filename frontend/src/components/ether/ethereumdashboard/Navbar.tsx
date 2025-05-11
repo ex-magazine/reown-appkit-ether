@@ -21,22 +21,19 @@ export default function Navbar() {
       <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-xl font-semibold"
-          >
-            
-                      <Image
-                        src="/reown-logo.png"
-                        alt="Reown"
-                        width={160}
-                        height={70}
-                        priority
-                      />
-                   
-           
-          </Link>
-           </div>
+            <Link
+              href="/"
+              className="flex items-center gap-2 text-xl font-semibold"
+            >
+              <Image
+                src="/reown-logo.png"
+                alt="Reown"
+                width={160}
+                height={70}
+                priority
+              />
+            </Link>
+          </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-center">
               {NavbarLinks.map((item, index) => (

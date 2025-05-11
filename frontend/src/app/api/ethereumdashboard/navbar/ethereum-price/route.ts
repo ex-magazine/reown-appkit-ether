@@ -19,7 +19,7 @@ async function fetchEthereumPrice() {
 
   const response = await fetch(
     PRO_COINGECKO_URL + API_ENDPOINT + QUERY_STRING_ETHEREUM,
-    options
+    options,
   );
 
   // Fetch data using the Ethereum data endpoints
@@ -36,7 +36,7 @@ export async function GET() {
   } catch {
     return NextResponse.json(
       { error: 'Failed to fetch Ethereum price' },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

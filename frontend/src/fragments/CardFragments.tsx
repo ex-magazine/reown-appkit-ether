@@ -4,7 +4,7 @@ import { DropdownGenre } from '@/components/ether/movieapps/DropdownGenre';
 import MovieCardSkeleton from '@/components/ether/movieapps/MovieCardSkeleton';
 // import MovieCard from "@/components/movieCard";
 import { Button } from '@/components/ui/button';
-import { getNowPlaying, getPopularMovie } from '@/service/fetchMovie';
+import { getNowPlaying, getPopularMovie } from '@/services/fetchMovie';
 import { Movie } from '@/types/movie.';
 import { useQuery } from '@tanstack/react-query';
 import dynamic from 'next/dynamic';

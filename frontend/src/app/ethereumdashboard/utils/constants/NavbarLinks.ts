@@ -33,7 +33,10 @@ export const NavbarLinks: NavbarLinkObject[] = [
     name: 'Prices',
     dropdown: [
       { name: 'Coin Prices', href: '/ethereumdashboard/prices' },
-      { name: 'ERC20 Token Prices', href: '/ethereumdashboard/erc20-token-prices' },
+      {
+        name: 'ERC20 Token Prices',
+        href: '/ethereumdashboard/erc20-token-prices',
+      },
     ],
   },
   {
@@ -47,7 +50,10 @@ export const NavbarLinks: NavbarLinkObject[] = [
     name: 'Token Lookups',
     dropdown: [
       { name: 'ENS', href: '/ens-lookup' },
-      { name: 'ERC721 Token Lookups', href: '/ethereumdashboard/erc721-lookups' },
+      {
+        name: 'ERC721 Token Lookups',
+        href: '/ethereumdashboard/erc721-lookups',
+      },
     ],
   },
 ];

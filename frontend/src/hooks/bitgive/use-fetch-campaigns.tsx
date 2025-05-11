@@ -1,13 +1,9 @@
-import { useState } from "react";
-import {
-  getContract,
-  readContract,
-  resolveMethod,
-} from "thirdweb";
-import { contracts } from "@/lib/bitgive/contract";
-import { client, rootstockTestnet } from "@/lib/bitgive/config";
-import { publicClient } from "@/lib/bitgive/client";
-import { Abi, formatUnits } from "viem";
+import { useState } from 'react';
+import { getContract, readContract, resolveMethod } from 'thirdweb';
+import { contracts } from '@/lib/bitgive/contract';
+import { client, rootstockTestnet } from '@/lib/bitgive/config';
+import { publicClient } from '@/lib/bitgive/client';
+import { Abi, formatUnits } from 'viem';
 
 export interface Campaign {
   id: number;
@@ -49,37 +45,39 @@ const useFetchCampaigns = () => {
       setError(null);
       const campaignsIds = await readContract({
         contract,
-        method: resolveMethod("getFeaturedCampaigns"),
+        method: resolveMethod('getFeaturedCampaigns'),
         params: [],
       });
 
       const featuredCampaigns = await getCampaignsDetails(
-        campaignsIds as number[]
+        campaignsIds as number[],
       );
 
       return featuredCampaigns;
     } catch (err: any) {
-      setError(err.message || "Failed to fetch featured campaigns");
+      setError(err.message || 'Failed to fetch featured campaigns');
     } finally {
       setLoading(false);
     }
   };
 
-  const fetchCampaignDetails = async (campaignId: number): Promise<Campaign | undefined> => {
+  const fetchCampaignDetails = async (
+    campaignId: number,
+  ): Promise<Campaign | undefined> => {
     try {
       setLoading(true);
       setError(null);
-      const campaignDetails = await readContract({
+      const campaignDetails = (await readContract({
         contract,
-        method: resolveMethod("getCampaignInfo"),
+        method: resolveMethod('getCampaignInfo'),
         params: [campaignId],
-      }) as any;
+      })) as any;
 
-      const donations = await readContract({
+      const donations = (await readContract({
         contract: donationManagerContract,
-        method: resolveMethod("getDonationsByCampaign"),
+        method: resolveMethod('getDonationsByCampaign'),
         params: [campaignId],
-      }) as BigInt[]
+      })) as BigInt[];
 
       return {
         ...campaignDetails,
@@ -87,10 +85,10 @@ const useFetchCampaigns = () => {
         id: Number(campaignDetails.id),
         goal: Number(formatUnits(campaignDetails.goal, 18)),
         raisedAmount: Number(formatUnits(campaignDetails.raisedAmount, 18)),
-        donations: donations.length
+        donations: donations.length,
       };
     } catch (err: any) {
-      setError(err.message || "Failed to fetch campaign details");
+      setError(err.message || 'Failed to fetch campaign details');
     } finally {
       setLoading(false);
     }
@@ -102,21 +100,21 @@ const useFetchCampaigns = () => {
       setError(null);
       const campaignsIds = await readContract({
         contract,
-        method: resolveMethod("getCampaignsByOwner"),
+        method: resolveMethod('getCampaignsByOwner'),
         params: [owner],
       });
 
       const ownerCampaigns = await getCampaignsDetails(
-        campaignsIds as number[]
+        campaignsIds as number[],
       );
 
       return ownerCampaigns;
     } catch (err: any) {
-      setError(err.message || "Failed to fetch owner campaign");
+      setError(err.message || 'Failed to fetch owner campaign');
     } finally {
       setLoading(false);
     }
-    return []
+    return [];
   };
 
   const getAllCampaigns = async (): Promise<Campaign[]> => {
@@ -126,21 +124,21 @@ const useFetchCampaigns = () => {
 
       const allCampaignsIds = await readContract({
         contract,
-        method: resolveMethod("getAllCampaigns"),
+        method: resolveMethod('getAllCampaigns'),
         params: [],
       });
 
       // console.log("All campaigns ids:: ", allCampaignsIds);
 
       const allCampaigns = await getCampaignsDetails(
-        allCampaignsIds as number[]
+        allCampaignsIds as number[],
       );
 
       // console.log("All campaigns:: ", allCampaigns);
 
       return allCampaigns;
     } catch (err: any) {
-      setError(err.message || "Failed to fetch all campaigns");
+      setError(err.message || 'Failed to fetch all campaigns');
     } finally {
       setLoading(false);
     }
@@ -152,7 +150,7 @@ const useFetchCampaigns = () => {
     const rawTxs = ids.map((id) => ({
       address: contracts.campaignManager.address,
       abi: contracts.campaignManager.abi as Abi,
-      functionName: "getCampaignInfo",
+      functionName: 'getCampaignInfo',
       args: [id],
     }));
 
@@ -161,7 +159,7 @@ const useFetchCampaigns = () => {
     });
 
     return results
-      .filter(({ status }) => status === "success")
+      .filter(({ status }) => status === 'success')
       .map(({ result }: { result?: any; status: string; error?: Error }) => ({
         ...result,
         createdAt: Number(result.createdAt),

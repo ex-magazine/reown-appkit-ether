@@ -20,7 +20,7 @@ declare global {
 }
 let pgsqlPrisma: pgsqlClient;
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
   pgsqlPrisma = new pgsqlClient();
 } else {
   if (!global.pgsqlPrisma) {

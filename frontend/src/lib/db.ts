@@ -12,8 +12,6 @@ export const db = globalThis.prismaGlobal ?? prismaClientSingleton();
 
 if (process.env.NODE_ENV !== 'production') globalThis.prismaGlobal = db;
 
-
-
 // import { PrismaClient as PrismaClientMedia } from '../../prisma/generated/media';
 // import { PrismaClient as PrismaClientTicket } from '../../prisma/generated/ticket';
 
@@ -53,9 +51,5 @@ if (process.env.NODE_ENV !== 'production') globalThis.prismaGlobal = db;
 
 // // Export the combined client and individual clients for direct access
 
-
-
 // // Save the instance in development to prevent multiple instances in hot reloading
 // if (process.env.NODE_ENV !== "production") globalThis.prismaGlobal = prisma;
-
-

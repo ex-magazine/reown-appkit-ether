@@ -16,7 +16,9 @@ import ValidatorQueueType from '../utils/types/ValidatorQueueType';
 export default function ValidatorQueueInfoTable() {
   const validatorQueueData = useSWR<{
     information: { data: ValidatorQueueType };
-  }>('/api/ethereumdashboard/validator-queue-data', GenericFetcher, { refreshInterval: 50000 });
+  }>('/api/ethereumdashboard/validator-queue-data', GenericFetcher, {
+    refreshInterval: 50000,
+  });
   const { data: validatorData, error, isLoading } = validatorQueueData;
 
   // Conditionally render the Validator Queue Info Table Component

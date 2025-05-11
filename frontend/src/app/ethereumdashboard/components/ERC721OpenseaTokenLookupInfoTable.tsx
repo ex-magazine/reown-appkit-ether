@@ -30,7 +30,7 @@ export default function ERC721OpenseaTokenLookupInfoTable(props: {
     ],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render the Info Table

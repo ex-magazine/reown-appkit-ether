@@ -56,17 +56,18 @@ const Footer = () => {
         '/moviestmdb/watchlist',
         '/main/messages',
       ].includes(pathname) ||
-        match === 'moviesprix' ||
-        match === 'main' ||
-        match === 'moviestmdb' ? (
+      match === 'moviesprix' ||
+      match === 'main' ||
+      match === 'moviestmdb' ? (
         ''
       ) : (
         <footer
-          className={`relative overflow-hidden bg-slate-900 tracking-tight text-gray-100 antialiased ${['/login', '/register', '/dashboard'].includes(pathname) ||
+          className={`relative overflow-hidden bg-slate-900 tracking-tight text-gray-100 antialiased ${
+            ['/login', '/register', '/dashboard'].includes(pathname) ||
             pathname.startsWith('/dashboard/')
-            ? 'hidden'
-            : 'block'
-            }`}
+              ? 'hidden'
+              : 'block'
+          }`}
         >
           {/* Animated background elements */}
           <div className="absolute inset-0 opacity-10">

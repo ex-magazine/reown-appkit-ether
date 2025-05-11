@@ -23,7 +23,7 @@ export default function TopLosingCoinsTable() {
   } = useSWR<{ top_losers: TopLosingCoinsType[] }>(
     '/api/top-bottom-coin-prices',
     GenericFetcher,
-    { refreshInterval: 50000 }
+    { refreshInterval: 50000 },
   );
 
   // Conditionally render this component

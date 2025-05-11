@@ -7,7 +7,7 @@ interface ProviderRpcError extends Error {
 }
 
 export class BlockchainService {
-  private provider: ethers.providers.Web3Provider;
+  private provider: ethers.BrowserProvider;
   private contract: ethers.Contract;
 
   constructor() {
@@ -21,7 +21,7 @@ export class BlockchainService {
       );
     }
 
-    this.provider = new ethers.providers.Web3Provider(window.ethereum);
+    this.provider = new ethers.BrowserProvider(window.ethereum);
     this.contract = new ethers.Contract(
       process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!,
       TicketTrackerABI.abi,
@@ -48,11 +48,12 @@ export class BlockchainService {
 
   async createTicket(ticketId: string): Promise<string> {
     try {
-      const signer = this.provider.getSigner();
+      const signer = await this.provider.getSigner();
       const contractWithSigner = this.contract.connect(signer);
       const tx = await contractWithSigner.createTicket(ticketId);
       const receipt = await tx.wait();
-      return receipt.transactionHash;
+      // return receipt.transactionHash;
+      return receipt.hash;
     } catch (error) {
       console.error('Failed to create ticket on blockchain:', error);
       throw error;
@@ -65,7 +66,8 @@ export class BlockchainService {
       const contractWithSigner = this.contract.connect(signer);
       const tx = await contractWithSigner.updateTicketStatus(ticketId, status);
       const receipt = await tx.wait();
-      return receipt.transactionHash;
+      // return receipt.transactionHash;
+      return receipt.hash;
     } catch (error) {
       console.error('Failed to update ticket status on blockchain:', error);
       throw error;

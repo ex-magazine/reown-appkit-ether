@@ -22,7 +22,7 @@ export default function ERC721CollectionDataInfoTable(props: {
     ['/api/erc721-collection-data', { address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render component

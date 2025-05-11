@@ -24,14 +24,14 @@ export async function POST(request: Request) {
       'https://deep-index.moralis.io/api/v2.2/wallets/' +
         body.address +
         '/net-worth?chains%5B0%5D=eth&exclude_spam=true&exclude_unverified_contracts=true',
-      options
+      options,
     );
 
     // Fetch data using the Ethereum data endpoints
     if (!response.ok)
       return NextResponse.json(
         { error: 'Failed to fetch Ethereum price' },
-        { status: 500 }
+        { status: 500 },
       );
     else {
       const data = await response.json();

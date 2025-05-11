@@ -24,14 +24,14 @@ export async function POST(request: Request) {
       '/nft/transfers?chain=' +
       body.network +
       '&format=decimal&direction=both',
-    options
+    options,
   ); // Pass in address and chain values
 
   // Fetch data using the Ethereum data endpoints
   if (!response.ok)
     return NextResponse.json(
       { error: 'Failed to fetch Ethereum price' },
-      { status: 500 }
+      { status: 500 },
     );
   else {
     const data = await response.json();

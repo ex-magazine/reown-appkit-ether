@@ -26,7 +26,7 @@ export default function ERC20collectionOwnersInfoTable(props: {
     ['/api/erc20-transfer', { contract: address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render the info table

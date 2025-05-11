@@ -19,9 +19,13 @@ export default function TopERC20CoinsInfoTable() {
     data: coins,
     error: coinsError,
     isLoading: loadingCoins,
-  } = useSWR<TopERC20CoinsType[]>('/api/ethereumdashboard/top-erc20-tokens', GenericFetcher, {
-    refreshInterval: 50000,
-  });
+  } = useSWR<TopERC20CoinsType[]>(
+    '/api/ethereumdashboard/top-erc20-tokens',
+    GenericFetcher,
+    {
+      refreshInterval: 50000,
+    },
+  );
 
   // Conditionally render this component
   if (coinsError) {

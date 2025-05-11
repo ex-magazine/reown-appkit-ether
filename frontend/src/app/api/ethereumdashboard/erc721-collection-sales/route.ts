@@ -22,7 +22,7 @@ export async function POST(request: Request) {
   // Run backend request
   const response = await fetch(
     MORALIS_URL + 'nft/' + body.address + TRADES_ENDPOINT,
-    options
+    options,
   );
 
   // Conditionally return data based on fetch request
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
       {
         message: 'Could not fetch ERC721 collection sales data',
       },
-      { status: 400 }
+      { status: 400 },
     );
   } else {
     const information = await response.json();

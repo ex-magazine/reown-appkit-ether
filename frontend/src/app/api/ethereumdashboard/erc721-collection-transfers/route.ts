@@ -21,7 +21,7 @@ export async function POST(request: Request) {
   // Run backend request
   const response = await fetch(
     MORALIS_URL + 'nft/' + body.address + TRANSFERS_ENDPOINT,
-    options
+    options,
   );
 
   // Conditionally render data based on request result
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
       {
         message: 'Could not retrieve ERC721 collection transfers data',
       },
-      { status: 400 }
+      { status: 400 },
     );
   }
 }

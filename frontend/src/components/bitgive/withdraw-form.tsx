@@ -1,23 +1,28 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/bitgive/ui/card";
-import { Button } from "@/components/bitgive/ui/button";
-import { Input } from "@/components/bitgive/ui/input";
-import { Label } from "@/components/bitgive/ui/label";
-import { Wallet, ArrowDownToLine, Loader2 } from "lucide-react";
-import { parseEther } from "viem";
-import { toast } from "sonner";
+import { useState } from 'react';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/bitgive/ui/card';
+import { Button } from '@/components/bitgive/ui/button';
+import { Input } from '@/components/bitgive/ui/input';
+import { Label } from '@/components/bitgive/ui/label';
+import { Wallet, ArrowDownToLine, Loader2 } from 'lucide-react';
+import { parseEther } from 'viem';
+import { toast } from 'sonner';
 import {
   getContract,
   prepareContractCall,
   sendAndConfirmTransaction,
   readContract,
   resolveMethod,
-} from "thirdweb";
-import { contracts } from "@/lib/bitgive/contract";
-import { client, rootstockTestnet } from "@/lib/bitgive/config";
-import { useActiveAccount } from "thirdweb/react";
+} from 'thirdweb';
+import { contracts } from '@/lib/bitgive/contract';
+import { client, rootstockTestnet } from '@/lib/bitgive/config';
+import { useActiveAccount } from 'thirdweb/react';
 
 interface WithdrawFormProps {
   campaignId: number;
@@ -43,7 +48,7 @@ export default function WithdrawForm({
     const tx = prepareContractCall({
       contract,
       // @ts-ignore
-      method: resolveMethod("withdrawFunds"),
+      method: resolveMethod('withdrawFunds'),
       params: [campaignId, amount],
     });
 
@@ -56,13 +61,13 @@ export default function WithdrawForm({
   const checkCanWithdraw = async (campaignId: number): Promise<boolean> => {
     const goalReached = (await readContract({
       contract,
-      method: resolveMethod("goalReached"),
+      method: resolveMethod('goalReached'),
       params: [campaignId],
     })) as unknown as boolean;
 
     const hasEnded = (await readContract({
       contract,
-      method: resolveMethod("hasEnded"),
+      method: resolveMethod('hasEnded'),
       params: [campaignId],
     })) as unknown as boolean;
 
@@ -73,10 +78,11 @@ export default function WithdrawForm({
     const canWithdraw = await checkCanWithdraw(campaignId);
 
     if (!canWithdraw) {
-        toast.error("You Cannot withdraw at this time", {
-          description: "You cannot withdraw at this time as the goal has not been reached or the campaign has not ended.",
-        });
-        return;
+      toast.error('You Cannot withdraw at this time', {
+        description:
+          'You cannot withdraw at this time as the goal has not been reached or the campaign has not ended.',
+      });
+      return;
     }
 
     try {
@@ -88,13 +94,13 @@ export default function WithdrawForm({
       // Call the withdraw function
       await withdrawFunds(campaignId, amountInWei);
 
-      toast.success("Funds withdrawn successfully", {
+      toast.success('Funds withdrawn successfully', {
         description: `${raisedAmount} RBTC has been withdrawn to your wallet`,
       });
     } catch (error: any) {
-      console.error("Withdrawal error:", error);
-      toast.error(error?.message || "Withdrawal failed", {
-        description: "There was an error withdrawing funds. Please try again.",
+      console.error('Withdrawal error:', error);
+      toast.error(error?.message || 'Withdrawal failed', {
+        description: 'There was an error withdrawing funds. Please try again.',
       });
     } finally {
       setIsWithdrawing(false);
@@ -115,16 +121,14 @@ export default function WithdrawForm({
             </div>
             <div className="mt-2 text-2xl font-bold">{raisedAmount} RBTC</div>
             <p className="text-xs text-muted-foreground">
-              This is the total amount raised for this campaign.  
+              This is the total amount raised for this campaign.
             </p>
           </div>
 
           <Button
             className="w-full bg-gradient-to-r from-[#F7931A] to-[#F5A623] text-white hover:from-[#F7931A]/90 hover:to-[#F5A623]/90 shadow-glow-sm"
             onClick={handleWithdraw}
-            disabled={
-              isWithdrawing
-            }
+            disabled={isWithdrawing}
           >
             {isWithdrawing ? (
               <>

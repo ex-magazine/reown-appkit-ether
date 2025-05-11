@@ -31,18 +31,18 @@ export async function POST(request: Request) {
       '&tag=' +
       tag +
       '&apikey=' +
-      API_KEY
+      API_KEY,
   );
   const ethPriceResponse = await fetch(
     'https://pro-api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd',
-    options
+    options,
   );
 
   // Fetch data and conditionally return data based on request response
   if (!ethBalanceResponse.ok || !ethPriceResponse.ok) {
     return NextResponse.json(
       { error: 'Failed to fetch Ethereum price' },
-      { status: 500 }
+      { status: 500 },
     );
   } else {
     const ethBalanceData = await ethBalanceResponse.json();

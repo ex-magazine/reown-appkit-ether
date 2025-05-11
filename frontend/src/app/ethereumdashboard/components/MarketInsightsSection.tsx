@@ -14,7 +14,9 @@ export default function MarketInsightsSection() {
   useEffect(() => {
     async function fetchMarketInsights() {
       try {
-        const response = await fetch('/api/ethereumdashboard/market-insights-data');
+        const response = await fetch(
+          '/api/ethereumdashboard/market-insights-data',
+        );
 
         // Return error, if request call is not successful
         if (!response.ok) {

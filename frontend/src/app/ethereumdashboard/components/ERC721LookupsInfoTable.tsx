@@ -27,7 +27,7 @@ export default function ERC721LookupsInfoTable(props: {
     ['/api/erc721-lookup-by-id', { address, network, id: tokenID }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render ERC721 Lookups Info Table component

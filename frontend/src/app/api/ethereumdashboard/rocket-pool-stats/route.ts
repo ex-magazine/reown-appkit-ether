@@ -16,7 +16,7 @@ export async function GET() {
   // Fetch data based on options parameters
   const response = await fetch(
     BEACON_CHAIN_URL + '?apikey=' + process.env.BEACON_CHAIN_API_KEY,
-    options
+    options,
   ); // Fetch data related to the global market
 
   // Return response based on data fetch
@@ -25,7 +25,7 @@ export async function GET() {
       {
         message: 'Could not fetch global market data',
       },
-      { status: 400 }
+      { status: 400 },
     );
   } else {
     // Send back as response, rocket pool statistics

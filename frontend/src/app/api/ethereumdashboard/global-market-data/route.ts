@@ -19,7 +19,7 @@ export async function GET() {
   // Fetch data based on options parameters
   const response = await fetch(
     PRO_COINGECKO_URL + GLOBALMARKETDATA_ENDPOINT,
-    options
+    options,
   ); // Fetch data related to the global market
 
   // Return response based on data fetch
@@ -28,7 +28,7 @@ export async function GET() {
       {
         message: 'Could not fetch global market data',
       },
-      { status: 400 }
+      { status: 400 },
     );
   } else {
     // Send back as response, global market data

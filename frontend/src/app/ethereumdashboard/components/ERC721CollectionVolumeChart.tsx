@@ -46,7 +46,7 @@ export default function ERC721CollectionVolumeChart(props: {
     ['/api/erc721-collection-chart-data', { address, interval }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render data
@@ -66,7 +66,7 @@ export default function ERC721CollectionVolumeChart(props: {
 
     // Modifying the y-axis domain for appropriate ranges
     const prices = erc721CollectionVolumeData.volumes.map(
-      (item: { price: string }) => item.price
+      (item: { price: string }) => item.price,
     );
     const min = Math.min(...prices);
     const max = Math.max(...prices);

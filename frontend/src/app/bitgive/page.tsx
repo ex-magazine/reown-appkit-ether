@@ -1,8 +1,8 @@
-import DashboardLayout from "@/components/bitgive/dashboard-layout"
-import DonationSummary from "@/components/bitgive/donation-summary"
-import CharityList from "@/components/bitgive/charity-list"
-import RecentActivity from "@/components/bitgive/recent-activity"
-import RecentDonations from "@/components/bitgive/recent-donations"
+import DashboardLayout from '@/components/bitgive/dashboard-layout';
+import DonationSummary from '@/components/bitgive/donation-summary';
+import CharityList from '@/components/bitgive/charity-list';
+import RecentActivity from '@/components/bitgive/recent-activity';
+import RecentDonations from '@/components/bitgive/recent-donations';
 
 export default function Dashboard() {
   return (
@@ -23,5 +23,5 @@ export default function Dashboard() {
         </div>
       </div>
     </DashboardLayout>
-  )
+  );
 }

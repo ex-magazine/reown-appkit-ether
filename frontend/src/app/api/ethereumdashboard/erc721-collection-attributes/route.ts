@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     'https://eth-mainnet.g.alchemy.com/nft/v3/' +
       process.env.ALCHEMY_API_KEY_1 +
       '/summarizeNFTAttributes?contractAddress=' +
-      body.address
+      body.address,
   );
 
   // Conditionally return data
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
   } else {
     return NextResponse.json(
       { message: 'Could not fetch collection floor prices by marketplace' },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

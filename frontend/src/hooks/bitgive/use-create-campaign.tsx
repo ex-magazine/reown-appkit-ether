@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   getContract,
   prepareContractCall,
   resolveMethod,
   sendAndConfirmTransaction,
-} from "thirdweb";
-import { useActiveAccount } from "thirdweb/react";
-import { uploadImageToIPFS } from "@/lib/bitgive/utils";
-import { contracts } from "@/lib/bitgive/contract";
-import { client, rootstockTestnet } from "@/lib/bitgive/config";
+} from 'thirdweb';
+import { useActiveAccount } from 'thirdweb/react';
+import { uploadImageToIPFS } from '@/lib/bitgive/utils';
+import { contracts } from '@/lib/bitgive/contract';
+import { client, rootstockTestnet } from '@/lib/bitgive/config';
 
 const useCreateCampaign = () => {
   const account = useActiveAccount();
@@ -30,7 +30,7 @@ const useCreateCampaign = () => {
 
     try {
       if (!address) {
-        throw new Error("No active account found.");
+        throw new Error('No active account found.');
       }
       if (
         !campaignData.name ||
@@ -45,11 +45,11 @@ const useCreateCampaign = () => {
       // Upload the image to IPFS
       const imageUrl = await uploadImageToIPFS(
         campaignData.image,
-        campaignData.name
+        campaignData.name,
       );
 
       if (!imageUrl) {
-        throw new Error("Failed to upload image to IPFS.");
+        throw new Error('Failed to upload image to IPFS.');
       }
 
       // Get the contract instance
@@ -62,7 +62,7 @@ const useCreateCampaign = () => {
       const tx = prepareContractCall({
         contract,
         // @ts-ignore
-        method: resolveMethod("createCampaign"),
+        method: resolveMethod('createCampaign'),
         params: [
           campaignData.name,
           campaignData.description,
@@ -81,7 +81,7 @@ const useCreateCampaign = () => {
 
       setIsLoading(false);
     } catch (err: any) {
-      setError(err.message || "An error occurred while creating the campaign.");
+      setError(err.message || 'An error occurred while creating the campaign.');
       setIsLoading(false);
       throw err;
     }

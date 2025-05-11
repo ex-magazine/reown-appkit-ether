@@ -24,7 +24,7 @@ export default function ENSOwnershipInfoTable(props: { data: string }) {
     ['/api/ens-ownership-information', { address: data }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render ENS Ownership data

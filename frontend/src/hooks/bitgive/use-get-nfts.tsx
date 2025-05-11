@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { getContract, readContract, resolveMethod } from "thirdweb";
-import { useActiveAccount } from "thirdweb/react";
-import { contracts } from "@/lib/bitgive/contract";
-import { client, rootstockTestnet } from "@/lib/bitgive/config";
-import useFetchCampaigns from "./use-fetch-campaigns";
-import { publicClient } from "@/lib/bitgive/client";
-import { Abi } from "viem";
+import { useState } from 'react';
+import { getContract, readContract, resolveMethod } from 'thirdweb';
+import { useActiveAccount } from 'thirdweb/react';
+import { contracts } from '@/lib/bitgive/contract';
+import { client, rootstockTestnet } from '@/lib/bitgive/config';
+import useFetchCampaigns from './use-fetch-campaigns';
+import { publicClient } from '@/lib/bitgive/client';
+import { Abi } from 'viem';
 
 export interface NFTMetadata {
   id: number;
@@ -34,21 +34,21 @@ const useGetNfts = () => {
       setIsLoading(true);
       const tokenIds = (await readContract({
         contract,
-        method: resolveMethod("getTokensByOwner"),
+        method: resolveMethod('getTokensByOwner'),
         params: [address],
       })) as any;
 
       const rawMetadataTxs = tokenIds.map((id: any) => ({
         address: contracts.nftReward.address,
         abi: contracts.nftReward.abi as Abi,
-        functionName: "getNFTMetadata",
+        functionName: 'getNFTMetadata',
         args: [id],
       }));
 
       const rawTokenUriTxs = tokenIds.map((id: any) => ({
         address: contracts.nftReward.address,
         abi: contracts.nftReward.abi as Abi,
-        functionName: "tokenURI",
+        functionName: 'tokenURI',
         args: [id],
       }));
 
@@ -63,14 +63,14 @@ const useGetNfts = () => {
       const tokenUriResults = results.slice(midIndex);
 
       const tokenUris = tokenUriResults.map(
-        ({ result }: { result?: any; status: string; error?: Error }) => result
+        ({ result }: { result?: any; status: string; error?: Error }) => result,
       );
 
       const tokenDetails = await Promise.all(
         tokenUris.map(async (uri) => {
           const response = await fetch(uri);
           return response.json();
-        })
+        }),
       );
 
       // console.log("tokenDetails::", tokenDetails);
@@ -78,7 +78,7 @@ const useGetNfts = () => {
       return nftMetadataResults.map(
         (
           { result }: { result?: any; status: string; error?: Error },
-          idx: number
+          idx: number,
         ) => ({
           id: Number(result.tokenId),
           title: tokenDetails[idx].name,
@@ -86,11 +86,11 @@ const useGetNfts = () => {
           date: Number(result.mintedAt) * 1000, //converting time to milliseconds
           tier: result.tier,
           charity: result.campaignName,
-        })
+        }),
       );
     } catch (error: any) {
       setError(
-        error.message || "An error occured while fetching Donor Donations"
+        error.message || 'An error occured while fetching Donor Donations',
       );
     } finally {
       setIsLoading(false);

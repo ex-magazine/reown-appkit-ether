@@ -21,14 +21,14 @@ export async function GET() {
   // Make an API call to fetch all the coins supported by CoinGecko
   const response = await fetch(
     PRO_COINGECKO_URL + COIN_PRICES_ENDPOINT,
-    options
+    options,
   );
 
   // Fetch data using the Ethereum data endpoints
   if (!response.ok)
     return NextResponse.json(
       { error: 'Failed to fetch Ethereum price' },
-      { status: 500 }
+      { status: 500 },
     );
   else {
     const data = await response.json();

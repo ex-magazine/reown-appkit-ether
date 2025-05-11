@@ -1,6 +1,5 @@
 'use client';
 
-
 import { createAppKit } from '@reown/appkit/react';
 import {
   mainnet,
@@ -48,7 +47,7 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/179229932'],
 };
 
-const networks = [mainnet, arbitrum]
+const networks = [mainnet, arbitrum];
 
 export const wagmiAdapter = new WagmiAdapter({
   storage: createStorage({
@@ -56,7 +55,7 @@ export const wagmiAdapter = new WagmiAdapter({
   }),
   ssr: true,
   networks,
-  projectId
+  projectId,
   /*
   transports: {
     [mainnet.id]: http(),

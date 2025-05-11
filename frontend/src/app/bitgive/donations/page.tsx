@@ -1,5 +1,5 @@
-import DashboardLayout from "@/components/bitgive/dashboard-layout"
-import DonationHistory from "@/components/bitgive/donation-history"
+import DashboardLayout from '@/components/bitgive/dashboard-layout';
+import DonationHistory from '@/components/bitgive/donation-history';
 
 export default function DonationsPage() {
   return (
@@ -10,5 +10,5 @@ export default function DonationsPage() {
         <DonationHistory />
       </div>
     </DashboardLayout>
-  )
+  );
 }

@@ -24,7 +24,7 @@ export default function WalletStatsInfoTable(props: { address: string }) {
     ['/api/wallet-stats-data', { address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   if (loadingWalletStats) {

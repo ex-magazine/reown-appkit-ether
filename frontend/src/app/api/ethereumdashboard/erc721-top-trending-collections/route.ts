@@ -14,7 +14,7 @@ export async function GET() {
   // Fetch data using the FETCH api
   const response = await fetch(
     'https://deep-index.moralis.io/api/v2.2/market-data/nfts/top-collections',
-    options
+    options,
   );
 
   // Conditionally return data based on data fetch

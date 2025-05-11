@@ -27,7 +27,7 @@ export default function WalletPnLBreakdownInfoTable(props: {
     ['/api/wallet-pnl-breakdown-data', { address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render Wallet PnL Breakdown Info Table Component

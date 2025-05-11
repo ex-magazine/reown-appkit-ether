@@ -30,7 +30,7 @@ export async function POST(request: Request) {
       {
         message: 'Could not retrieve ERC721 collection data',
       },
-      { status: 400 }
+      { status: 400 },
     );
   }
 }

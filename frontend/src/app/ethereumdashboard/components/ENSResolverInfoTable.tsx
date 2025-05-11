@@ -24,7 +24,7 @@ export default function ENSResolverInfoTable(props: { data: string }) {
     ['/api/ens-resolver-information', { address: data }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render ENS Resolver data

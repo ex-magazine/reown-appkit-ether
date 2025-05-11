@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Card,
@@ -6,16 +6,16 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/bitgive/ui/card";
-import { Badge } from "@/components/bitgive/ui/badge";
-import { Button } from "@/components/bitgive/ui/button";
-import { Loader2, Share2 } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import useGetNfts, { NFTMetadata } from "@/hooks/bitgive/use-get-nfts";
-import { formatDate } from "@/lib/bitgive/utils";
-import { useActiveAccount } from "thirdweb/react";
-import { toast } from "sonner";
+} from '@/components/bitgive/ui/card';
+import { Badge } from '@/components/bitgive/ui/badge';
+import { Button } from '@/components/bitgive/ui/button';
+import { Loader2, Share2 } from 'lucide-react';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import useGetNfts, { NFTMetadata } from '@/hooks/bitgive/use-get-nfts';
+import { formatDate } from '@/lib/bitgive/utils';
+import { useActiveAccount } from 'thirdweb/react';
+import { toast } from 'sonner';
 
 export default function NftGallery() {
   const [nfts, setNfts] = useState<NFTMetadata[]>([]);
@@ -26,14 +26,14 @@ export default function NftGallery() {
     navigator.clipboard
       .writeText(uri)
       .then(() => {
-        toast.success("NFT link copied to clipboard! 🎉", {
-          position: "top-center",
+        toast.success('NFT link copied to clipboard! 🎉', {
+          position: 'top-center',
         });
       })
       .catch((error): any => {
-        console.error("Failed to copy:", error);
-        toast.error(error?.message || "Failed to copy the NFT link.", {
-          position: "top-center",
+        console.error('Failed to copy:', error);
+        toast.error(error?.message || 'Failed to copy the NFT link.', {
+          position: 'top-center',
         });
       });
   };
@@ -68,7 +68,7 @@ export default function NftGallery() {
           <Card key={nft.id} className="overflow-hidden">
             <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-br from-orange-100 to-blue-100">
               <Image
-                src={nft.image || "/placeholder.svg"}
+                src={nft.image || '/placeholder.svg'}
                 alt={nft.title}
                 fill
                 className="object-cover"
@@ -78,7 +78,11 @@ export default function NftGallery() {
                   variant="ghost"
                   size="icon"
                   className="h-8 w-8"
-                  onClick={() => handleShare(`https://rootstock-testnet.blockscout.com/token/0x6bE0fc1fa590d4300E9c1aF59F551Dfa082464EF/instance/${nft.id}`)}
+                  onClick={() =>
+                    handleShare(
+                      `https://rootstock-testnet.blockscout.com/token/0x6bE0fc1fa590d4300E9c1aF59F551Dfa082464EF/instance/${nft.id}`,
+                    )
+                  }
                 >
                   <Share2 className="h-4 w-4" />
                   <span className="sr-only">Share</span>
@@ -93,11 +97,11 @@ export default function NftGallery() {
               <div className="flex items-center justify-between">
                 <Badge
                   className={
-                    nft.tier === "Gold"
-                      ? "bg-yellow-100 text-yellow-800 hover:text-white"
-                      : nft.tier === "Silver"
-                      ? "bg-gray-100 text-gray-800 hover:text-white"
-                      : "bg-amber-100 text-amber-800 hover:text-white"
+                    nft.tier === 'Gold'
+                      ? 'bg-yellow-100 text-yellow-800 hover:text-white'
+                      : nft.tier === 'Silver'
+                        ? 'bg-gray-100 text-gray-800 hover:text-white'
+                        : 'bg-amber-100 text-amber-800 hover:text-white'
                   }
                 >
                   {nft.tier}

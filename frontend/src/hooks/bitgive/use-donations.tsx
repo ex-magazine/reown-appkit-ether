@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   getContract,
   prepareContractCall,
@@ -6,15 +6,15 @@ import {
   resolveMethod,
   sendAndConfirmTransaction,
   toWei,
-} from "thirdweb";
-import { useActiveAccount } from "thirdweb/react";
-import { uploadNftMetadata } from "@/lib/bitgive/utils";
-import { contracts } from "@/lib/bitgive/contract";
-import { client, rootstockTestnet } from "@/lib/bitgive/config";
-import { NftBadgeTierUris } from "@/lib/bitgive/constants";
-import useFetchCampaigns from "./use-fetch-campaigns";
-import { publicClient } from "@/lib/bitgive/client";
-import { Abi, formatUnits } from "viem";
+} from 'thirdweb';
+import { useActiveAccount } from 'thirdweb/react';
+import { uploadNftMetadata } from '@/lib/bitgive/utils';
+import { contracts } from '@/lib/bitgive/contract';
+import { client, rootstockTestnet } from '@/lib/bitgive/config';
+import { NftBadgeTierUris } from '@/lib/bitgive/constants';
+import useFetchCampaigns from './use-fetch-campaigns';
+import { publicClient } from '@/lib/bitgive/client';
+import { Abi, formatUnits } from 'viem';
 
 export interface DonationRecord {
   id: number;
@@ -57,25 +57,25 @@ const useDonations = () => {
   const donateToCampaign = async (
     campaignId: number,
     donationAmount: string,
-    tier: string
+    tier: string,
   ) => {
     setIsLoading(true);
     setError(null);
 
     try {
       if (!address) {
-        throw new Error("No active account found.");
+        throw new Error('No active account found.');
       }
       if (campaignId < 0 || !donationAmount) return;
 
-      let tokenURI = "";
+      let tokenURI = '';
 
       if (tier) {
         const imageUri = NftBadgeTierUris[tier];
 
         const nextTierCount = await readContract({
           contract: nftContract,
-          method: resolveMethod("getNextTierCount"),
+          method: resolveMethod('getNextTierCount'),
           params: [tier],
         });
 
@@ -91,7 +91,7 @@ const useDonations = () => {
         });
 
         if (!tokenMetadata.tokenUri) {
-          throw new Error("Failed to upload image to IPFS.");
+          throw new Error('Failed to upload image to IPFS.');
         }
 
         tokenURI = tokenMetadata.tokenUri;
@@ -100,7 +100,7 @@ const useDonations = () => {
       const tx = prepareContractCall({
         contract,
         // @ts-ignore
-        method: resolveMethod("processDonation"),
+        method: resolveMethod('processDonation'),
         params: [campaignId, tokenURI],
         value: toWei(donationAmount),
       });
@@ -114,7 +114,7 @@ const useDonations = () => {
       return txReceipt;
     } catch (err: any) {
       console.log(err);
-      setError(err.message || "An error occurred while dontating to campaign.");
+      setError(err.message || 'An error occurred while dontating to campaign.');
       setIsLoading(false);
       throw err;
     }
@@ -127,14 +127,14 @@ const useDonations = () => {
       setError(null);
       const donationIds = (await readContract({
         contract,
-        method: resolveMethod("getDonationsByDonor"),
+        method: resolveMethod('getDonationsByDonor'),
         params: [address],
       })) as any;
 
       const rawTxs = donationIds.map((id: any) => ({
         address: contracts.donationManager.address,
         abi: contracts.donationManager.abi as Abi,
-        functionName: "getDonationDetails",
+        functionName: 'getDonationDetails',
         args: [id],
       }));
 
@@ -144,17 +144,17 @@ const useDonations = () => {
 
       const campaignIds = results.map(
         ({ result }: { result?: any; status: string; error?: Error }) =>
-          result.campaignId
+          result.campaignId,
       );
 
       const campaigns = await getCampaignsDetails(campaignIds);
 
       return results
-        .filter(({ status }) => status === "success")
+        .filter(({ status }) => status === 'success')
         .map(
           (
             { result }: { result?: any; status: string; error?: Error },
-            idx: number
+            idx: number,
           ) => ({
             ...result,
             id: Number(result.id),
@@ -163,11 +163,11 @@ const useDonations = () => {
             amount: Number(formatUnits(result.amount, 18)),
             campaignName: campaigns[idx].name,
             campaignImage: campaigns[idx].imageURI,
-          })
+          }),
         );
     } catch (error: any) {
       setError(
-        error.message || "An error occured while fetching Donor Donations"
+        error.message || 'An error occured while fetching Donor Donations',
       );
     } finally {
       setIsLoading(false);
@@ -182,36 +182,27 @@ const useDonations = () => {
       setError(null);
       const donations = (await readContract({
         contract,
-        method: resolveMethod("getRecentDonations"),
+        method: resolveMethod('getRecentDonations'),
         params: [3],
       })) as any;
 
-      const campaignIds = donations.map(
-        (donation: any) =>
-          donation.campaignId
-      );
+      const campaignIds = donations.map((donation: any) => donation.campaignId);
 
       const campaigns = await getCampaignsDetails(campaignIds);
 
-      return donations
-        .map(
-          (
-            donation: any ,
-            idx: number
-          ) => ({
-            ...donation,
-            id: Number(donation.id),
-            campaignId: Number(donation.campaignId),
-            timestamp: Number(donation.timestamp) * 1000, //converting time to milliseconds
-            amount: Number(formatUnits(donation.amount, 18)),
-            campaignName: campaigns[idx].name,
-            campaignImage: campaigns[idx].imageURI,
-          })
-        );
+      return donations.map((donation: any, idx: number) => ({
+        ...donation,
+        id: Number(donation.id),
+        campaignId: Number(donation.campaignId),
+        timestamp: Number(donation.timestamp) * 1000, //converting time to milliseconds
+        amount: Number(formatUnits(donation.amount, 18)),
+        campaignName: campaigns[idx].name,
+        campaignImage: campaigns[idx].imageURI,
+      }));
     } catch (error: any) {
-      console.error(error)
+      console.error(error);
       setError(
-        error.message || "An error occured while fetching Donor Donations"
+        error.message || 'An error occured while fetching Donor Donations',
       );
     } finally {
       setIsLoading(false);
@@ -226,31 +217,36 @@ const useDonations = () => {
       setError(null);
       const donationCount = (await readContract({
         contract,
-        method: resolveMethod("getDonationCount"),
+        method: resolveMethod('getDonationCount'),
         params: [],
       })) as any;
 
       const campaigns = (await readContract({
         contract: campaignManagerContract,
-        method: resolveMethod("getAllCampaigns"),
+        method: resolveMethod('getAllCampaigns'),
         params: [],
       })) as any;
 
       const donations = (await readContract({
         contract,
-        method: resolveMethod("getRecentDonations"),
+        method: resolveMethod('getRecentDonations'),
         params: [donationCount],
       })) as any;
 
       const nftsMinted = (await readContract({
         contract: nftContract,
-        method: resolveMethod("getTotalNFTs"),
+        method: resolveMethod('getTotalNFTs'),
         params: [],
       })) as any;
 
-      const totalDonated = donations.reduce((acc: number, donation: any) => acc + Number(donation.amount), 0);
+      const totalDonated = donations.reduce(
+        (acc: number, donation: any) => acc + Number(donation.amount),
+        0,
+      );
 
-      const countUniqueDonors = (donations: { donor: string; amount: number }[]) => {
+      const countUniqueDonors = (
+        donations: { donor: string; amount: number }[],
+      ) => {
         return donations.reduce<Set<string>>((acc, donation) => {
           acc.add(donation.donor);
           return acc;
@@ -259,24 +255,31 @@ const useDonations = () => {
 
       const donors = countUniqueDonors(donations);
 
-      return ({
+      return {
         donors,
         charitiesSupported: Number(campaigns.length),
         nftsMinted: Number(nftsMinted),
         totalDonated: Number(formatUnits(totalDonated, 18)),
-      })
+      };
     } catch (error: any) {
-      console.error(error)
+      console.error(error);
       setError(
-        error.message || "An error occurred while fetching Donor Donations"
+        error.message || 'An error occurred while fetching Donor Donations',
       );
     } finally {
       setIsLoading(false);
     }
     return null;
-  }
+  };
 
-  return { donateToCampaign, getDonorDonations, getRecentDonations, getDonationStats, isLoading, error };
+  return {
+    donateToCampaign,
+    getDonorDonations,
+    getRecentDonations,
+    getDonationStats,
+    isLoading,
+    error,
+  };
 };
 
 export default useDonations;

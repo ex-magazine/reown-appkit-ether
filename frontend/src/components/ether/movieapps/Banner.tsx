@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';
-import { getTrending } from '@/service/fetchMovie';
+import { getTrending } from '@/services/fetchMovie';
 import { Movie } from '@/types/movie.';
 import { ChevronLeft, ChevronRight, Info, Play, Star } from 'lucide-react';
 import Link from 'next/link';

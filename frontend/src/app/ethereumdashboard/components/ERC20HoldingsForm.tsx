@@ -38,23 +38,29 @@ export default function ERC20HoldingsForm() {
       // FETCH API for ERC20 Holdings and Transfers data from a given wallet address
       setShowAlert(false);
 
-      const erc20HoldingsData = await fetch('/api/ethereumdashboard/address-erc20-holdings', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          address: walletAddressRef.current!.value.trim(),
-          network,
-        }),
-      });
+      const erc20HoldingsData = await fetch(
+        '/api/ethereumdashboard/address-erc20-holdings',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            address: walletAddressRef.current!.value.trim(),
+            network,
+          }),
+        },
+      );
 
-      const erc20TransfersData = await fetch('/api/ethereumdashboard/address-erc20-transfers', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          address: walletAddressRef.current!.value.trim(),
-          network,
-        }),
-      });
+      const erc20TransfersData = await fetch(
+        '/api/ethereumdashboard/address-erc20-transfers',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            address: walletAddressRef.current!.value.trim(),
+            network,
+          }),
+        },
+      );
 
       // Check the status of ERC20 Holdings Data
       if (erc20HoldingsData.ok) {

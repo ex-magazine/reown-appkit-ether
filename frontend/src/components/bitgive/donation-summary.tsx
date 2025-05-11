@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Card,
@@ -6,18 +6,18 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { AlertTriangle, Bitcoin, LucideFileWarning } from "lucide-react";
-import { motion } from "framer-motion";
-import useDonations from "@/hooks/bitgive/use-donations";
-import { useState, useEffect } from "react";
-import { Skeleton } from "./ui/skeleton";
+} from '@/components/ui/card';
+import { AlertTriangle, Bitcoin, LucideFileWarning } from 'lucide-react';
+import { motion } from 'framer-motion';
+import useDonations from '@/hooks/bitgive/use-donations';
+import { useState, useEffect } from 'react';
+import { Skeleton } from './ui/skeleton';
 import {
   Tooltip,
   TooltipProvider,
   TooltipTrigger,
   TooltipContent,
-} from "./ui/tooltip";
+} from './ui/tooltip';
 
 type Stats = {
   totalDonated: number;

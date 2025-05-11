@@ -18,23 +18,23 @@ export async function POST(request: Request) {
     // Gather wallet analytics using API resources and running checks to see if wallet address is valid
     const response = await fetch(
       NETWORK_MAPPER[network] +
-      '?module=' +
-      mod +
-      '&action=' +
-      action +
-      '&address=' +
-      body.address +
-      '&tag=' +
-      tag +
-      '&apikey=' +
-      process.env.ETHERSCAN_API_KEY
+        '?module=' +
+        mod +
+        '&action=' +
+        action +
+        '&address=' +
+        body.address +
+        '&tag=' +
+        tag +
+        '&apikey=' +
+        process.env.ETHERSCAN_API_KEY,
     );
 
     // Fetch data using the Ethereum data endpoints
     if (!response.ok)
       return NextResponse.json(
         { error: 'Failed to fetch Ethereum price' },
-        { status: 500 }
+        { status: 500 },
       );
     else {
       const data = response.json();
@@ -53,14 +53,14 @@ export async function POST(request: Request) {
     // Transactions endpoint for retrieving information related to an wallet's activity on an ETH testnet
     const response = await fetch(
       MORALIS_URL + body.address + '/balance?chain=' + body.network,
-      options
+      options,
     );
 
     // Fetch data using the Ethereum data endpoints
     if (!response.ok)
       return NextResponse.json(
         { error: 'Failed to fetch Ethereum price' },
-        { status: 500 }
+        { status: 500 },
       );
     else {
       const data = await response.json();

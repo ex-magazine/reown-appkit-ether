@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/bitgive/ui/button";
+import { useState } from 'react';
+import { Button } from '@/components/bitgive/ui/button';
 import {
   Card,
   CardContent,
@@ -9,15 +9,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/bitgive/ui/card";
-import { Input } from "@/components/bitgive/ui/input";
-import { Label } from "@/components/bitgive/ui/label";
-import { Bitcoin, ExternalLink, Info } from "lucide-react";
-import { motion } from "framer-motion";
-import useDonations from "@/hooks/bitgive/use-donations";
-import { toast } from "sonner";
-import { useActiveAccount } from "thirdweb/react";
-import ConnectBtn from "./connect-btn";
+} from '@/components/bitgive/ui/card';
+import { Input } from '@/components/bitgive/ui/input';
+import { Label } from '@/components/bitgive/ui/label';
+import { Bitcoin, ExternalLink, Info } from 'lucide-react';
+import { motion } from 'framer-motion';
+import useDonations from '@/hooks/bitgive/use-donations';
+import { toast } from 'sonner';
+import { useActiveAccount } from 'thirdweb/react';
+import ConnectBtn from './connect-btn';
 
 export default function DonationForm({
   campaignId,
@@ -26,9 +26,9 @@ export default function DonationForm({
   campaignId: number;
   verified: boolean;
 }) {
-  const [amount, setAmount] = useState<string>("");
+  const [amount, setAmount] = useState<string>('');
   const [status, setStatus] = useState<string | null>(null);
-  const [txHash, setTxHash] = useState("");
+  const [txHash, setTxHash] = useState('');
   const { donateToCampaign, isLoading, error } = useDonations();
   const account = useActiveAccount();
 
@@ -37,25 +37,27 @@ export default function DonationForm({
   };
 
   const handleDonate = async () => {
-    const loadingToast = toast.loading("Donating to campaign");
+    const loadingToast = toast.loading('Donating to campaign');
     try {
-      setStatus("awaiting");
+      setStatus('awaiting');
       const tier = getNftTier();
       const txReceipt = await donateToCampaign(
         campaignId,
         amount,
-        tier ? tier : ""
+        tier ? tier : '',
       );
       if (error) throw error;
 
-      if (txReceipt?.status === "success") {
-        setStatus("success");
-        toast.success("Donated to campaign successfully");
+      if (txReceipt?.status === 'success') {
+        setStatus('success');
+        toast.success('Donated to campaign successfully');
         setTxHash(txReceipt.transactionHash);
       }
     } catch (error: any) {
       console.error(error);
-      toast.error(error?.message || "Error donating to campaign, please try again");
+      toast.error(
+        error?.message || 'Error donating to campaign, please try again',
+      );
       setStatus(null);
     } finally {
       toast.dismiss(loadingToast);
@@ -64,10 +66,10 @@ export default function DonationForm({
 
   // Determine NFT tier based on amount
   const getNftTier = () => {
-    const amountNum = Number.parseFloat(amount || "0");
-    if (amountNum >= 0.01) return "Gold";
-    if (amountNum >= 0.005) return "Silver";
-    if (amountNum >= 0.001) return "Bronze";
+    const amountNum = Number.parseFloat(amount || '0');
+    if (amountNum >= 0.01) return 'Gold';
+    if (amountNum >= 0.005) return 'Silver';
+    if (amountNum >= 0.001) return 'Bronze';
     return null;
   };
 
@@ -96,11 +98,11 @@ export default function DonationForm({
             <Button
               variant="outline"
               size="sm"
-              onClick={() => handleAmountSelect("0.001")}
+              onClick={() => handleAmountSelect('0.001')}
               className={`border-border/40 ${
-                amount === "0.001"
-                  ? "border-[#F5A623]/60 bg-gradient-to-br from-[#F7931A]/10 to-[#F5A623]/10"
-                  : ""
+                amount === '0.001'
+                  ? 'border-[#F5A623]/60 bg-gradient-to-br from-[#F7931A]/10 to-[#F5A623]/10'
+                  : ''
               }`}
             >
               0.001
@@ -108,11 +110,11 @@ export default function DonationForm({
             <Button
               variant="outline"
               size="sm"
-              onClick={() => handleAmountSelect("0.005")}
+              onClick={() => handleAmountSelect('0.005')}
               className={`border-border/40 ${
-                amount === "0.005"
-                  ? "border-[#F5A623]/60 bg-gradient-to-br from-[#F7931A]/10 to-[#F5A623]/10"
-                  : ""
+                amount === '0.005'
+                  ? 'border-[#F5A623]/60 bg-gradient-to-br from-[#F7931A]/10 to-[#F5A623]/10'
+                  : ''
               }`}
             >
               0.005
@@ -120,11 +122,11 @@ export default function DonationForm({
             <Button
               variant="outline"
               size="sm"
-              onClick={() => handleAmountSelect("0.01")}
+              onClick={() => handleAmountSelect('0.01')}
               className={`border-border/40 ${
-                amount === "0.01"
-                  ? "border-[#F5A623]/60 bg-gradient-to-br from-[#F7931A]/10 to-[#F5A623]/10"
-                  : ""
+                amount === '0.01'
+                  ? 'border-[#F5A623]/60 bg-gradient-to-br from-[#F7931A]/10 to-[#F5A623]/10'
+                  : ''
               }`}
             >
               0.01
@@ -135,7 +137,7 @@ export default function DonationForm({
         {tier && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={{ opacity: 1, height: 'auto' }}
             transition={{ duration: 0.3 }}
             className="rounded-lg border border-border/40 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm p-4"
           >
@@ -145,11 +147,11 @@ export default function DonationForm({
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span
                     className={`text-xs font-bold ${
-                      tier === "Gold"
-                        ? "text-[#F5A623]"
-                        : tier === "Silver"
-                        ? "text-gray-400"
-                        : "text-amber-700"
+                      tier === 'Gold'
+                        ? 'text-[#F5A623]'
+                        : tier === 'Silver'
+                          ? 'text-gray-400'
+                          : 'text-amber-700'
                     }`}
                   >
                     {tier}
@@ -201,19 +203,19 @@ export default function DonationForm({
         {status && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={{ opacity: 1, height: 'auto' }}
             transition={{ duration: 0.3 }}
             className="w-full rounded-lg border border-border/40 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm p-3 text-center text-sm"
           >
-            {status === "awaiting" && (
+            {status === 'awaiting' && (
               <span className="text-muted-foreground">
                 Awaiting confirmation...
               </span>
             )}
-            {status === "success" && (
+            {status === 'success' && (
               <span className="flex items-center justify-center gap-1 font-medium text-green-500">
-                Success! Donation Completed{" "}
-                {tier && " with NFT minted successfully"}
+                Success! Donation Completed{' '}
+                {tier && ' with NFT minted successfully'}
                 <a
                   href={`https://rootstock-testnet.blockscout.com/tx/${txHash}`}
                   target="_blank"

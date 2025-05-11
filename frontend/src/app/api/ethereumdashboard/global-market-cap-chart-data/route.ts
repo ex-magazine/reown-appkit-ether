@@ -22,14 +22,14 @@ export async function GET() {
   // Pass in options containing API Key to make authenticated call to get market cap data
   const response = await fetch(
     PRO_COINGECKO_URL + MARKET_DATA_ENDPOINT,
-    options
+    options,
   );
 
   // Fetch data using the Ethereum data endpoints
   if (!response.ok)
     return NextResponse.json(
       { error: 'Failed to fetch Ethereum price' },
-      { status: 500 }
+      { status: 500 },
     );
   else {
     // Return modified date/price data

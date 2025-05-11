@@ -13,7 +13,6 @@ import { generateTmdbImagePath } from '@/lib/ether/moviestmdb/tmdb-image-path';
 import RecommendationSection from '@/components/ether/moviestmdb/RecommendationSection';
 import { getImageProps } from 'next/image';
 
-
 interface Params {
   params: Promise<{ id: string }>;
 }
@@ -41,9 +40,7 @@ export const generateMetadata = async ({ params }: Params) => {
   };
 };
 
-
 const pages = async (params: Params) => {
-
   const movieId = (await params.params).id;
 
   const [movie, credits, recommendations] = await Promise.all([
@@ -125,6 +122,6 @@ const pages = async (params: Params) => {
       </div>
     </>
   );
-}
+};
 
 export default pages;

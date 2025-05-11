@@ -26,7 +26,7 @@ export default function TransactionActivityTable(props: { address: string }) {
     ['/api/address-transaction-history', { address }],
     ([url, body]: [string, PostFetcherArgumentsType]) =>
       PostFetcher(url, { arg: body }),
-    { refreshInterval: 100000 }
+    { refreshInterval: 100000 },
   );
 
   // Conditionally render component

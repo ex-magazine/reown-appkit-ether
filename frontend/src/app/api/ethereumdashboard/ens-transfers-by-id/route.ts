@@ -24,14 +24,14 @@ export async function POST(request: Request) {
   const response = await fetch(
     'https://api.transpose.io/ens/ens-transfers-by-token-id?' +
       new URLSearchParams(params),
-    options
+    options,
   );
 
   // Fetch data using the Ethereum data endpoints
   if (!response.ok) {
     return NextResponse.json(
       { error: 'Failed to fetch Ethereum price' },
-      { status: 500 }
+      { status: 500 },
     );
   } else {
     const data = await response.json();

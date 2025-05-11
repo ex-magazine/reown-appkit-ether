@@ -1,7 +1,7 @@
 'use client';
 
 import { MovieCardSecond } from '@/components/ether/movieapps/MovieCardSecond';
-import { getRecommendedMovies, getSimilarMovies } from '@/service/fetchMovie';
+import { getRecommendedMovies, getSimilarMovies } from '@/services/fetchMovie';
 import { Movie } from '@/types/movie.';
 import { useQuery } from '@tanstack/react-query';
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';

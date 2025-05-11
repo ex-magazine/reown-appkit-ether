@@ -1,25 +1,45 @@
-import { Button } from "@/components/bitgive/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/bitgive/ui/card"
-import { Progress } from "@/components/bitgive/ui/progress"
-import { Bitcoin } from "lucide-react"
-import Image from "next/image"
+import { Button } from '@/components/bitgive/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/bitgive/ui/card';
+import { Progress } from '@/components/bitgive/ui/progress';
+import { Bitcoin } from 'lucide-react';
+import Image from 'next/image';
 
 interface CharityCardProps {
-  name: string
-  description: string
-  image: string
-  raised: number
-  goal: number
-  id: string
+  name: string;
+  description: string;
+  image: string;
+  raised: number;
+  goal: number;
+  id: string;
 }
 
-export default function CharityCard({ name, description, image, raised, goal, id }: CharityCardProps) {
-  const percentage = Math.min(Math.round((raised / goal) * 100), 100)
+export default function CharityCard({
+  name,
+  description,
+  image,
+  raised,
+  goal,
+  id,
+}: CharityCardProps) {
+  const percentage = Math.min(Math.round((raised / goal) * 100), 100);
 
   return (
     <Card className="overflow-hidden transition-all hover:shadow-md">
       <div className="relative h-48 w-full">
-        <Image src={image || "/placeholder.svg"} alt={name} fill className="object-cover" priority />
+        <Image
+          src={image || '/placeholder.svg'}
+          alt={name}
+          fill
+          className="object-cover"
+          priority
+        />
       </div>
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
@@ -45,8 +65,10 @@ export default function CharityCard({ name, description, image, raised, goal, id
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full bg-[#F5A623] text-white hover:bg-[#E09612]">Support Now</Button>
+        <Button className="w-full bg-[#F5A623] text-white hover:bg-[#E09612]">
+          Support Now
+        </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }

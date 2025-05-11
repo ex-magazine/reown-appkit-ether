@@ -13,9 +13,13 @@ import {
 
 // Generic Gas Metrics Info Table Component
 export default function GenericGasMetricsInfoTable() {
-  const gasMetricsInfo = useSWR('/api/ethereumdashboard/navbar/gas-track', GenericFetcher, {
-    refreshInterval: 50000,
-  });
+  const gasMetricsInfo = useSWR(
+    '/api/ethereumdashboard/navbar/gas-track',
+    GenericFetcher,
+    {
+      refreshInterval: 50000,
+    },
+  );
   const { data, error, isLoading } = gasMetricsInfo;
 
   // Conditionally render the Generic Gas Metrics Info Table Component

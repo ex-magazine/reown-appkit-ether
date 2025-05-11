@@ -37,7 +37,6 @@ export const config = wagmiAdapter.wagmiConfig;
 // Set up queryClient
 const queryClient = new QueryClient();
 
-
 // Set up metadata
 const metadata = {
   name: 'Banzai Game 2.0',

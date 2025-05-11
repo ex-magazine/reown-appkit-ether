@@ -1,4 +1,4 @@
-import { ContractTransaction, providers } from 'ethers';
+import { ContractTransaction, JsonRpcProvider } from 'ethers';
 
 export type TransactionStatus =
   | 'PENDING'
@@ -26,10 +26,10 @@ export class TransactionManager {
   private listeners: Set<StatusListener> = new Set();
   private readonly maxAttempts: number;
   private readonly confirmationBlocks: number;
-  private readonly provider: providers.Provider;
+  private readonly provider: JsonRpcProvider;
 
   constructor(
-    provider: providers.Provider,
+    provider: JsonRpcProvider,
     maxAttempts: number = 3,
     confirmationBlocks: number = 2,
   ) {

@@ -1,8 +1,8 @@
 'use client';
 
-import { createAppKit } from '@reown/appkit/react'
+import { createAppKit } from '@reown/appkit/react';
 
-import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
+import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
 import {
   mainnet,
   arbitrum,
@@ -19,7 +19,9 @@ import {
   celo,
   apeChain,
   victionTestnet,
-  polygon, AppKitNetwork, sepolia,
+  polygon,
+  AppKitNetwork,
+  sepolia,
 } from '@reown/appkit/networks';
 
 import { cookieStorage, createStorage } from '@wagmi/core';
@@ -31,7 +33,7 @@ import { cookieToInitialState, WagmiProvider, type Config } from 'wagmi';
 const queryClient = new QueryClient();
 
 // 1. Get projectId from https://cloud.reown.com
-const projectId = 'b675b7e440958031e616f93b09d45cc7'
+const projectId = 'b675b7e440958031e616f93b09d45cc7';
 // const projectId = process.env.REOWN_CLOUD_PROJECT_ID;
 
 // 2. Create a metadata object - optional
@@ -60,8 +62,8 @@ const networks: [AppKitNetwork, ...AppKitNetwork[]] = [
   monadTestnet,
   celo,
   apeChain,
-  victionTestnet
-]
+  victionTestnet,
+];
 
 // 4. Create Wagmi Adapter
 export const wagmiAdapter = new WagmiAdapter({
@@ -71,7 +73,7 @@ export const wagmiAdapter = new WagmiAdapter({
 
   networks,
   projectId,
-  ssr: true
+  ssr: true,
   /*
   transports: {
     [mainnet.id]: http(),
@@ -128,7 +130,7 @@ function ContextProvider({
 }) {
   const initialState = cookieToInitialState(
     wagmiAdapter.wagmiConfig as Config,
-    cookies
+    cookies,
   );
 
   return (
@@ -142,7 +144,3 @@ function ContextProvider({
 }
 
 export default ContextProvider;
-
-
-
-
