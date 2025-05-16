@@ -40,7 +40,7 @@ import { InfoList } from '@/components/ether/InfoList';
 import NoSsr from '@/components/ether/NoSsr';
 
 
-
+/*
 export const metadata: Metadata = {
   // title: {
   //     default: 'MoviesPrix - Explore Movies',
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: 'white',
 };
-
+*/
 export default function HomePage() {
   const { data: session } = useSession();
   const url = session ? '/dashboard' : '/login';
