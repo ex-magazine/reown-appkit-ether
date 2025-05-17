@@ -3,7 +3,7 @@ import { authOptions } from '@/lib/auth';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from 'sonner';
 import './globals.css';
-
+import type { Metadata, Viewport } from 'next';
 import { ClientProviders } from '@/providers/client-providers';
 import NexTopLoader from 'nextjs-toploader';
 import { CreateTicketFAB } from '@/components/create-ticket-fab';
@@ -16,7 +16,7 @@ import Navbar from '@/components/ether/ethereumdashboard/Navbar';
 
 import { Inter, Roboto_Mono, Titillium_Web } from 'next/font/google';
 
-import './globals.css';
+
 
 const robotoMono = Roboto_Mono({
   subsets: ['latin'],
@@ -33,6 +33,46 @@ const titilliumWeb = Titillium_Web({
 });
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+    title: {
+        default: 'Software Development Lifecycle (SDLC) | DevContainers | DevLake | Microservices architectures',
+        template: '%s | VPC, EC2, ALB, ECS, S3, RDS, Lambda, Cloudwatch',
+    },
+    description: 'DeFi protocols like Uniswap, Aave, MakerDao',
+    keywords: ['chain development toolkits such as Arbitrum Orbit',
+       'Foundry, Viem, Hardhat, and Ether.', 'TypeScript, Next.js, and React', 
+       'Layer 2 solutions, wallets, and ERC standards ( ERC-20, ERC- 721)', 
+       'Web3 technologies (EVM, Solidity, ethers.js/web3.js)', 'real-time systems (WebSockets, WebRTC)'],
+    authors: [{ name: 'Tommy', url: 'https://github.com/ex-magazine' }],
+    metadataBase: new URL('https://reown-appkit-ether.vercel.app/'),
+    openGraph: {
+        description: 'DevOps tools (Docker, Kubernetes, CI/CD pipelines)/ cloud platforms such as AWS, GCP, or Azure',
+        url: 'https://reown-appkit-ether.vercel.app/',
+        siteName: 'Deep understanding of non-EVM blockchains',
+        images: [
+            {
+                url: 'https://reown-appkit-ether.vercel.app/banner.png',
+                width: 1200,
+                height: 630,
+                alt: 'smart contracts (Solidity, Rust, etc.)',
+            },
+        ],
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        description: 'Networking protocols: TCP/IP, UDP, HTTP and WebSocket',
+        images: ['https://reown-appkit-ether.vercel.app/banner.png'],
+    },
+    manifest: '/site.webmanifest',
+    robots: 'index, follow',
+};
+
+export const viewport: Viewport = {
+    themeColor: 'white',
+};
+
 
 export default async function RootLayout({
   children,

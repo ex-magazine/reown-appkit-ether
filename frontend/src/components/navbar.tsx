@@ -243,6 +243,13 @@ export function Navbar({ onMobileMenuClick }: NavbarProps) {
             >
               Ethereum dashboard
             </Link>
+            <Link
+              href="/evmexplorer"
+              target="_blank"
+              className="tracking-tight transition duration-300 hover:text-indigo-600"
+            >
+              EVM Smart Contract
+            </Link>
           </nav>
           {/* Search bar */}
           {session && (
