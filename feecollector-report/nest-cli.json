@@ -1,0 +1,39 @@
+{
+  "monorepo": true,
+  "root": ".",
+  "sourceRoot": "./src",
+  "compilerOptions": {
+    "tsConfigPath": "./tsconfig.base.json"
+  },
+  "projects": {
+    "common": {
+      "type": "module",
+      "root": "common",
+      "entryFile": "index",
+      "sourceRoot": "common/src",
+      "compilerOptions": {
+        "webpack": true,
+        "tsConfigPath": "common/tsconfig.build.json",
+        "webpackConfigPath": "common/webpack.config.js"
+      }
+    },
+    "fees-reporter": {
+      "type": "application",
+      "root": "fees-reporter",
+      "entryFile": "main",
+      "sourceRoot": "fees-reporter/src",
+      "compilerOptions": {
+        "tsConfigPath": "fees-reporter/tsconfig.build.json"
+      }
+    },
+    "events-scraper": {
+      "type": "application",
+      "root": "events-scraper",
+      "entryFile": "main",
+      "sourceRoot": "events-scraper/src",
+      "compilerOptions": {
+        "tsConfigPath": "events-scraper/tsconfig.build.json"
+      }
+    }
+  }
+}
