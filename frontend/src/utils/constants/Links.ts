@@ -86,6 +86,11 @@ export const Links: LinkType[] = [
 
 
 
+  { name: 'Abraxas Capital', href: 'https://intel.arkm.com/explorer/entity/abraxas-capital-heka-funds' },
+  { name: 'Abraxas Capital Mgmt (Heka Funds)', href: 'https://intel.arkm.com/explorer/address/0xEd0C6079229E2d407672a117c22b62064f4a4312' },
+  { name: 'Difi Visualizer', href: 'https://intel.arkm.com/visualizer/entity/0xEd0C6079229E2d407672a117c22b62064f4a4312?flow=all&positions=%7B%7D&sortDir=desc&sortKey=time&usdGte=0.1' },
+ 
+
   {
     name: 'Bull Market Peak Indicators',
     href: 'https://www.coinglass.com/bull-market-peak-signals',
