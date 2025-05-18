@@ -1,0 +1,14 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+directive @upper on FIELD_DEFINITION
+
+type EventModel {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  findEvents(contractAddress: String!, eventName: String!): [EventModel!]!
+}

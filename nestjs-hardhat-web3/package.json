@@ -1,0 +1,21 @@
+{
+  "name": "web3-pucrio-gateway",
+  "version": "1.0.0",
+  "description": "Web3 Template Project for Smart Contract and NodeJS EVM Gateways",
+  "main": "index.js",
+  "author": "Yang Ricardo Barcellos Miranda <yang@puc-rio.br>",
+  "license": "private",
+  "private": true,
+  "workspaces": ["packages/*", "apps/*"],
+  "dependencies": {
+    "turbo": "1.10.6"
+  },
+  "scripts": {
+    "dev": "turbo dev",
+    "start": "turbo start",
+    "build": "turbo build",
+    "test": "turbo test",
+    "test-network": "turbo test-network",
+    "lock-contract-localhost-deploy": "turbo lock-contract-localhost-deploy"
+  }
+}
