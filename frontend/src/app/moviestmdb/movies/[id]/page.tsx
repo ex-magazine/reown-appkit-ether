@@ -67,62 +67,7 @@ export default async function MoviePage({ params }: Params) {
                     backgroundImage: `linear-gradient(#000000bb, #000000bb), url(${optimizedBackdrop})`,
                 }}
             >
-                <div className="container flex flex-col md:flex-row gap-8">
-                    <div className="w-full max-w-[200px] max-md:mx-auto md:max-w-[300px]">
-                        <LazyImage
-                            src={generateTmdbImagePath(movie.poster_path, 200)}
-                            alt={movie.title}
-                            width={200}
-                            height={300}
-                            className="rounded-lg border-4 border-border/30"
-                        />
-                    </div>
-                    <div className="w-full md:w-2/3 space-y-4">
-                        <h1 className="text-2xl font-bold">{movie.title}</h1>
-                        <div className="flex items-center gap-2">
-                            <span className="inline-flex gap-2 items-center text-sm">
-                                <FaStar size={14} className="text-orange-500" />
-                                {movie.vote_average.toFixed(1)}
-                            </span>
-
-                            <span className="size-1 bg-gray-500 rounded-full"></span>
-
-                            <span className="text-sm">
-                                {movie.vote_count} votes
-                            </span>
-
-                            <span className="size-1 bg-gray-500 rounded-full"></span>
-
-                            <span className="text-sm">
-                                {dateFormatter(new Date(movie.release_date))}
-                            </span>
-                        </div>
-
-                        <div className="flex gap-2 items-center text-sm !mt-0">
-                            {movie.genres.map((genre, idx) => (
-                                <div key={genre.id}>
-                                    <span
-                                        key={genre.id}
-                                        className="rounded text-sm"
-                                    >
-                                        {genre.name}
-                                    </span>
-                                    {idx < movie.genres.length - 1 && (
-                                        <span className="size-1 bg-gray-500 rounded-full"></span>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-
-                        <p className="text-sm font-bold">{movie.tagline}</p>
-                        <h5 className="text-xs font-bold uppercase">
-                            Overview
-                        </h5>
-                        <p className="!mt-1">{movie.overview}</p>
-
-                        <AddToWatchlistButton movieId={movie.id} />
-                    </div>
-                </div>
+                sssssssssssssssssss
             </section>
             
         </>
