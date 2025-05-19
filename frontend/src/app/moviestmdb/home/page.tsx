@@ -1,8 +1,13 @@
 import { getMovies } from '@/action/movies';
 import InfiniteMovies from '@/components/ether/moviestmdb/InfiniteMovies';
 import MovieCard from '@/components/ether/moviestmdb/MovieCard';
+import { Metadata } from 'next';
 
-// export const revalidate = 60;
+export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: 'Movies tmdb',
+};
 
 const Home = async () => {
   const movies = await getMovies(1);
