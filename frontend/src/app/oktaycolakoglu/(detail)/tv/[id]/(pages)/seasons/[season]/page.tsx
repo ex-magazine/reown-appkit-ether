@@ -3,7 +3,7 @@ import { tmdb } from "@/tmdb/api"
 import { WithCredits } from "@/tmdb/api/types"
 import { format } from "@/tmdb/utils"
 
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ether/oktaycolakoglu/ui/badge"
 import { MediaDetailView } from "@/components/ether/oktaycolakoglu/media-detail-view"
 import { MediaPoster } from "@/components/ether/oktaycolakoglu/media-poster"
 import { MediaRating } from "@/components/ether/oktaycolakoglu/media-rating"
