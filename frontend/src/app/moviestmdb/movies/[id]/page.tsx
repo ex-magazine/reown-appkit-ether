@@ -18,6 +18,28 @@ interface Params {
     params: Promise<{ id: string }>;
 }
 
+export const revalidate = 60;
+
+export const generateStaticParams = async () => {
+    const movies = await getMovies(1);
+    return movies.map((movie) => ({
+        params: {
+            id: movie.id.toString(),
+        },
+    }));
+};
+
+export const generateMetadata = async ({ params }: Params) => {
+    const movieId = (await params).id;
+
+    const movie = await getMovieDetails(movieId);
+
+    return {
+        title: movie.title,
+        description: movie.overview,
+        image: generateTmdbImagePath(movie.poster_path, 500),
+    };
+};
 
 export default async function MoviePage({ params }: Params) {
     const movieId = (await params).id;
