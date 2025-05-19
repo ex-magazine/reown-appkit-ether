@@ -124,7 +124,12 @@ export default async function MoviePage({ params }: Params) {
                     </div>
                 </div>
             </section>
-            
+            <div className="container space-y-8">
+                <MovieActorsSection cast={credits.cast} />
+                <RecommendationSection
+                    recommendations={recommendations.results}
+                />
+            </div>
         </>
     );
 }
