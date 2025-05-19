@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import MovieCard from '@/components/ether/moviestmdb/MovieCard';
 import { searchMovies } from '@/action/movies';
 import { TMovie } from '@/lib/ether/moviestmdb/schemas/movie-schemas';
-
+import { Metadata } from 'next';
 export default function SearchPage() {
   const searchParams = useSearchParams();
   const query = searchParams.get('query') || '';

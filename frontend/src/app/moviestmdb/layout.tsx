@@ -2,6 +2,7 @@ import Header from '@/components/ether/moviestmdb/layout/Header';
 import Footer from '@/components/ether/moviestmdb/layout/Footer';
 import { ThemeProvider } from '@/components/ether/moviestmdb/layout/ThemeProvider';
 import { Toaster } from 'react-hot-toast';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Movie Application',
