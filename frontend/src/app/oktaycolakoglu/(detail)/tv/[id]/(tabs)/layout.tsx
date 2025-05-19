@@ -1,17 +1,17 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { siteConfig } from "@/config"
+import { siteConfig } from "@/config/oktaycolakoglu"
 import { tmdb } from "@/tmdb/api"
 import { WithVideos } from "@/tmdb/api/types"
 import { format } from "@/tmdb/utils"
 
-import { Tabs, TabsLink, TabsList } from "@/components/ui/tabs"
-import { MediaBackdrop } from "@/components/media-backdrop"
-import { MediaDetailView } from "@/components/media-detail-view"
-import { MediaPoster } from "@/components/media-poster"
-import { MediaRating } from "@/components/media-rating"
-import { MediaTrailerDialog } from "@/components/media-trailer-dialog"
-import { ScrollFixer } from "@/components/scroll-fixer"
+import { Tabs, TabsLink, TabsList } from "@/components/ether/oktaycolakoglu/ui/tabs"
+import { MediaBackdrop } from "@/components/ether/oktaycolakoglu/media-backdrop"
+import { MediaDetailView } from "@/components/ether/oktaycolakoglu/media-detail-view"
+import { MediaPoster } from "@/components/ether/oktaycolakoglu/media-poster"
+import { MediaRating } from "@/components/ether/oktaycolakoglu/media-rating"
+import { MediaTrailerDialog } from "@/components/ether/oktaycolakoglu/media-trailer-dialog"
+import { ScrollFixer } from "@/components/ether/oktaycolakoglu/scroll-fixer"
 
 interface DetailLayoutProps {
   params: {

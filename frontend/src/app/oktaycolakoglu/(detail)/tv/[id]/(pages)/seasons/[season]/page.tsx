@@ -4,12 +4,12 @@ import { WithCredits } from "@/tmdb/api/types"
 import { format } from "@/tmdb/utils"
 
 import { Badge } from "@/components/ui/badge"
-import { MediaDetailView } from "@/components/media-detail-view"
-import { MediaPoster } from "@/components/media-poster"
-import { MediaRating } from "@/components/media-rating"
-import { TvSeasonBreadcrumb } from "@/components/tv-season-breadcrumb"
-import { TvSeasonDetails } from "@/components/tv-season-details"
-import { TvSeasonNavigation } from "@/components/tv-season-navigation"
+import { MediaDetailView } from "@/components/ether/oktaycolakoglu/media-detail-view"
+import { MediaPoster } from "@/components/ether/oktaycolakoglu/media-poster"
+import { MediaRating } from "@/components/ether/oktaycolakoglu/media-rating"
+import { TvSeasonBreadcrumb } from "@/components/ether/oktaycolakoglu/tv-season-breadcrumb"
+import { TvSeasonDetails } from "@/components/ether/oktaycolakoglu/tv-season-details"
+import { TvSeasonNavigation } from "@/components/ether/oktaycolakoglu/tv-season-navigation"
 
 interface DetailSeasonsProps {
   params: {

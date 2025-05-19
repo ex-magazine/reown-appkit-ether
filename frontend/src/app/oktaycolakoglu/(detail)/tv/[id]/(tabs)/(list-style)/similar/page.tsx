@@ -1,7 +1,7 @@
 import { tmdb } from "@/tmdb/api"
 
-import { ListPagination } from "@/components/list-pagination"
-import { TvCard } from "@/components/tv-card"
+import { ListPagination } from "@/components/ether/oktaycolakoglu/list-pagination"
+import { TvCard } from "@/components/ether/oktaycolakoglu/tv-card"
 
 interface DetailSimilarProps {
   params: {

@@ -2,10 +2,10 @@ import Link from "next/link"
 import { tmdb } from "@/tmdb/api"
 import { Info } from "lucide-react"
 
-import { Alert, AlertTitle } from "@/components/ui/alert"
-import { SeparatorLabel } from "@/components/ui/separator-label"
-import { MediaCastCard } from "@/components/media-cast-card"
-import { MediaCrewCard } from "@/components/media-crew-card"
+import { Alert, AlertTitle } from "@/components/ether/oktaycolakoglu/ui/alert"
+import { SeparatorLabel } from "@/components/ether/oktaycolakoglu/ui/separator-label"
+import { MediaCastCard } from "@/components/ether/oktaycolakoglu/media-cast-card"
+import { MediaCrewCard } from "@/components/ether/oktaycolakoglu/media-crew-card"
 
 interface DetailCreditsProps {
   params: {

@@ -9,14 +9,14 @@ import {
   getPersonHighlights,
 } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { MediaBackdrop } from "@/components/media-backdrop"
-import { MediaDetailView } from "@/components/media-detail-view"
-import { MediaImages } from "@/components/media-images"
-import { MediaPoster } from "@/components/media-poster"
-import { MovieCard } from "@/components/movie-card"
-import { PersonCreditsTable } from "@/components/person-credits-table"
-import { TvCard } from "@/components/tv-card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ether/oktaycolakoglu/ui/tabs"
+import { MediaBackdrop } from "@/components/ether/oktaycolakoglu/media-backdrop"
+import { MediaDetailView } from "@/components/ether/oktaycolakoglu/media-detail-view"
+import { MediaImages } from "@/components/ether/oktaycolakoglu/media-images"
+import { MediaPoster } from "@/components/ether/oktaycolakoglu/media-poster"
+import { MovieCard } from "@/components/ether/oktaycolakoglu/movie-card"
+import { PersonCreditsTable } from "@/components/ether/oktaycolakoglu/person-credits-table"
+import { TvCard } from "@/components/ether/oktaycolakoglu/tv-card"
 
 interface DetailProps {
   params: {

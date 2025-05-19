@@ -1,4 +1,4 @@
-import { SkeletonReviewCard } from "@/components/user-review-card"
+import { SkeletonReviewCard } from "@/components/ether/oktaycolakoglu/user-review-card"
 
 export default function Loading() {
   return (

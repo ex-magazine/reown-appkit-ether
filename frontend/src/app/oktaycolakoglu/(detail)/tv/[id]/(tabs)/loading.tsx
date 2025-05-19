@@ -1,1 +1,1 @@
-export { SkeletonMediaDetail as default } from "@/components/media-detail-view"
+export { SkeletonMediaDetail as default } from "@/components/ether/oktaycolakoglu/media-detail-view"

@@ -3,16 +3,16 @@ import { tmdb } from "@/tmdb/api"
 import { format } from "@/tmdb/utils"
 
 import { cn, formatValue, joiner, pad } from "@/lib/utils"
-import { Badge } from "@/components/ui/badge"
-import { buttonVariants } from "@/components/ui/button"
+import { Badge } from "@/components/ether/oktaycolakoglu/ui/badge"
+import { buttonVariants } from "@/components/ether/oktaycolakoglu/ui/button"
 import {
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
-} from "@/components/ui/table"
-import { MediaBackdrop } from "@/components/media-backdrop"
+} from "@/components/ether/oktaycolakoglu/ui/table"
+import { MediaBackdrop } from "@/components/ether/oktaycolakoglu/media-backdrop"
 
 export default async function Detail({ params }: { params: { id: string } }) {
   const {

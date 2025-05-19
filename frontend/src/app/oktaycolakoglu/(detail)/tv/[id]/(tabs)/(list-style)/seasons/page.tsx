@@ -2,9 +2,9 @@ import { Fragment } from "react"
 import Link from "next/link"
 import { tmdb } from "@/tmdb/api"
 
-import { MediaCard } from "@/components/media-card"
-import { MediaPoster } from "@/components/media-poster"
-import { MediaRating } from "@/components/media-rating"
+import { MediaCard } from "@/components/ether/oktaycolakoglu/media-card"
+import { MediaPoster } from "@/components/ether/oktaycolakoglu/media-poster"
+import { MediaRating } from "@/components/ether/oktaycolakoglu/media-rating"
 
 interface DetailSeasonsProps {
   params: {
