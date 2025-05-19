@@ -77,7 +77,7 @@ export default async function Detail({ params }: DetailProps) {
       value: production_companies.map(({ id, name }) => (
         <Link
           key={id}
-          href={`/movie/discover?with_companies=${id}`}
+          href={`/oktaycolakoglu/movie/discover?with_companies=${id}`}
           className="mr-1 border-b-2 transition hover:text-foreground"
         >
           {name}

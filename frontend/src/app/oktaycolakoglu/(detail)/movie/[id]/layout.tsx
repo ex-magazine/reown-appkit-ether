@@ -76,7 +76,7 @@ export default async function DetailLayout({
             {genres?.map((genre) => (
               <Link
                 key={genre.id}
-                href={`/movie/discover?with_genres=${genre.id}`}
+                href={`/oktaycolakoglu/movie/discover?with_genres=${genre.id}`}
               >
                 <MediaDetailView.Genre key={genre.id}>
                   {genre.name}
@@ -105,16 +105,16 @@ export default async function DetailLayout({
         <Tabs className="mt-12 w-full">
           <div className="max-w-screen scrollbar-hidden -mx-8 overflow-x-scroll px-8 lg:m-0 lg:p-0">
             <TabsList>
-              <TabsLink href={`/movie/${id}`}>Overview</TabsLink>
-              <TabsLink href={`/movie/${id}/credits`}>Credits</TabsLink>
-              <TabsLink href={`/movie/${id}/watch`}>Watch</TabsLink>
-              <TabsLink href={`/movie/${id}/reviews`}>Reviews</TabsLink>
-              <TabsLink href={`/movie/${id}/images`}>Images</TabsLink>
-              <TabsLink href={`/movie/${id}/videos`}>Videos</TabsLink>
-              <TabsLink href={`/movie/${id}/recommendations`}>
+              <TabsLink href={`/oktaycolakoglu/movie/${id}`}>Overview</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/movie/${id}/credits`}>Credits</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/movie/${id}/watch`}>Watch</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/movie/${id}/reviews`}>Reviews</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/movie/${id}/images`}>Images</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/movie/${id}/videos`}>Videos</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/movie/${id}/recommendations`}>
                 Recommendations
               </TabsLink>
-              <TabsLink href={`/movie/${id}/similar`}>Similar</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/movie/${id}/similar`}>Similar</TabsLink>
             </TabsList>
           </div>
         </Tabs>

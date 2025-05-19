@@ -92,7 +92,7 @@ export default async function Detail({ params }: { params: { id: string } }) {
       value: production_companies.map(({ id, name }) => (
         <Link
           key={id}
-          href={`/tv/discover?with_companies=${id}`}
+          href={`/oktaycolakoglu/tv/discover?with_companies=${id}`}
           className="mr-1 border-b-2 transition hover:text-foreground"
         >
           {name}
@@ -104,7 +104,7 @@ export default async function Detail({ params }: { params: { id: string } }) {
       value: networks.map(({ id, name }) => (
         <Link
           key={id}
-          href={`/tv/discover?with_networks=${id}`}
+          href={`/oktaycolakoglu/tv/discover?with_networks=${id}`}
           className="mr-1 border-b-2 transition hover:text-foreground"
         >
           {name}
@@ -146,7 +146,7 @@ export default async function Detail({ params }: { params: { id: string } }) {
                 {lastEpisode.overview}
               </p>
               <Link
-                href={`/tv/${params.id}/seasons/${lastEpisode.season_number}`}
+                href={`/oktaycolakoglu/tv/${params.id}/seasons/${lastEpisode.season_number}`}
                 className={cn(buttonVariants({ variant: "default" }), "mt-4")}
                 prefetch={false}
               >

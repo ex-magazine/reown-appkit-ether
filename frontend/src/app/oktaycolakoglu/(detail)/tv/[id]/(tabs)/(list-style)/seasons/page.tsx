@@ -34,7 +34,7 @@ export default async function DetailSeasons({ params }: DetailSeasonsProps) {
       {seasons.map((season) => (
         <Fragment key={season.id}>
           <Link
-            href={`/tv/${params.id}/seasons/${season.season_number}`}
+            href={`/oktaycolakoglu/tv/${params.id}/seasons/${season.season_number}`}
             prefetch={false}
           >
             <MediaCard.Root>

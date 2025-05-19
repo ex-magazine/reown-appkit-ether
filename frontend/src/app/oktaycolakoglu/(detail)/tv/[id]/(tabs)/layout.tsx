@@ -74,7 +74,7 @@ export default async function DetailLayout({
             {genres?.map((genre) => (
               <Link
                 key={genre.id}
-                href={`/tv/discover?with_genres=${genre.id}`}
+                href={`/oktaycolakoglu/tv/discover?with_genres=${genre.id}`}
               >
                 <MediaDetailView.Genre>{genre.name}</MediaDetailView.Genre>
               </Link>
@@ -101,19 +101,19 @@ export default async function DetailLayout({
         <Tabs className="mt-8 lg:mt-12">
           <div className="max-w-screen scrollbar-hidden -mx-8 overflow-x-scroll px-8 lg:m-0 lg:p-0">
             <TabsList>
-              <TabsLink href={`/tv/${id}`}>Overview</TabsLink>
-              <TabsLink className="gap-2" href={`/tv/${id}/credits`}>
+              <TabsLink href={`/oktaycolakoglu/tv/${id}`}>Overview</TabsLink>
+              <TabsLink className="gap-2" href={`/oktaycolakoglu/tv/${id}/credits`}>
                 Credits
               </TabsLink>
-              <TabsLink href={`/tv/${id}/watch`}>Watch</TabsLink>
-              <TabsLink href={`/tv/${id}/reviews`}>Reviews</TabsLink>
-              <TabsLink href={`/tv/${id}/seasons`}>Seasons</TabsLink>
-              <TabsLink href={`/tv/${id}/images`}>Images</TabsLink>
-              <TabsLink href={`/tv/${id}/videos`}>Videos</TabsLink>
-              <TabsLink href={`/tv/${id}/recommendations`}>
+              <TabsLink href={`/oktaycolakoglu/tv/${id}/watch`}>Watch</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/tv/${id}/reviews`}>Reviews</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/tv/${id}/seasons`}>Seasons</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/tv/${id}/images`}>Images</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/tv/${id}/videos`}>Videos</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/tv/${id}/recommendations`}>
                 Recommendations
               </TabsLink>
-              <TabsLink href={`/tv/${id}/similar`}>Similar</TabsLink>
+              <TabsLink href={`/oktaycolakoglu/tv/${id}/similar`}>Similar</TabsLink>
             </TabsList>
           </div>
         </Tabs>

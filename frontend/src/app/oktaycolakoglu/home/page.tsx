@@ -30,7 +30,7 @@ console.log(process.env.TMDB_API_KEY);
         <TrendCarousel
           type="movie"
           title="Trending Movies"
-          link="/trending/movie"
+          link="/oktaycolakoglu/trending/movie"
           items={movies}
         />
 
@@ -50,7 +50,7 @@ console.log(process.env.TMDB_API_KEY);
         <TrendCarousel
           type="tv"
           title="Trending TV Shows"
-          link="/trending/tv"
+          link="/oktaycolakoglu/trending/tv"
           items={tvShows}
         />
 
