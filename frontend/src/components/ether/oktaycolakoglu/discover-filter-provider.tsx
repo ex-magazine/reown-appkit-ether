@@ -17,7 +17,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ether/oktaycolakoglu/ui/popover"
 import { ScrollArea } from "@/components/ether/oktaycolakoglu/ui/scroll-area"
 import { InfoTooltip } from "@/components/ether/oktaycolakoglu/info-tooltip"
 import { ProviderLogo } from "@/components/ether/oktaycolakoglu/provider-logo"

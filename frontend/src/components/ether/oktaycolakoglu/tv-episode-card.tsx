@@ -4,8 +4,8 @@ import { format, tmdbImage } from "@/tmdb/utils"
 import { Calendar, Clock, Expand } from "lucide-react"
 
 import { formatValue, pad } from "@/lib/utils"
-import { Badge } from "@/components/ui/badge"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+import { Badge } from "@/components/ether/oktaycolakoglu/ui/badge"
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ether/oktaycolakoglu/ui/dialog"
 import { MediaBackdrop } from "@/components/ether/oktaycolakoglu/media-backdrop"
 import { MediaRating } from "@/components/ether/oktaycolakoglu/media-rating"
 

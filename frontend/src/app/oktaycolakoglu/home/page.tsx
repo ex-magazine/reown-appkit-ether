@@ -14,14 +14,13 @@ export default async function Home() {
     time: "day",
     page: "1",
   })
-console.log(process.env.TMDB_API_KEY);
+
   const { results: tvShows } = await tmdb.trending.tv({
     time: "day",
     page: "1",
   })
 
-  console.log (results,"movies");
-
+ 
   return (
     <section>
       <div className="container space-y-8">
