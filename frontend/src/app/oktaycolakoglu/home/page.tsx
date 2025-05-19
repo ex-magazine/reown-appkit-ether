@@ -20,7 +20,7 @@ console.log(process.env.TMDB_API_KEY);
     page: "1",
   })
 
-  console.log (movies,"movies");
+  console.log (results,"movies");
 
   return (
     <section>
