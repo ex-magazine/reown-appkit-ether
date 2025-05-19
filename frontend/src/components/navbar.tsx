@@ -241,7 +241,7 @@ export function Navbar({ onMobileMenuClick }: NavbarProps) {
               target="_blank"
               className="tracking-tight transition duration-300 hover:text-indigo-600"
             >
-              Ethereum dashboard
+              Ethereum Dashboard
             </Link>
             <Link
               href="/evmexplorer"

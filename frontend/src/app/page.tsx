@@ -520,25 +520,28 @@ export default function HomePage() {
                     href="/moviestmdb/home"
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
-                    Moviestmdb
+                    Movies TMDB
                   </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/moviestmdb/watchlist"
-                    className="text-sm text-muted-foreground hover:text-primary"
-                  >
-                    Watchlist
-                  </Link>
-                </li>
+                </li>             
                 <li>
                   <Link
                     href="/moviesprix/home"
                     className="text-sm text-muted-foreground hover:text-primary"
                   >
-                    Moviesprix
+                    Movies Prix
                   </Link>
                 </li>
+
+                  <li>
+                  <Link
+                    href="/oktaycolakoglu/home"
+                    className="text-sm text-muted-foreground hover:text-primary"
+                  >
+                    Movies Oktaycolakoglu
+                  </Link>
+                </li>
+
+                
               </ul>
             </div>
 
