@@ -18,7 +18,7 @@ import { discoverMovies } from '@/utils/movies';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'Movies Prix',
 };
 
 const CategoriesList = [
