@@ -29,7 +29,7 @@ const Hero: React.FC<ComponentProps<"div">> = ({
 }) => {
   return (
     <div
-      className={cn("container md:mt-8 md:px-16 xl:mt-12 xl:px-32", className)}
+      className={cn("container md:mt-8 md:px-16 xl:mt-12 xl:px-32 mx-auto", className)}
       {...props}
     >
       <div className="grid gap-4 md:grid-cols-[auto,1fr] md:gap-10 xl:gap-16">
@@ -61,7 +61,7 @@ const Content: React.FC<ComponentProps<"div">> = ({ className, ...props }) => {
   return (
     <div
       className={cn(
-        "container mt-4 md:mt-8 md:px-16 xl:mt-12 xl:px-32",
+        "container mt-4 md:mt-8 md:px-16 xl:mt-12 xl:px-32 mx-auto",
         className
       )}
       {...props}

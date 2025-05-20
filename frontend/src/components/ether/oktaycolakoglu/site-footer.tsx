@@ -11,7 +11,7 @@ export const SiteFooter: React.FC<ComponentProps<"footer">> = () => {
 
   return (
     <footer className="relative mt-12 border-t bg-background">
-      <div className="container flex flex-col lg:flex-row">
+      <div className="container flex flex-col lg:flex-row mx-auto">
         <div className="px-2 py-8 pt-12 text-muted-foreground md:p-12">
           <Icons.Logo className="size-8" />
         </div>

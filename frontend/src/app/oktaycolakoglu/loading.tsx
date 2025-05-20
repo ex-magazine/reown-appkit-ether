@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ether/oktaycolakoglu/ui/skeleton"
 
 export default function Loading() {
   return (
-    <div className="container space-y-8">
+    <div className="container space-y-8 mx-auto">
       <Skeleton className="h-hero rounded-md" />
       <Skeleton className="h-8 w-64" />
       <div className="flex flex-wrap">

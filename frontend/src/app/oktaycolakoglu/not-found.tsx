@@ -3,7 +3,7 @@ import { buttonVariants } from "@/components/ether/oktaycolakoglu/ui/button"
 
 export default function NotFound() {
   return (
-    <div className="container flex h-[40vh] items-end justify-center">
+    <div className="container flex h-[40vh] items-end justify-center mx-auto">
       <div className="text-center">
         <h1 className="text-2xl">404</h1>
         <p className="text-muted-foreground">

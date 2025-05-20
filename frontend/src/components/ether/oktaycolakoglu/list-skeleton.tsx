@@ -1,7 +1,7 @@
 import { Skeleton } from "@/components/ether/oktaycolakoglu/ui/skeleton"
 
 export const ListSkeleton = () => (
-  <div className="container space-y-8">
+  <div className="container space-y-8 mx-auto">
     <div className="md:mb-12 md:mt-6">
       <Skeleton className="mb-2 h-8 rounded-md md:w-40" />
       <Skeleton className="mb-2 h-4 w-1/2 rounded-md md:w-60" />
