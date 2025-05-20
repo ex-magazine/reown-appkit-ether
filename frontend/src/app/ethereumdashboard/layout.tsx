@@ -1,9 +1,9 @@
 import { Analytics } from '@vercel/analytics/next';
 
-import MetricsNavbar from './components/MetricsNavbar';
+import MetricsNavbar from '@/components/ether/ethereumdashboard/MetricsNavbar';
 
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import Footer from '@/components/ether/ethereumdashboard/Footer';
+import Navbar from '@/components/ether/ethereumdashboard/Navbar';
 import Script from 'next/script';
 
 const EthereumdashboardLayout = ({

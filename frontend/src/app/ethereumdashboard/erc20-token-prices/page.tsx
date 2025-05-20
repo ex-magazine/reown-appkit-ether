@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import ERC20TokenPricesForm from '../components/ERC20TokenPricesForm';
+import ERC20TokenPricesForm from '@/components/ether/ethereumdashboard/ERC20TokenPricesForm';
 
 // Custom Metadata for SEO
 export const metadata: Metadata = {

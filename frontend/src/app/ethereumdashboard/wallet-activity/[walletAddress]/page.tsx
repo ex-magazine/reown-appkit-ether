@@ -1,8 +1,8 @@
-import InternalTransactionsActivityTable from '@/app/ethereumdashboard/components/InternalTransactionsActivityTable';
-import OpenseaAccountInfoTable from '@/app/ethereumdashboard/components/OpenseaAccountInfoTable';
-import TransactionActivityTable from '@/app/ethereumdashboard/components/TransactionActivityTable';
-import TransactionsAccountInfoTable from '@/app/ethereumdashboard/components/TransactionsAccountInfoTable';
-import addressValidator from '@/app/ethereumdashboard/utils/functions/addressValidator';
+import InternalTransactionsActivityTable from '@/components/ether/ethereumdashboard/InternalTransactionsActivityTable';
+import OpenseaAccountInfoTable from '@/components/ether/ethereumdashboard/OpenseaAccountInfoTable';
+import TransactionActivityTable from '@/components/ether/ethereumdashboard/TransactionActivityTable';
+import TransactionsAccountInfoTable from '@/components/ether/ethereumdashboard/TransactionsAccountInfoTable';
+import addressValidator from '@/utils/functions/addressValidator';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

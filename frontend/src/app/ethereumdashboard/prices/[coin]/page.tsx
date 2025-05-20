@@ -1,6 +1,6 @@
-import GenericChartPage from '@/app/ethereumdashboard/components/GenericChartPage';
-import { coinValidator } from '@/app/ethereumdashboard/utils/functions/coinValidator';
-import CoinChartInfoType from '@/app/ethereumdashboard/utils/types/CoinChartInfoType';
+import GenericChartPage from '@/components/ether/ethereumdashboard/GenericChartPage';
+import { coinValidator } from '@/utils/functions/coinValidator';
+import CoinChartInfoType from '@/utils/types/CoinChartInfoType';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

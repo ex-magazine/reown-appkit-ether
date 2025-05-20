@@ -1,4 +1,4 @@
-import WalletAnalyticsForm from '../components/WalletAnalyticsForm';
+import WalletAnalyticsForm from '@/components/ether/ethereumdashboard/WalletAnalyticsForm';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

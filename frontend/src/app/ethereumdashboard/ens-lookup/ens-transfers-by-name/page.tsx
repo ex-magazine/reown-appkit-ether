@@ -1,4 +1,4 @@
-import ENSTransferByNameForm from '@/app/ethereumdashboard/components/ENSTransferByNameForm';
+import ENSTransferByNameForm from '@/components/ether/ethereumdashboard/ENSTransferByNameForm';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

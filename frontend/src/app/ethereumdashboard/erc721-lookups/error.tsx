@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import { AlertCircle, Home } from 'lucide-react';
-import { Button } from '../components/ui/button';
+import { Button } from '@/components/ether/ethereumdashboard/ui/button';
 
 // Custom Error Page for ERC721 Lookups
 export default function ERC721LookupsErrorPage({

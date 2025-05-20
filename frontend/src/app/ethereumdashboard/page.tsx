@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { Button } from './components/ui/button';
-import HomePageWalletForm from './components/HomePageWalletForm';
-import HomePageMarketDataSection from './components/HomePageMarketDataSection';
-import HomePageGlobalMarketCapChart from './components/HomePageGlobalMarketCapChart';
-import HomePageTrendingCoinsTable from './components/HomePageTrendingCoinsTable';
-import HomePageTrendingCollectionsTable from './components/HomePageTrendingCollectionsTable';
+import { Button } from '@/components/ether/ethereumdashboard/ui/button';
+import HomePageWalletForm from '@/components/ether/ethereumdashboard/HomePageWalletForm';
+import HomePageMarketDataSection from '@/components/ether/ethereumdashboard/HomePageMarketDataSection';
+import HomePageGlobalMarketCapChart from '@/components/ether/ethereumdashboard/HomePageGlobalMarketCapChart';
+import HomePageTrendingCoinsTable from '@/components/ether/ethereumdashboard/HomePageTrendingCoinsTable';
+import HomePageTrendingCollectionsTable from '@/components/ether/ethereumdashboard/HomePageTrendingCollectionsTable';
 import type { Metadata } from 'next';
 
 // Custom Metadata

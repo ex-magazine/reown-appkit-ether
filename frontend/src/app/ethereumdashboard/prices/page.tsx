@@ -1,6 +1,6 @@
-import CryptoPricesTable from '@/app/ethereumdashboard/components/CryptoPricesTable';
-import TopWinningCoinsTable from '../components/TopWinningCoinsTable';
-import TopLosingCoinsTable from '../components/TopLosingCoinsTable';
+import CryptoPricesTable from '@/components/ether/ethereumdashboard/CryptoPricesTable';
+import TopWinningCoinsTable from '@/components/ether/ethereumdashboard/TopWinningCoinsTable';
+import TopLosingCoinsTable from '@/components/ether/ethereumdashboard/TopLosingCoinsTable';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

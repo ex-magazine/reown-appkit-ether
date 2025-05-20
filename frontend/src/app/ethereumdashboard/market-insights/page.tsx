@@ -1,4 +1,4 @@
-import MarketInsightsSection from '../components/MarketInsightsSection';
+import MarketInsightsSection from '@/components/ether/ethereumdashboard/MarketInsightsSection';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

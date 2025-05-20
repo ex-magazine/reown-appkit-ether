@@ -1,5 +1,5 @@
-import GenericGasMetricsInfoTable from '../components/GenericGasMetricsInfoTable';
-import GasBlockInfoTable from '../components/GasBlockInfoTable';
+import GenericGasMetricsInfoTable from '@/components/ether/ethereumdashboard/GenericGasMetricsInfoTable';
+import GasBlockInfoTable from '@/components/ether/ethereumdashboard/GasBlockInfoTable';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

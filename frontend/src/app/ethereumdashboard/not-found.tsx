@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Home } from 'lucide-react';
-import { Button } from './components/ui/button';
+import { Button } from '@/components/ether/ethereumdashboard/ui/button';
 
 // Not Found Page for the Default Route
 export default function NotFound() {

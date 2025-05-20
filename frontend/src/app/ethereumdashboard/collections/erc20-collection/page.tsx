@@ -1,4 +1,4 @@
-import ERC20CollectionsAnalyticsForm from '@/app/ethereumdashboard/components/ERC20CollectionsAnalyticsForm';
+import ERC20CollectionsAnalyticsForm from '@/components/ether/ethereumdashboard/ERC20CollectionsAnalyticsForm';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

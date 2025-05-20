@@ -4,9 +4,9 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from './../components/ui/card';
+} from './@/components/ether/ethereumdashboard/ui/card';
 import Link from 'next/link';
-import { protocolsList } from '../utils/constants/EIPProtocolsList';
+import { protocolsList } from '@/utils/constants/EIPProtocolsList';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

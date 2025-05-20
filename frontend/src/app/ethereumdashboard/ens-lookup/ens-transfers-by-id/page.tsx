@@ -1,4 +1,4 @@
-import ENSTransfersByIDForm from '@/app/ethereumdashboard/components/ENSTransferByIDForm';
+import ENSTransfersByIDForm from '@/components/ether/ethereumdashboard/ENSTransferByIDForm';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

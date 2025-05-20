@@ -1,4 +1,4 @@
-import ENSToAddressForm from '@/app/ethereumdashboard/components/ENSToAddressForm';
+import ENSToAddressForm from '@/components/ether/ethereumdashboard/ENSToAddressForm';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

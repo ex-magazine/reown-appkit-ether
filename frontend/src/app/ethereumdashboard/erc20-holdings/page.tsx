@@ -1,4 +1,4 @@
-import ERC20HoldingsForm from '../components/ERC20HoldingsForm';
+import ERC20HoldingsForm from '@/components/ether/ethereumdashboard/ERC20HoldingsForm';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

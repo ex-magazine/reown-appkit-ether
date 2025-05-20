@@ -1,5 +1,5 @@
-import { AboutPageCardList } from '../utils/constants/AboutPageCardList';
-import type AboutPageCardType from '../utils/types/AboutPageCardType';
+import { AboutPageCardList } from '@/utils/constants/AboutPageCardList';
+import type AboutPageCardType from '@/utils/types/AboutPageCardType';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 

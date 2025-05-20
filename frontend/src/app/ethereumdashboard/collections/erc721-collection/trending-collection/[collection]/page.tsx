@@ -1,10 +1,10 @@
-import ERC721CollectionAttributeSummaryInfoTable from '@/app/ethereumdashboard/components/ERC721CollectionAttributeSummaryInfoTable';
-import ERC721CollectionDataInfoTable from '@/app/ethereumdashboard/components/ERC721CollectionDataInfoTable';
-import ERC721CollectionExtraDataInfoTable from '@/app/ethereumdashboard/components/ERC721CollectionExtraDataInfoTable';
-import ERC721CollectionFloorPriceInfoTable from '@/app/ethereumdashboard/components/ERC721CollectionFloorPriceInfoTable';
-import ERC721CollectionSalesInfoTable from '@/app/ethereumdashboard/components/ERC721CollectionSalesInfoTable';
-import ERC721CollectionTransfersInfoTable from '@/app/ethereumdashboard/components/ERC721CollectionTransfersInfoTable';
-import { collectionValidator } from '@/app/ethereumdashboard/utils/functions/collectionValidator';
+import ERC721CollectionAttributeSummaryInfoTable from '@/components/ether/ethereumdashboard/ERC721CollectionAttributeSummaryInfoTable';
+import ERC721CollectionDataInfoTable from '@/components/ether/ethereumdashboard/ERC721CollectionDataInfoTable';
+import ERC721CollectionExtraDataInfoTable from '@/components/ether/ethereumdashboard/ERC721CollectionExtraDataInfoTable';
+import ERC721CollectionFloorPriceInfoTable from '@/components/ether/ethereumdashboard/ERC721CollectionFloorPriceInfoTable';
+import ERC721CollectionSalesInfoTable from '@/components/ether/ethereumdashboard/ERC721CollectionSalesInfoTable';
+import ERC721CollectionTransfersInfoTable from '@/components/ether/ethereumdashboard/ERC721CollectionTransfersInfoTable';
+import { collectionValidator } from '@/utils/functions/collectionValidator';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

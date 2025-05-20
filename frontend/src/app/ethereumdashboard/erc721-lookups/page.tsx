@@ -1,4 +1,4 @@
-import ERC721LookupsForm from '../components/ERC721LookupsForm';
+import ERC721LookupsForm from '@/components/ether/ethereumdashboard/ERC721LookupsForm';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

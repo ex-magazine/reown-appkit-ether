@@ -1,7 +1,7 @@
-import RocketPoolStatsInfoTable from '../components/RocketPoolStatsInfoTable';
-import StakingWebsiteSection from '../components/StakingWebsitesSection';
-import ValidatorLeaderboardInfoTable from '../components/ValidatorLeaderboardInfoTable';
-import ValidatorQueueInfoTable from '../components/ValidatorQueueInfoTable';
+import RocketPoolStatsInfoTable from '@/components/ether/ethereumdashboard/RocketPoolStatsInfoTable';
+import StakingWebsiteSection from '@/components/ether/ethereumdashboard/StakingWebsitesSection';
+import ValidatorLeaderboardInfoTable from '@/components/ether/ethereumdashboard/ValidatorLeaderboardInfoTable';
+import ValidatorQueueInfoTable from '@/components/ether/ethereumdashboard/ValidatorQueueInfoTable';
 import type { Metadata } from 'next';
 
 // Custom Metadata for SEO

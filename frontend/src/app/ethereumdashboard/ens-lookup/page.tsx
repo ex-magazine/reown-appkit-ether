@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import ENSSelectorSection from '../components/ENSSelectorSection';
+import ENSSelectorSection from '@/components/ether/ethereumdashboard/ENSSelectorSection';
 
 // Custom Metadata for SEO
 export const metadata: Metadata = {

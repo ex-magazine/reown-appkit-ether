@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import CollectionsSelectorSection from '../components/CollectionsSelectorSection';
+import CollectionsSelectorSection from '@/components/ether/ethereumdashboard/CollectionsSelectorSection';
 
 // Custom Metadata for SEO
 export const metadata: Metadata = {
