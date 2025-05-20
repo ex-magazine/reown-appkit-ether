@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { NETWORK_MAPPER } from '@/app/ethereumdashboard/utils/constants/NETWORK_MAPPER';
+import { NETWORK_MAPPER } from '@/utils/constants/NETWORK_MAPPER';
 
 // Set MORALIS URL for request
 const MORALIS_URL = 'https://deep-index.moralis.io/api/v2/';

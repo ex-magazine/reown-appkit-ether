@@ -5,8 +5,8 @@ import FirecrawlApp from '@mendable/firecrawl-js';
 import { groq } from '@ai-sdk/groq';
 import { NextResponse } from 'next/server';
 import { generateObject } from 'ai';
-import marketSchema from '@/app/ethereumdashboard/utils/constants/MarketSchema';
-import AITextGeneratedSchema from '@/app/ethereumdashboard/utils/constants/AITextGeneratedSchema';
+import marketSchema from '@/utils/constants/MarketSchema';
+import AITextGeneratedSchema from '@/utils/constants/AITextGeneratedSchema';
 
 export async function GET() {
   // Check if the API key is set
