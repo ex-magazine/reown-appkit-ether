@@ -96,7 +96,7 @@ export default async function MoviePage({ params }: Params) {
                     backgroundImage: `linear-gradient(#000000bb, #000000bb), url(${optimizedBackdrop})`,
                 }}
             >
-                <div className="container flex flex-col md:flex-row gap-8">
+                <div className="container mx-auto flex flex-col md:flex-row gap-8">
                     <div className="w-full max-w-[200px] max-md:mx-auto md:max-w-[300px]">
                         <LazyImage
                             src={generateTmdbImagePath(movie.poster_path, 200)}
@@ -153,7 +153,7 @@ export default async function MoviePage({ params }: Params) {
                     </div>
                 </div>
             </section>
-            <div className="container space-y-8">
+            <div className="container mx-auto space-y-8">
                 <MovieActorsSection cast={credits.cast} />
                 <RecommendationSection
                     recommendations={recommendations.results}

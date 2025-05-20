@@ -34,7 +34,7 @@ export default function SearchPage() {
   }, [inView]);
 
   return (
-    <div className="mx-auto max-w-7xl space-y-12">
+    <div className="mx-auto container space-y-12">
       <h1 className="mb-6 text-xl font-bold">
         Search Results for &quot;{query}&quot;
       </h1>

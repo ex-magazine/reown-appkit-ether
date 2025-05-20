@@ -6,7 +6,7 @@ const WatchlistPage = async () => {
   const watchlist = await getWatchlistProducts();
 
   return (
-    <div className="container">
+    <div className="container mx-auto">
       <h1 className="mb-6 text-xl font-bold">Your Watchlist</h1>
       {watchlist.length === 0 ? (
         <p>Your watchlist is empty.</p>
