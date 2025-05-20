@@ -20,7 +20,7 @@ export const NavbarLinks: NavbarLinkObject[] = [
     dropdown: [
       {
         name: 'Gas Information',
-        href: '/gas-tracker',
+        href: '/ethereumdashboard/gas-tracker',
       },
     ],
   },
