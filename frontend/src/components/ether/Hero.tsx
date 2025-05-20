@@ -2,18 +2,18 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-600 to-indigo-700 px-6 py-20 text-white">
+    <section className="relative w-full overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-600 to-indigo-700 px-6 py-20">
       {/* Content Container */}
-      <div className="relative z-0 flex w-full flex-col items-center text-center">
+      <div className="relative z-10 tracking-tight flex w-full flex-col items-center text-center">
         {/* Heading */}
-        <h1 className="mt-10 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+        <h1 className="mt-10 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
           Empower Your DApp Development
         </h1>
 
         {/* Subheading */}
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-gray-200 sm:text-xl">
+        <p className="mt-6 max-w-3xl text-lg leading-relaxed sm:text-xl">
           Simplify wallet integration for Web3 applications with Reown AppKit.
-          Build EVM-compatible solutions and streamline blockchain wallet
+          Build EVM compatible solutions and streamline blockchain wallet
           interactions seamlessly.
         </p>
 
@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           </a>
           <a
             href="#features"
-            className="rounded-full bg-indigo-800 px-8 py-3 text-lg font-semibold shadow-md transition duration-300 hover:bg-indigo-900"
+            className="text-white rounded-full bg-indigo-800 px-8 py-3 text-lg font-semibold shadow-md transition duration-300 hover:bg-indigo-900"
           >
             Learn More
           </a>

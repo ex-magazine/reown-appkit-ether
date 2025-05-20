@@ -11,7 +11,7 @@ export const NavbarLinks: NavbarLinkObject[] = [
       { name: 'Token Analytics', href: '/ethereumdashboard/collections' },
       { name: 'Wallet Analytics', href: '/ethereumdashboard/wallet-analytics' },
       { name: 'EVM Explorer', href: '/evmexplorer' },
-      { name: 'Popular EVM', href: '/evmexplorer/explore' },
+      { name: 'EVM Popular', href: '/evmexplorer/explore' },
       { name: 'EVM Climate', href: '/evmexplorer/climate' },
     ],
   },
