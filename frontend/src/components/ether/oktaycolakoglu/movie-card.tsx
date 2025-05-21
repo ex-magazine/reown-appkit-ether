@@ -17,7 +17,7 @@ export const MovieCard: React.FC<Movie> = ({
   release_date,
 }) => {
   return (
-    <Link href={`/movie/${id}`} key={id} prefetch={false}>
+    <Link href={`/oktaycolakoglu/movie/${id}`} key={id} prefetch={false}>
       <MediaCard.Root>
         <MediaPoster image={poster_path} alt={title} />
         <MediaCard.Content>

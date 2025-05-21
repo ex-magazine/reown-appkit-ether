@@ -25,7 +25,7 @@ export const TvSeasonNavigation: React.FC<TvSeasonNavigationProps> = ({
   const nextSeason = seasons.find((s) => s.season_number === Number(season) + 1)
 
   const goSeason = (s: number) => {
-    router.push(`/tv/${id}/seasons/${s}`)
+    router.push(`/oktaycolakoglu/tv/${id}/seasons/${s}`)
   }
 
   return (

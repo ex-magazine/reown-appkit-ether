@@ -18,7 +18,7 @@ const baseUrl: string = "https://api.themoviedb.org/3"
  */
 const defaultHeaders: Record<string, string> = {
   "Content-Type": "application/json", 
-  Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
+  Authorization: `Bearer ${process.env.TMDB_BEAR_KEY}`,
 }
 
 /**

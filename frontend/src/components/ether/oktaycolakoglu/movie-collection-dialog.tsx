@@ -48,7 +48,7 @@ export const MovieCollectionDialog: React.FC<MovieCollectionDialogProps> = ({
         <ScrollArea className="max-h-[80dvh] md:pr-4">
           <div className="grid gap-4 md:grid-cols-2">
             {sortByReleaseDate(parts).map((part) => (
-              <Link href={`/movie/${part.id}`} key={part.id}>
+              <Link href={`/oktaycolakoglu/movie/${part.id}`} key={part.id}>
                 <MediaMiniDetail.Root className="rounded-md border">
                   <MediaMiniDetail.Backdrop>
                     <MediaBackdrop

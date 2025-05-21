@@ -17,20 +17,20 @@ export const TvSeasonBreadcrumb: React.FC<TvSeasonBreadcrumbProps> = ({
   return (
     <div className="flex items-center text-sm">
       <Link
-        href={`/tv/${id}`}
+        href={`/oktaycolakoglu/tv/${id}`}
         className="text-muted-foreground hover:text-foreground"
       >
         {showName}
       </Link>
       <ChevronRight className="mx-2 size-4 text-muted-foreground" />
       <Link
-        href={`/tv/${id}/seasons`}
+        href={`/oktaycolakoglu/tv/${id}/seasons`}
         className="text-muted-foreground hover:text-foreground"
       >
         Seasons
       </Link>
       <ChevronRight className="mx-2 size-4 text-muted-foreground" />
-      <Link href={`/tv/${id}/seasons/${season}`}>{seasonName}</Link>
+      <Link href={`/oktaycolakoglu/tv/${id}/seasons/${season}`}>{seasonName}</Link>
     </div>
   )
 }

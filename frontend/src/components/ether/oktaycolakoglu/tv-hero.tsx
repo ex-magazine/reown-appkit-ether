@@ -54,7 +54,7 @@ export const TvHero: React.FC<TvHeroProps> = ({
 
           <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
             <Link
-              href={`/tv/${item.id}`}
+              href={`/oktaycolakoglu/tv/${item.id}`}
               className={buttonVariants({
                 size: "lg",
                 variant: "default",

@@ -62,7 +62,7 @@ export const MovieHero: React.FC<MovieHeroProps> = ({
 
           <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
             <Link
-              href={`/movie/${item.id}`}
+              href={`/oktaycolakoglu/movie/${item.id}`}
               className={buttonVariants({
                 size: "lg",
                 variant: "default",
