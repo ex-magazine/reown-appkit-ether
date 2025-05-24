@@ -6,12 +6,12 @@ interface ListPageProps {
   searchParams?: Record<string, string>
 }
 
-export async function generateMetadata() {
-  return {
-    title: "Now Playing Movies",
-    description: pages.movie.nowPlaying.description,
-  }
-}
+// export async function generateMetadata() {
+//   return {
+//     title: "Now Playing Movies",
+//     description: pages.movie.nowPlaying.description,
+//   }
+// }
 
 export default async function NowPlaying({ searchParams }: ListPageProps) {
   return (

@@ -19,20 +19,20 @@ interface DetailSeasonsProps {
   }
 }
 
-export async function generateMetadata({ params }: DetailSeasonsProps) {
-  const detail = await tmdb.tv.detail({
-    id: params.id,
-  })
+// export async function generateMetadata({ params }: DetailSeasonsProps) {
+//   const detail = await tmdb.tv.detail({
+//     id: params.id,
+//   })
 
-  const { name } = await tmdb.tvSeasons.details({
-    id: params.id,
-    season: params.season,
-  })
+//   const { name } = await tmdb.tvSeasons.details({
+//     id: params.id,
+//     season: params.season,
+//   })
 
-  return {
-    title: `${name} - ${detail.name}`,
-  }
-}
+//   return {
+//     title: `${name} - ${detail.name}`,
+//   }
+// }
 
 export default async function DetailSeasons({
   params: { id, season },

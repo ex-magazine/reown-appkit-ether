@@ -6,12 +6,12 @@ interface TrendingPageProps {
   searchParams?: Record<string, string>
 }
 
-export async function generateMetadata() {
-  return {
-    title: "Trending People",
-    description: pages.trending.tv.description,
-  }
-}
+// export async function generateMetadata() {
+//   return {
+//     title: "Trending People",
+//     description: pages.trending.tv.description,
+//   }
+// }
 
 export default async function TrendingPage({
   searchParams,

@@ -6,12 +6,12 @@ interface ListPageProps {
   searchParams?: Record<string, string>
 }
 
-export async function generateMetadata() {
-  return {
-    title: "Upcoming Movies",
-    description: pages.movie.upcoming.description,
-  }
-}
+// export async function generateMetadata() {
+//   return {
+//     title: "Upcoming Movies",
+//     description: pages.movie.upcoming.description,
+//   }
+// }
 
 export default async function Upcoming({ searchParams }: ListPageProps) {
   return (

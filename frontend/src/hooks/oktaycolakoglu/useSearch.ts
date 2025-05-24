@@ -16,7 +16,7 @@ export const useSearch = (auto: boolean = true) => {
   const [value] = useDebounce(term, 500)
 
   useEffect(() => {
-    if (pathname !== "/search") {
+    if (pathname !== "/oktaycolakoglu/search") {
       setPage(pathname)
     }
     if (!query) {
@@ -32,14 +32,14 @@ export const useSearch = (auto: boolean = true) => {
 
   function handleSearch(value: string) {
     if (value !== "") {
-      router.push(`/search?q=${value}`)
+      router.push(`/oktaycolakoglu/search?q=${value}`)
 
     
 
       return
     }
 
-    if (!page && pathname === "/search") {
+    if (!page && pathname === "/oktaycolakoglu/search") {
       router.replace("/", {
         scroll: true,
       })

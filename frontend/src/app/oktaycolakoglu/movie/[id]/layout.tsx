@@ -20,18 +20,18 @@ interface DetailLayoutProps {
   children: React.ReactNode
 }
 
-export async function generateMetadata({ params }: DetailLayoutProps) {
-  const { title } = await tmdb.movie.detail({
-    id: params.id,
-  })
+// export async function generateMetadata({ params }: DetailLayoutProps) {
+//   const { title } = await tmdb.movie.detail({
+//     id: params.id,
+//   })
 
-  return {
-    title: {
-      default: title,
-      template: `%s - ${title} - ${siteConfig.name}`,
-    },
-  }
-}
+//   return {
+//     title: {
+//       default: title,
+//       template: `%s - ${title} - ${siteConfig.name}`,
+//     },
+//   }
+// }
 
 export default async function DetailLayout({
   params,

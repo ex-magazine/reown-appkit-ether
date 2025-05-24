@@ -11,11 +11,11 @@ interface SearchProps {
   }
 }
 
-export async function generateMetadata({ searchParams }: SearchProps) {
-  return {
-    title: `Search results for: ${searchParams.q}`,
-  }
-}
+// export async function generateMetadata({ searchParams }: SearchProps) {
+//   return {
+//     title: `Search results for: ${searchParams.q}`,
+//   }
+// }
 
 export default async function Search({ searchParams }: SearchProps) {
   if (!searchParams.q) {

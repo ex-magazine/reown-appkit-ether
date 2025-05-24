@@ -6,12 +6,12 @@ interface ListPageProps {
   searchParams?: Record<string, string>
 }
 
-export async function generateMetadata() {
-  return {
-    title: "Top Rated Movies",
-    description: pages.movie.topRated.description,
-  }
-}
+// export async function generateMetadata() {
+//   return {
+//     title: "Top Rated Movies",
+//     description: pages.movie.topRated.description,
+//   }
+// }
 
 export default async function TopRated({ searchParams }: ListPageProps) {
   return (

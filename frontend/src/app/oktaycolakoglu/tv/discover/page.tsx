@@ -13,12 +13,12 @@ interface ListPageProps {
   searchParams?: Record<string, string>
 }
 
-export async function generateMetadata() {
-  return {
-    title: "Discover TV Shows",
-    description: pages.tv.discover.description,
-  }
-}
+// export async function generateMetadata() {
+//   return {
+//     title: "Discover TV Shows",
+//     description: pages.tv.discover.description,
+//   }
+// }
 
 export default async function Discover({ searchParams }: ListPageProps) {
   const cookieStore = await cookies();

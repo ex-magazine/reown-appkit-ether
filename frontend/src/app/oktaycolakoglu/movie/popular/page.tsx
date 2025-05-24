@@ -6,12 +6,12 @@ interface ListPageProps {
   searchParams?: Record<string, string>
 }
 
-export async function generateMetadata() {
-  return {
-    title: "Popular Movies",
-    description: pages.movie.popular.description,
-  }
-}
+// export async function generateMetadata() {
+//   return {
+//     title: "Popular Movies",
+//     description: pages.movie.popular.description,
+//   }
+// }
 
 export default function Popular({ searchParams }: ListPageProps) {
   return (

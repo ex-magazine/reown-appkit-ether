@@ -24,15 +24,15 @@ interface DetailProps {
   }
 }
 
-export async function generateMetadata({ params }: DetailProps) {
-  const { name } = await tmdb.person.detail({
-    id: params.id,
-  })
+// export async function generateMetadata({ params }: DetailProps) {
+//   const { name } = await tmdb.person.detail({
+//     id: params.id,
+//   })
 
-  return {
-    title: name,
-  }
-}
+//   return {
+//     title: name,
+//   }
+// }
 
 export default async function Detail({ params }: DetailProps) {
   const {

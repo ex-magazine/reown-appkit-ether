@@ -15,6 +15,7 @@ import {
 import { MediaBackdrop } from "@/components/ether/oktaycolakoglu/media-backdrop"
 
 export default async function Detail({ params }: { params: { id: string } }) {
+  const id = (await params).id;
   const {
     first_air_date,
     last_air_date,
@@ -31,7 +32,7 @@ export default async function Detail({ params }: { params: { id: string } }) {
     original_language,
     last_episode_to_air: lastEpisode,
   } = await tmdb.tv.detail({
-    id: params.id,
+    id: id,
   })
 
   const items = [
@@ -146,8 +147,9 @@ export default async function Detail({ params }: { params: { id: string } }) {
                 {lastEpisode.overview}
               </p>
               <Link
-                href={`/oktaycolakoglu/tv/${params.id}/seasons/${lastEpisode.season_number}`}
-                className={cn(buttonVariants({ variant: "default" }), "mt-4")}
+                href={`/oktaycolakoglu/tv/${id}/seasons/${lastEpisode.season_number}`}
+                // className={cn(buttonVariants({ variant: "default" }), "mt-4")}
+                className="mt-6"
                 prefetch={false}
               >
                 View Episodes
