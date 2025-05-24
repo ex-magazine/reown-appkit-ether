@@ -19,6 +19,7 @@ interface DetailProps {
 }
 
 export default async function Detail({ params }: DetailProps) {
+  const id = (await params).id;
   const {
     status,
     release_date,
@@ -32,7 +33,7 @@ export default async function Detail({ params }: DetailProps) {
     original_language,
     production_countries,
   } = await tmdb.movie.detail({
-    id: params.id,
+    id: id,
   })
 
   const overview = [

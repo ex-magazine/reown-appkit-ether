@@ -35,6 +35,7 @@ interface DetailProps {
 // }
 
 export default async function Detail({ params }: DetailProps) {
+  const id = (await params).id;
   const {
     name,
     profile_path,
@@ -45,7 +46,7 @@ export default async function Detail({ params }: DetailProps) {
     known_for_department: department,
     combined_credits: { cast, crew },
   } = await tmdb.person.detail<WithCombinedCredits & WithImages>({
-    id: params.id,
+    id: id,
     append: "combined_credits,images",
   })
 

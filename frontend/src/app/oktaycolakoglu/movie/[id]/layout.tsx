@@ -37,6 +37,7 @@ export default async function DetailLayout({
   params,
   children,
 }: DetailLayoutProps) {
+  const id_number = (await params).id;
   const {
     id,
     title,
@@ -50,7 +51,7 @@ export default async function DetailLayout({
     tagline,
     videos,
   } = await tmdb.movie.detail<WithVideos>({
-    id: params.id,
+    id: id_number,
     append: "videos",
   })
 
