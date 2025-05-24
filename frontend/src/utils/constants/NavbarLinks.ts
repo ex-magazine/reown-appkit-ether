@@ -3,6 +3,47 @@ import NavbarLinkObject from '../types/NavbarLinkObject';
 // Constants for working with Navbar Links
 export const NavbarLinks: NavbarLinkObject[] = [
   {
+    name: 'Airdrop & Whitelist',
+    dropdown: [
+      {
+        name: 'Cryptorank',
+        href: 'https://cryptorank.io/drophunting',
+      },
+      {
+        name: 'Galxe',
+        href: 'https://www.galxe.com/earndrop',
+      },
+      {
+        name: 'Zealy',
+        href: 'https://zealy.io/',
+      },
+      {
+        name: 'Layer 3',
+        href: 'https://app.layer3.xyz/discover',
+      },
+      {
+        name: 'Revoke',
+        href: 'https://revoke.cash',
+      },
+      {
+        name: 'AdsPower Browser',
+        href: 'https://www.adspower.com/',
+      },
+      {
+        name: 'Bitwarden',
+        href: 'https://bitwarden.com/',
+      },
+      {
+        name: 'DeBank',
+        href: 'https://debank.com/',
+      },
+      {
+        name: '5phutcrypto',
+        href: 'https://5phutcrypto.io/cong-cu-san-airdrop-va-whitelist',
+      },
+    ],
+  },
+  {
     name: 'Extra Data',
     dropdown: [
       { name: 'EIP Protocols', href: '/ethereumdashboard/eip-protocols' },
