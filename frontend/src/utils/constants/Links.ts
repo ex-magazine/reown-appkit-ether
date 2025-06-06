@@ -52,7 +52,7 @@ export const Links: LinkType[] = [
   { name: 'Sepolia PoW Faucet', href: 'https://sepolia-faucet.pk910.de/#/mine/74da04e1-e30a-4434-b3cd-befa10d9be46' },
 
 
-  
+
 
 
   { name: 'Messari', href: 'https://messari.io/' },
@@ -89,7 +89,7 @@ export const Links: LinkType[] = [
   { name: 'Abraxas Capital', href: 'https://intel.arkm.com/explorer/entity/abraxas-capital-heka-funds' },
   { name: 'Abraxas Capital Mgmt (Heka Funds)', href: 'https://intel.arkm.com/explorer/address/0xEd0C6079229E2d407672a117c22b62064f4a4312' },
   { name: 'Difi Visualizer', href: 'https://intel.arkm.com/visualizer/entity/0xEd0C6079229E2d407672a117c22b62064f4a4312?flow=all&positions=%7B%7D&sortDir=desc&sortKey=time&usdGte=0.1' },
- 
+
 
   {
     name: 'Bull Market Peak Indicators',
@@ -106,5 +106,13 @@ export const Links: LinkType[] = [
   {
     name: 'Bitcoin CounterFlow',
     href: 'https://bitcoincounterflow.com/charts/google-trends',
+  },
+  {
+    name: 'Tether Treasury USDT Balance',
+    href: 'https://dune.com/52hz_database/test-usdt-zz',
+  },
+  {
+    name: 'Orderflow Heatmap & Leverage Liquidation',
+    href: 'https://hashwei.ai/',
   },
 ];
