@@ -2,7 +2,7 @@ import React from 'react';
 
 const Docaccordion: React.FC = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-600 to-indigo-700 px-6 py-20">
+    <section className="flex flex-1 flex-col items-center justify-center px-4 pt-20">
 
       <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
         <h2 id="accordion-color-heading-1">
