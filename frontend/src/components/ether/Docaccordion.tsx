@@ -1,9 +1,47 @@
 import React from 'react';
+import { useState } from 'react';
 
 const Docaccordion: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleAccordion = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <section className="flex flex-1 flex-col items-center justify-center px-4 pt-20">
-
+      <div className="w-full">
+        <div className="border border-gray-300 rounded-md">
+          <button
+            className="flex items-center justify-between w-full p-4"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <span>Accordion Header</span>
+            <svg
+              className={`h-5 w-5 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+                }`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            className={`overflow-hidden transition-max-height duration-300 ${isOpen ? "max-h-96" : "max-h-0"
+              }`}
+          >
+            <div className="p-4 border-t border-gray-300">
+              Accordion content
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
         <h2 id="accordion-color-heading-1">
           <button type="button" className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-1" aria-expanded="true" aria-controls="accordion-color-body-1">
