@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom/vitest';
 
-import { fireEvent, render, screen } from '@/lib/test-utils';
+import { fireEvent, render, screen } from '@/lib/ether/test-utils';
 
 import Account from '../account';
 

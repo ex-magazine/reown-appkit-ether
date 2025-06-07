@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom/vitest';
 
-import { render, screen } from '@/lib/test-utils';
+import { render, screen } from '@/lib/ether/test-utils';
 
 import ErrorContent from '../error-content';
 

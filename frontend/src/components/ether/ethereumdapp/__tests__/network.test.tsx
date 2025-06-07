@@ -1,11 +1,11 @@
 import '@testing-library/jest-dom/vitest';
 
-import { fireEvent, render, screen } from '@/lib/test-utils';
+import { fireEvent, render, screen } from '@/lib/ether/test-utils';
 
 import Network from '../network';
 import Account from '../account';
 
-beforeEach(() => {});
+beforeEach(() => { });
 
 describe('<Network />', () => {
   it('should not connect wallet', () => {
