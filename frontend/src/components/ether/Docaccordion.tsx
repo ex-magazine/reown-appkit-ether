@@ -38,10 +38,9 @@ const Docaccordion: React.FC = () => {
           >
             <div className="p-4 border-t border-gray-300">
               <div className="mb-2 text-gray-500 dark:text-gray-400">
-                <h4>$UNI #Uniswap</h4>
+                <h3>$UNI #Uniswap</h3>
                 <p>
-                  Tạo ra khoảng $1,2 tỷ USD phí mỗi năm.
-0.25% khối lượng giao dịch là interface fees ($5 - $10M mỗi tháng) chảy về túi Uniswap Labs, phần còn lại là LP fees thuộc về Liquidity Privider => UNI holder không nhận được giá trị gì, lmao.
+                  Tạo ra khoảng $1,2 tỷ USD phí mỗi năm. 0.25% khối lượng giao dịch là interface fees ($5 - $10M mỗi tháng) chảy về túi Uniswap Labs, phần còn lại là LP fees thuộc về Liquidity Privider => UNI holder không nhận được giá trị gì, lmao.
                   Ngoài ra, design tokenomic của UNI không giới hạn tổng cung. Initial total supply = 1B, sau khi vesting hết thì bắt đầu quá trình lạm phát vĩnh viễn 2% mỗi năm. Mặc dù con số này không quá lớn (~21% sau 10 năm) nhưng đó là một khoản ăn mòn dần giá trị của holder.
                   Nó như kiểu, hãy mua cổ phần công ty của tôi đi, lợi nhuận hàng năm tôi sẽ không chia cho các bạn tí nào nhưng ngoài ra mỗi năm tôi sẽ tiếp tục in ra và bán thêm 2% cổ phần nữa. LOL.
                   Nếu không có gì thay đổi thì động lực nắm giữ UNI chỉ còn mỗi nằm chờ pump dump. Lối thoát duy nhất cho UNI holder là cơ chế Fee Switch, khi được kích hoạt nó cho phép chia sẻ một phần LP fee về DAO Treasury và có thể sẽ được phân bổ tới UNI holders.
@@ -51,21 +50,21 @@ const Docaccordion: React.FC = () => {
                 </p>
               </div>
               <div className="text-gray-500 dark:text-gray-400">
-                <h4>$CAKE #Pancakeswap</h4>
+                <h3>$CAKE #Pancakeswap</h3>
                 <p>
                   Tạo ra khoảng $1.8 tỷ USD phí giao dịch mỗi năm, mang về $450M doanh thu và có tới $325M giá trị dành cho CAKE holder.
                   Kể từ phiên bản tokenomics 3.0 CAKE đã từ bỏ veToken + revenue sharing để chuyển sang mô hình giảm phát thông qua buy back & burn.
                   Theo đó 15% swap fee cùng nhiều khoản phí tiện ích sẽ được sử dụng để buy back & burn CAKE, từ đó tạo ra hiệu ứng giảm phát token. Việc chuyển đổi mô hình này đã mang đến cho CAKE 23 tháng giảm phát liên tục, loại bỏ đi ~5% nguồn cung.
                   Total supply của CAKE giới hạn ở 450M, cir supply hiện tại khoảng 369M, nếu cứ tiếp tục giữ vững phong độ thì dự án sẽ không bao giờ chạm tới mốc supply 450M.
                   Vậy điểm yếu trong mô hình tokenomic này là gì?
-Đầu tiên mô hình buy back & burn phụ thuộc vào hiệu quả hoạt động của dự án và BNBChain, giảm phát chỉ thực sự đạt hiệu quả khi nguồn phí thu về đủ lớn để burn vượt qua con số CAKE lạm phát. Nếu CAKE chạm giới hạn total supply tức không mint thêm được CAKE mới thì sẽ không còn cơ chế khuyến khích cho các Liquidity Provider => dẫn đến sụt giảm thanh khoản => sụt giảm volume => lượng burn giảm.
+                  Đầu tiên mô hình buy back & burn phụ thuộc vào hiệu quả hoạt động của dự án và BNBChain, giảm phát chỉ thực sự đạt hiệu quả khi nguồn phí thu về đủ lớn để burn vượt qua con số CAKE lạm phát. Nếu CAKE chạm giới hạn total supply tức không mint thêm được CAKE mới thì sẽ không còn cơ chế khuyến khích cho các Liquidity Provider => dẫn đến sụt giảm thanh khoản => sụt giảm volume => lượng burn giảm.
                   Thứ hai là nguồn doanh thu đến từ nhiều loại token, dự án cần quy đổi sang CAKE để burn nên nếu giá CAKE tăng cao cũng dẫn đến hiệu quả burn giảm sút. Mô hình buy back & burn sẽ hiệu quả hơn khi giữ giá CAKE thấp.
                   Cuối cùng lợi ích này trông không đã bằng trả cổ tức tiền mặt vì giá token thường biến động nhiều.
                   Như vậy, mặc dù mô hình giảm phát hoạt động khá hiệu quả nhưng cũng ẩn chứa nhiều biến số.
                 </p>
               </div>
               <div className="text-gray-500 dark:text-gray-400">
-                <h4>$HYPE #Hyperliquid</h4>
+                <h3>$HYPE #Hyperliquid</h3>
 
                 <p>
                   Hyperliquid là sản Perpdex số 1 hiện nay, luôn nằm trong top doanh thu của bất cứ bảng xếp hạng nào. Mặc dù mới đi vào hoạt động được nửa năm nhưng dự án đã tạo ra ~900 triệu USD phí giao dịch và đặc biệt là chuyển dòng giá trị trị lên tới $835 triệu USD về cho HYPE holder. Nếu ước lượng cả năm thì gấp 5 lần CAKE.
@@ -84,10 +83,75 @@ const Docaccordion: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+
+        <div className="border border-gray-300 rounded-md">
+          <button
+            className="flex items-center justify-between w-full p-4"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <span>#TRB (Tellor)</span>
+            <svg
+              className={`h-5 w-5 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+                }`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            className={`overflow-hidden transition-max-height duration-300 ${isOpen ? "h-full" : "max-h-0"
+              }`}
+          >
+            <div className="p-4 border-t border-gray-300">
+              <div className="mb-2 text-gray-500 dark:text-gray-400">
+                <h3>Tellor</h3>
+                <p>
+                  #TRB (Tellor) là một #oracle phi tập trung, có vai trò kết nối dữ liệu ngoài chuỗi (off-chain) với các blockchain, đặc biệt là #Ethereum. Vai trò của TRB trong thị trường crypto có thể chia thành hai phần: tác động kỹ thuật và tác động tâm lý / dòng tiền.
+                </p>
+                <p>√  Tác động và tác dụng kỹ thuật của TRB</p>
+                <p>  TRB giúp các smart contract nhận được dữ liệu từ thế giới thực như:</p>
+                <ul>
+                  <li>Giá tài sản (#BTC, #ETH, #Vàng, #USD…)</li>
+                  <li>Dữ liệu thời tiết, khí hậu (cho các ứng dụng bảo hiểm)</li>
+                  <li> Kết quả thể thao (cho các ứng dụng betting, prediction market)</li>
+                  <li>Dữ liệu on-chain (sàn giao dịch, lending protocol)</li>
+                </ul>
+                <p>🔧 Tác dụng:</p>
+                <p>Cung cấp dữ liệu phi tập trung: Không phụ thuộc vào một nguồn duy nhất như Chainlink node, Tellor sử dụng cơ chế staking + mining để xác minh dữ liệu.
+                  Chống kiểm duyệt: Do là oracle phi tập trung, không dễ bị thao túng hay dừng hoạt động như một số oracle tập trung.
+                  Khả năng mở rộng: Có thể tích hợp với nhiều chain, không chỉ Ethereum (hiện có trên Polygon, Arbitrum, BSC…).</p>
+                <p> √ Tác động đến thị trường (tâm lý & dòng tiền)</p>
+                <p>📈 Khi TRB pump:</p>
+                <p>Tạo hiệu ứng lan tỏa đến các dự án oracle như LINK, DIA, BAND, API3.
+                  Kích hoạt sự chú ý của dòng tiền đầu cơ: TRB từng gây FOMO mạnh khi tăng từ ~$10 lên gần $600 trong năm 2023, kéo theo nhiều sóng ăn theo.
+                  Tạo kỳ vọng đầu cơ với mô hình “low cap Oracle” - do marketcap nhỏ hơn LINK nhiều lần, TRB thường được coi là “version nghèo của Chainlink” và được kỳ vọng sẽ có sóng mạnh hơn khi dòng tiền về mảng oracle.
+                </p>
+                <p>TRB thường là chỉ báo sớm cho dòng tiền oracle:</p>
+                <p>Nếu TRB bật mạnh → khả năng cao các coin oracle khác cũng được để ý theo sau → giúp nhà đầu tư dự đoán sóng ngành. </p>
+                <p>  √  Điểm đặc biệt của TRB</p>
+                <p> Cộng đồng đông đảo nhưng “ngầm” - holder lâu dài, ít bị phân phối bởi VC, nhiều whale ôm lâu dài.
+                  Cơ chế phân phối khác biệt - không unlock token hàng loạt như các coin có vesting → dễ tạo cú pump khi nguồn cung thấp.
+                  Thường bị short mạnh rồi squeeze ngược - tạo các pha tăng sốc rất nhanh, gây ảnh hưởng lớn đến tâm lý thị trường.
+                </p>
+              </div>
 
 
-    </section>
+            </div>
+          </div>
+        </div>
+
+
+      </div >
+
+
+    </section >
   );
 };
 
