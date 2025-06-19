@@ -112,7 +112,17 @@ export const Links: LinkType[] = [
     href: 'https://dune.com/52hz_database/test-usdt-zz',
   },
   {
-    name: 'Orderflow Heatmap & Leverage Liquidation',
-    href: 'https://hashwei.ai/',
+    name: 'Finviz',
+    href: 'https://finviz.com/map.ashx',
+  },
+
+  {
+    name: 'Graphics for Economic News Releases',
+    href: 'https://www.bls.gov/charts/import-export/us-import-and-export-price-indexes-12-month-percent-change.htm',
+  },
+
+  {
+    name: ' Major Foreign Holders of Treasury Securities',
+    href: 'https://ticdata.treasury.gov/resource-center/data-chart-center/tic/Documents/slt_table5.html',
   },
 ];
