@@ -115,7 +115,14 @@ export const Links: LinkType[] = [
     name: 'Finviz',
     href: 'https://finviz.com/map.ashx',
   },
-
+  {
+    name: 'Spotgamma',
+    href: 'https://spotgamma.com/',
+  },
+  {
+    name: 'Apex Trader Funding',
+    href: 'https://apextraderfunding.com/',
+  },
   {
     name: 'Graphics for Economic News Releases',
     href: 'https://www.bls.gov/charts/import-export/us-import-and-export-price-indexes-12-month-percent-change.htm',
