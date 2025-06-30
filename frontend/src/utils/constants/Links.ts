@@ -124,6 +124,10 @@ export const Links: LinkType[] = [
     href: 'https://apextraderfunding.com/',
   },
   {
+    name: 'Ethereum Weekly Engagement',
+    href: 'https://www.growthepie.com/',
+  },
+  {
     name: 'Graphics for Economic News Releases',
     href: 'https://www.bls.gov/charts/import-export/us-import-and-export-price-indexes-12-month-percent-change.htm',
   },
